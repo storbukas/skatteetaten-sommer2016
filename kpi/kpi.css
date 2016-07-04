@@ -1,0 +1,132 @@
+body{
+    background-color: #d6d6d6;
+    min-width: 800px;}
+
+
+/*Font*/
+.font-helvetica-medium{
+    font-family: "Helvetica Neue",  Arial, sans-serif;
+    font-size: 1.2em;
+    color: #fff;}
+
+.font-helvetica-small{
+    font-family: "Helvetica Neue",  Arial, sans-serif;
+    font-size: 1em;}
+
+/*Top Menu*/
+.fa{
+    color: #FFF;}
+
+.navbar-default{
+    background-color: #6f2c3f;}
+
+.navbar-nav > li > a {
+    padding-top: 22px;
+    padding-bottom: 22px;}
+
+.menu-button-top{
+    width: 12.5em;
+    text-align: center;}
+
+.menu-button-top a:hover,
+.menu-button-top a:focus {
+    outline: none;
+    background-color: #b07c83 !important;}
+
+.navbar-fixed-top .navbar-nav .active > a,
+.navbar-fixed-top .navbar-nav .active > a > span,
+.navbar-fixed-top .navbar-nav .active > a > .fa,
+.navbar-fixed-top .navbar-nav .active > a:focus {
+    color: #000;
+    background-color: #b07c83; }
+
+
+
+
+.navbar-fixed-top{
+    border: none;}
+
+/*Side Menu*/
+
+.caret{
+    margin-right: 25%;
+    vertical-align: top;
+    margin-top: 4%;
+
+}
+
+.sidebar .navbar-nav .active > .sidemenu-link{
+    color: #000;
+    background-color: #d6d6d6;}
+
+.side-nav {
+    position: fixed;
+    top: 65px;
+    left: 225px;
+    width: 12.5em;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #ffffff;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;}
+
+.side-nav li a {
+    width: 225px;}
+
+.side-nav li a:hover,
+.side-nav li a:focus {
+    outline: none;
+    background-color: rgba(128, 148, 221, 0.67) !important;}
+
+.side-nav li ul {
+    padding: 0;}
+
+
+/*Sub Side Menu*/
+.sub-side-nav li{
+    height: 3em;}
+
+.sub-side-nav li a{
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block;
+    height: 3em;
+    width: 180px;}
+
+.sub-side-nav li a span {
+    vertical-align: top;
+    line-height: 3em;
+    color: #000;}
+
+.sidebar-line{
+    margin: 0 1em 0 0;
+    padding: 0;
+    display: inline-block;
+    height: 3em;
+    width: 0.2em;
+    background-color: #d6d6d6;
+}
+
+.sidebar-dot{
+    margin: 0 0.3em 0 -1.60em;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-color: #d6d6d6;
+    margin-bottom: 1em;
+    border-radius: 50%;}
+
+.sidebar .navbar-nav .active > .sub-sidemenu-link{
+    color: #000;
+    background-color: #ececec;}
+
+#person ul{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #f4f4f4;}
+
+
+
