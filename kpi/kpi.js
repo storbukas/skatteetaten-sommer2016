@@ -17,5 +17,7 @@ var current_top_URL  = current_page_URL.split("kpi/")[1];
         };
         
         window.onload = changeActive();
+        
+
     });
 
