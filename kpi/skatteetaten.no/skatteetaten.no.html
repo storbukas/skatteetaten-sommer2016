@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!--Customized downloaded jquery UI-->
+    <script src="../jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui/jquery-ui.js"></script>
+    <link href="../jquery-ui/jquery-ui.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Custom Fonts -->
@@ -62,11 +66,93 @@
     </div> <!-- /.container-fluid -->
 </nav>
 
-<div class="information-header">
+
+
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="name-date-header header-block">
+            <h1 class="nameOfSite font-helvetica-medium"></h1> <!-- name is set in kpi.ks -->
+            <span class="date font-helvetica-medium">22.sept.16</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="brukere-header header-block">
+            <span class="font-helvetica-medium">Brukere</span><br>
+            <span class="header-numbers">1 960 534</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="oekter-header header-block">
+            <span class="font-helvetica-medium">Økter</span><br>
+            <span class="header-numbers">2 960 534</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="siderPerOekt-header header-block">
+            <span class="font-helvetica-medium">Sider per økt</span><br>
+            <span class="header-numbers">3,40</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="sidevisninger-header header-block">
+            <span class="font-helvetica-medium">Sidevisninger</span><br>
+            <span class="header-numbers">10 064 278</span><br>
+            <!--<span class="font-helvetica-medium" style="color: #8094DD"> 10 064 278</span>-->
+        </div>
+        <div class="vertical-line"></div>
+        <div class="unikeSidevisninger-header header-block">
+            <span class="font-helvetica-medium">Unike sidevisninger</span><br>
+            <span class="header-numbers">9 986 549</span><br>
+            <!--<span class="font-helvetica-medium"> 10 064 278</span>-->
+        </div>
+    </div>
+
+    <div class="subHeaderDate">
+        <h2 class="subHeader"></h2>
+        <input type="date" class="form-control" id="datepicker" size="30" placeholder="Velg periode">
+    </div>
+
+
+
+
+    <div>
+        <form action="#">
+            <fieldset>
+                <select id="sortPagesBy">
+                    <option>Mest aktive sider</option>
+                    <option>Mest kristiske sider</option>
+                </select>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="accordion" class="main-box">
+        <h4>
+            <span class="accordionNumber">1</span>
+            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+            <span class="smilyIcon"></span>
+            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
+        </h4>
+        <div>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br></div>
+
+        <h4>
+            <span class="accordionNumber">1</span>
+            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+            <span class="smilyIcon"></span>
+            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
+        </h4>
+        <div>en tabell</div>
+
+        <h4>
+            <span class="accordionNumber">1</span>
+            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+            <span class="smilyIcon"></span>
+            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
+        </h4>
+        <div>en tabell</div>
+    </div>
+
+
 
 
 </div>
-
 
 
 
