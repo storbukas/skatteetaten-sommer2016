@@ -13,140 +13,211 @@
     <link href="../jquery-ui/jquery-ui.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--date picker, documentation: http://www.daterangepicker.com/-->
+    <script src="../datepicker/moment.min.js"></script>
+    <script type="text/javascript" src="../datepicker/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../datepicker/daterangepicker.css" />
+    <script>
+        moment.locale('es'); // change the global locale to Spanish
+    </script>
+
+
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="../kpi.css" rel="stylesheet">
-</head>
+
+
+
+
+
+
+
 
 <body>
-<!--Load menu-->
+
+<!--Load top menu-->
 <div id="menu"></div>
 <script>
-    $("#menu" ).load("../headerMenu.html" );
+    $("#menu" ).load("http://localhost:8000/kpi/headerMenu.html" );
 </script>
 
 
-
-
-<!--Content-->
+<!--Side Menu-->
 <nav class="navbar-default sidebar">
-
     <div class="container">
-
-
-
         <ul class="nav navbar-nav side-nav">
-
             <li class="font-helvetica-small">
-                <a class="sidemenu-link" href="file:///C:/Users/Administrator/Documents/skatteetaten/kpi/skatteetaten.no/skatteetaten.no.html"> Oversikt</a>
+                <a class="sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/skatteetaten.no.html"> Oversikt</a>
             </li>
-
             <li class="font-helvetica-small" id="person">
-                <a class="sidemenu-link" href="file:///C:/Users/Administrator/Documents/skatteetaten/kpi/skatteetaten.no/person.html" id="personMenu"> Person <b class="caret pull-right"></b></a>
+                <a class="sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/person.html" id="personMenu"> Person <b class="caret pull-right"></b></a>
             </li>
-
-
             <li class="font-helvetica-small">
                 <a class="sidemenu-link" href="#"> Bedrift og organis... <b class="caret pull-right"></b></a>
             </li>
-
             <li class="font-helvetica-small">
                 <a class="sidemenu-link" href="#"> Rådgiver <b class="caret pull-right"></b></a>
             </li>
-
             <li class="font-helvetica-small">
                 <a class="sidemenu-link" href="#"> Om Skatteetaten <b class="caret pull-right"></b></a>
             </li>
-
         </ul>
-
-
-
     </div> <!-- /.container-fluid -->
 </nav>
 
 
-
+<!--Content-->
 <div class="content-wrapper">
 
+    <!--Header-->
     <div class="content-header">
         <div class="name-date-header header-block">
-            <h1 class="nameOfSite font-helvetica-medium"></h1> <!-- name is set in kpi.ks -->
+            <h1 class="nameOfSite font-helvetica-medium"></h1> <!-- name is set in the script in headerMenu.html -->
             <span class="date font-helvetica-medium">22.sept.16</span>
         </div>
         <div class="vertical-line"></div>
-        <div class="brukere-header header-block">
+
+        <div class="header-block">
             <span class="font-helvetica-medium">Brukere</span><br>
-            <span class="header-numbers">1 960 534</span>
+            <span id="usersAmount" class="header-numbers"></span><br>
+            <span id="usersAmountCompare" class="font-helvetica-medium compareTo"> 10 064 278</span>
         </div>
+
         <div class="vertical-line"></div>
-        <div class="oekter-header header-block">
+        <div class="header-block">
             <span class="font-helvetica-medium">Økter</span><br>
-            <span class="header-numbers">2 960 534</span>
+            <span id="sessionsAmount" class="header-numbers"></span><br>
+            <span id="sessionsAmountCompare" class="font-helvetica-medium compareTo"> 10 064 278</span>
         </div>
+
         <div class="vertical-line"></div>
-        <div class="siderPerOekt-header header-block">
+        <div class="header-block">
             <span class="font-helvetica-medium">Sider per økt</span><br>
-            <span class="header-numbers">3,40</span>
+            <span id="pagesPerSession" class="header-numbers"></span><br>
+            <span id="pagesPerSessionCompare" class="font-helvetica-medium compareTo"> 10 064 278</span>
         </div>
+
         <div class="vertical-line"></div>
-        <div class="sidevisninger-header header-block">
+        <div class="header-block">
             <span class="font-helvetica-medium">Sidevisninger</span><br>
-            <span class="header-numbers">10 064 278</span><br>
-            <!--<span class="font-helvetica-medium" style="color: #8094DD"> 10 064 278</span>-->
+            <span id="pageviews" class="header-numbers"></span><br>
+            <span id="pageviewsCompare" class="font-helvetica-medium compareTo"> 10 064 278</span>
         </div>
+
         <div class="vertical-line"></div>
-        <div class="unikeSidevisninger-header header-block">
+        <div class="header-block">
             <span class="font-helvetica-medium">Unike sidevisninger</span><br>
-            <span class="header-numbers">9 986 549</span><br>
-            <!--<span class="font-helvetica-medium"> 10 064 278</span>-->
+            <span id="uniquePageviews" class="header-numbers"></span><br>
+            <span id="uniquePageviewsCompare" class="font-helvetica-medium compareTo"> 10 064 278</span>
         </div>
     </div>
 
-    <div class="subHeaderDate">
-        <h2 class="subHeader"></h2>
-        <input type="date" class="form-control" id="datepicker" size="30" placeholder="Velg periode">
-    </div>
 
+    <!--main box with information-->
+    <div class="white-bg-wrapper">
 
+        <!--sub header with datepicker-->
+        <div class="subHeaderDate">
+            <h2 class="subHeader"></h2>
+            <input id="datepickerInput">
+        </div>
 
+        <!--sort by, or copy paste link div-->
+        <div id="sortAccordionDiv">
+            <select id="sortPagesBy" class="font-helvetica-medium">
+                <option>Mest aktive sider</option>
+                <option>Mest kristiske sider</option>
+            </select>
+           <input id="pasteLink" class="font-helvetica-medium" placeholder="Lim inn inn en spesifisert side">
+        </div>
 
-    <div>
-        <form action="#">
-            <fieldset>
-                <select id="sortPagesBy">
-                    <option>Mest aktive sider</option>
-                    <option>Mest kristiske sider</option>
-                </select>
-            </fieldset>
-        </form>
-    </div>
+        <!--box with tables-->
+        <div id="accordion">
+            <h4>
+                <span class="accordionNumber font-helvetica-medium">1 </span>
+                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+                <span class="smilyIcon"><i class="fa fa-frown-o" aria-hidden="true"></i></span>
+                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
+            </h4>
+            <div>
+                <table class="table font-helvetica-small">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Faktiske</th>
+                            <th>Mål</th>
+                            <th>Trend</th>
+                            <th>Mål %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Fluktfrekvens</th>
+                            <td>20,42%</td>
+                            <td>30%</td>
+                            <td></td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sidevisninger vs unike</th>
+                            <td>20,42%</td>
+                            <td>30%</td>
+                            <td></td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gjennomsnittstid</th>
+                            <td>20,42%</td>
+                            <td>30%</td>
+                            <td></td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">VOC</th>
+                            <td>20,42%</td>
+                            <td>30%</td>
+                            <td></td>
+                            <td>5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <div id="accordion" class="main-box">
-        <h4>
-            <span class="accordionNumber">1</span>
-            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-            <span class="smilyIcon"></span>
-            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
-        </h4>
-        <div>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br>en tabell<br></div>
+            <h4>
+                <span class="accordionNumber font-helvetica-medium">1 </span>
+                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+                <span class="smilyIcon"><i class="fa fa-meh-o" aria-hidden="true"></i></span>
+                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
+            </h4>
+            <div></div>
+            <h4>
+                <span class="accordionNumber font-helvetica-medium">1 </span>
+                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
+                <span class="smilyIcon"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
+            </h4>
+            <div></div>
+        </div>
 
-        <h4>
-            <span class="accordionNumber">1</span>
-            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-            <span class="smilyIcon"></span>
-            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
-        </h4>
-        <div>en tabell</div>
+        <!--Feedback box-->
+        <div class="feedbackWrapper">
+            <div class="feedback-header"><h3 class="font-helvetica-medium">Tilbakemeldinger</h3></div>
+        </div>
 
-        <h4>
-            <span class="accordionNumber">1</span>
-            <span class="accordionLink">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-            <span class="smilyIcon"></span>
-            <p>Brukere: </p><span class="accordionBrukere">23456789</span>
-        </h4>
-        <div>en tabell</div>
+        <!--show limited amount of pages div-->
+        <div id="showPagesDiv">
+            <label class="font-helvetica-small" for="showPages">Vis antall rader: </label>
+            <select name="showPages" id="showPages" class="font-helvetica-medium">
+                <option>5</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+            </select>
+        </div>
+
     </div>
 
 
@@ -155,11 +226,8 @@
 </div>
 
 
-
-
 <script type="text/javascript" src="../kpi.js"></script>
 <script type="text/javascript" src="skatteetaten.no.js"></script>
-
 
 </body>
 </html>

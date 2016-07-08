@@ -1,7 +1,11 @@
-body{
-    background-color: #d6d6d6;
-    position:fixed;
-    width: 100%;}
+body {
+    background-color: #e1e1e1;
+    width: 100%;
+    position: relative;
+}
+
+
+
 
 /*Font*/
 .font-helvetica-medium{
@@ -13,11 +17,12 @@ body{
     font-size: 1.15em;}
 
 h1, h2, h3 ,h4, h5{
-    font-family: "Helvetica Neue",  Arial, sans-serif;}
+    font-family: "Helvetica Neue",  Arial, sans-serif;
+    outline: none;}
 
 /*Top Menu*/
 .menu-link-top span,
-.fa{
+.menu-link-top .fa{
     color: #FFF;}
 
 .navbar-default{
@@ -62,7 +67,7 @@ h1, h2, h3 ,h4, h5{
 
 .sidebar .navbar-nav .active > .sidemenu-link{
     color: #000;
-    background-color: #d6d6d6;}
+    background-color: #e1e1e1;}
 
 .side-nav {
     position: fixed;
@@ -112,14 +117,14 @@ h1, h2, h3 ,h4, h5{
     display: inline-block;
     height: 3em;
     width: 0.2em;
-    background-color: #d6d6d6;}
+    background-color: #e1e1e1;}
 
 .sidebar-dot{
     margin: 0 0.3em 0 -1.60em;
     display: inline-block;
     height: 1em;
     width: 1em;
-    background-color: #d6d6d6;
+    background-color: #e1e1e1;
     margin-bottom: 1em;
     border-radius: 50%;}
 
@@ -171,10 +176,31 @@ h1, h2, h3 ,h4, h5{
     font-weight: bold;
     font-size: 1.8em;}
 
+.compareTo{
+    color: #6f2c3f;
+    font-weight: bold;
+}
+
+/*white background on content*/
+.white-bg-wrapper{
+    display: inline-block;
+    background-color: #fff;
+    width: 92%;
+    border-radius: 5px;
+    margin: 4% 4% 0 4%;
+}
+
+
 /*--sub header--*/
 
 .subHeaderDate{
-    margin: 4% 3% 1% 3%;}
+    margin: 0;
+    width: 100%;
+    padding: 1%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 1%;
+    background-color: #ececec;}
 
 .subHeader{
     display: inline-block;
@@ -182,7 +208,7 @@ h1, h2, h3 ,h4, h5{
     margin: 0;
     vertical-align: top;}
 
-#datepicker{
+#datepickerInput{
     width: 15%;
     text-align: center;
     display: inline-block;
@@ -190,14 +216,42 @@ h1, h2, h3 ,h4, h5{
     float: right;}
 
 /*--main box--*/
-.main-box{
-    width: 60%;
-    margin: 0 0 0 3%;}
+
+#sortAccordionDiv{
+    width: 69%;
+    margin: 0 0 0.5% 1%;}
+
+#sortPagesBy{
+    display: inline-block;
+    font-size: 1.3em;
+    height: 1.7em;}
+
+#showPagesDiv{
+    text-align: right;
+    width: 69%;
+    display: inline-block;
+    margin: 0 0 1% 1%;
+    font-size: 0.9em;}
+
+#pasteLink{
+    display: inline-block;
+    float: right;
+    font-size: 1em;
+    width: 45%;
+    height: 1.7em;
+    margin-top: 0.55em;}
+
+#accordion{
+    width: 69%;
+    display: inline-block;
+    margin: 0 0 1% 1%;}
 
 #accordion .ui-accordion-header{
     margin: 0;
     border: none;
+    border-bottom: 1px solid;
     border-radius: 0;}
+
 
 #accordion .ui-accordion-header-icon,
 #accordion .ui-icon,
@@ -206,13 +260,81 @@ h1, h2, h3 ,h4, h5{
 
 #accordion .ui-accordion-content{
     margin: 0;
-    border: none;
     border-radius: 0;
-    background: #fff;}
+    background-color: #c7ceee;
+    border-bottom: 1px solid;}
+
+.table{
+    font-size: 1em;
+}
 
 #accordion p{
+    display: inline-block;}
+
+.accordionNumber{
+    font-weight: bold;
+    font-size: 1.3em;
+    vertical-align: middle;}
+
+.accordionLink{
+    font-size: 0.85em;
     display: inline-block;
+    width: 55%;
+    vertical-align: bottom;
+    margin-left: 1%;}
+
+.smilyIcon{
+    display:inline-block;
+    width: 15%;
+    font-size: 2em;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
 }
+
+.accordionBrukere{
+    vertical-align: middle;}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 1px solid #fff;}
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #fff;}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 1px solid #cccccc;
+    background: #8094DD;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+
+/*feedback box*/
+
+.feedbackWrapper{
+    display: inline-block;
+    width: 28%;
+    background-color: #c7ceee;
+    height: 250px;
+    float: right;
+    margin: 0 1% 0.5% 1%;
+    padding: 0;
+}
+
+.feedback-header{
+    background-color: #8094DD;
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1%;
+}
+
+.feedback-header h3{
+    margin: 0;
+    color: #fff;
+}
+
 
 
 
