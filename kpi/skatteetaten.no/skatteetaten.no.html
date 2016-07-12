@@ -14,13 +14,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <!--date picker, documentation: http://www.daterangepicker.com/-->
+    <!--moment and date picker, documentation: http://www.daterangepicker.com/-->
     <script src="../datepicker/moment.min.js"></script>
+    <script src="../moment-duration-format/moment-duration-format.js"></script>
     <script type="text/javascript" src="../datepicker/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="../datepicker/daterangepicker.css" />
-    <script>
-        moment.locale('es'); // change the global locale to Spanish
-    </script>
+
 
 
     <!-- Custom Fonts -->
@@ -135,12 +134,16 @@
 
         <!--box with tables-->
         <div id="accordion">
-            <h4>
+
+
+            <!--<h4>
                 <span class="accordionNumber font-helvetica-medium">1 </span>
                 <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
                 <span class="smilyIcon"><i class="fa fa-frown-o" aria-hidden="true"></i></span>
                 <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
             </h4>
+
+
             <div>
                 <table class="table font-helvetica-small">
                     <thead>
@@ -181,24 +184,17 @@
                             <td></td>
                             <td>5%</td>
                         </tr>
+                        <tr class="VOCyes">
+                            <th scope="row">"JA"</th>
+                            <td>20,42%</td>
+                            <td>30%</td>
+                            <td></td>
+                            <td>5%</td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>-->
 
-            <h4>
-                <span class="accordionNumber font-helvetica-medium">1 </span>
-                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-                <span class="smilyIcon"><i class="fa fa-meh-o" aria-hidden="true"></i></span>
-                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
-            </h4>
-            <div></div>
-            <h4>
-                <span class="accordionNumber font-helvetica-medium">1 </span>
-                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-                <span class="smilyIcon"><i class="fa fa-smile-o" aria-hidden="true"></i></span>
-                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
-            </h4>
-            <div></div>
         </div>
 
         <!--Feedback box-->
@@ -213,8 +209,6 @@
                 <option>5</option>
                 <option>10</option>
                 <option>25</option>
-                <option>50</option>
-                <option>100</option>
             </select>
         </div>
 
@@ -227,6 +221,7 @@
 
 
 <script type="text/javascript" src="../kpi.js"></script>
+<script type="text/javascript" src="../../standard-report-1month.json"></script>
 <script type="text/javascript" src="skatteetaten.no.js"></script>
 
 </body>

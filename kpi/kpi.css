@@ -84,12 +84,13 @@ h1, h2, h3 ,h4, h5{
     padding-bottom: 40px;}
 
 .side-nav li a {
-    width: 225px;}
+    width: 225px;
+    color: black !important;}
 
 .side-nav li a:hover,
 .side-nav li a:focus {
     outline: none;
-    background-color: rgba(128, 148, 221, 0.67) !important;}
+    background-color: rgba(132, 143, 186, 0.7) !important;}
 
 .side-nav li ul {
     padding: 0;}
@@ -177,7 +178,7 @@ h1, h2, h3 ,h4, h5{
     font-size: 1.8em;}
 
 .compareTo{
-    color: #6f2c3f;
+    color: #b07c83;
     font-weight: bold;
 }
 
