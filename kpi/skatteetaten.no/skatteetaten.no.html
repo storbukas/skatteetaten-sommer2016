@@ -114,25 +114,29 @@
     </div>
 
 
-    <!--main box with information-->
-    <div class="white-bg-wrapper">
+
 
         <!--sub header with datepicker-->
-        <div class="subHeaderDate">
+        <div class="subHeaderDate font-helvetica-small">
             <h2 class="subHeader"></h2>
-            <input id="datepickerInput">
+            <input id="datepickerInput"><br>
+            <div id="compareToDiv">
+                <input id="compareToInput" type="checkbox" name="compareToLastYear" value=""><p>Sammenligne med forrige år</p>
+            </div>
         </div>
 
+    <!--main box with information-->
+    <div class="white-bg-wrapper">
         <!--sort by, or copy paste link div-->
         <div id="sortAccordionDiv">
             <select id="sortPagesBy" class="font-helvetica-medium">
                 <option>Mest aktive sider</option>
                 <option>Mest kristiske sider</option>
             </select>
-           <input id="pasteLink" class="font-helvetica-medium" placeholder="Lim inn inn en spesifisert side">
+           <input type="text" id="pasteLink" class="font-helvetica-medium" placeholder="&#xf0c1; Lim inn inn en spesifisert side" style="font-family:Helvetica, FontAwesome">
         </div>
 
-        <!--box with tables-->
+        <!--box with tables/accordion from jquery UI-->
         <div id="accordion">
 
 

@@ -182,45 +182,62 @@ h1, h2, h3 ,h4, h5{
     font-weight: bold;
 }
 
-/*white background on content*/
-.white-bg-wrapper{
-    display: inline-block;
-    background-color: #fff;
-    width: 92%;
-    border-radius: 5px;
-    margin: 4% 4% 0 4%;
-}
+
 
 
 /*--sub header--*/
 
 .subHeaderDate{
-    margin: 0;
-    width: 100%;
+    display: inline-block;
+    margin: 4% 4% 0 4%;
+    width: 92%;
     padding: 1%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-bottom: 1%;
-    background-color: #ececec;}
+    background-color: #fff;}
+
 
 .subHeader{
     display: inline-block;
     color: #000;
     margin: 0;
+    margin-top: 1%;
     vertical-align: top;}
 
-#datepickerInput{
-    width: 15%;
+#datepickerInput,
+#compareToDiv{
+    width: 25%;
     text-align: center;
     display: inline-block;
     margin: 0;
-    float: right;}
+    float: right;
+    line-height: 0.8em;}
+
+
+#compareToInput{
+    margin: 0 2%;
+    padding: 0;}
+
+.subHeaderDate p{
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0;
+    vertical-align: top;
+    margin-top: 1%;
+}
+
+/*white background on content*/
+.white-bg-wrapper{
+    display: inline-block;
+    background-color: #fff;
+    width: 92%;
+    border-radius: 0px;
+    margin: 1% 4% 4% 4%;
+}
 
 /*--main box--*/
 
 #sortAccordionDiv{
     width: 69%;
-    margin: 0 0 0.5% 1%;}
+    margin: 1% 0 0.5% 1%;}
 
 #sortPagesBy{
     display: inline-block;
