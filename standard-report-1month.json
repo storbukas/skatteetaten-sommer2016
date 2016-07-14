@@ -189,6 +189,7 @@
     ],
     "top_pages": [
         {
+            "url": "http://www.skatteetaten.no/no/Person/",
             "title": "Skatteetaten - Person",
             "sessions": "1256967",
             "pageviews": "1825246",
@@ -197,6 +198,7 @@
             "avg_time_on_page": "22.3323917050889"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Person/Skatteoppgjor/Se-skatteoppgjoret-ditt/",
             "title": "Skatteetaten - Se skatteoppgj\u00f8ret ditt",
             "sessions": "308685",
             "pageviews": "1424213",
@@ -205,6 +207,7 @@
             "avg_time_on_page": "257.6969465223422"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Person/Selvangivelse/Selvangivelse-for-lonnstakere-og-pensjonister/",
             "title": "Skatteetaten - Se, endre eller levere selvangivelsen",
             "sessions": "147620",
             "pageviews": "293009",
@@ -213,6 +216,7 @@
             "avg_time_on_page": "129.27734371318437"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Person/Skatteoppgjor/",
             "title": "Skatteetaten - Skatteoppgj\u00f8r",
             "sessions": "108551",
             "pageviews": "1057612",
@@ -221,6 +225,7 @@
             "avg_time_on_page": "12.027171122625354"
         },
         {
+            "url": "https://www.skatteetaten.no/no/Person/bil-og-andre-kjoretoy/eierskifte/omregistreringsavgift/",
             "title": "Skatteetaten - Logg inn i Altinn",
             "sessions": "67324",
             "pageviews": "112354",
@@ -229,6 +234,7 @@
             "avg_time_on_page": "78.74493976454104"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Person/Skatteoppgjor/Skatteoppgjoret-i-ar/",
             "title": "Skatteetaten - Skatteoppgj\u00f8ret i 2015",
             "sessions": "45323",
             "pageviews": "62425",
@@ -237,6 +243,7 @@
             "avg_time_on_page": "25.98915874821147"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Person/Folkeregister/",
             "title": "Skatteetaten - Folkeregister",
             "sessions": "45257",
             "pageviews": "125194",
@@ -245,6 +252,7 @@
             "avg_time_on_page": "18.912215735819466"
         },
         {
+            "url": "http://www.skatteetaten.no/nn/Person/Skattekort-og-forskotsskatt/Frikort/Bestill-frikort/",
             "title": "Skatteetaten - Bestill frikort",
             "sessions": "44743",
             "pageviews": "107559",
@@ -253,6 +261,7 @@
             "avg_time_on_page": "168.00961398750422"
         },
         {
+            "url": "https://www.skatteetaten.no/no/Person/bil-og-andre-kjoretoy/eierskifte/omregistreringsavgift/",
             "title": "Skatteetaten - Finn omregistreringsavgift",
             "sessions": "30819",
             "pageviews": "42711",
@@ -261,6 +270,7 @@
             "avg_time_on_page": "132.5607850432518"
         },
         {
+            "url": "http://www.skatteetaten.no/no/Radgiver/Rettskilder/rundskriv-retningslinjer-og-andre-rettskilder/avgiftsrundskriv/arsavgift/",
             "title": "Skatteetaten - \u00c5rsavgift",
             "sessions": "28255",
             "pageviews": "80855",

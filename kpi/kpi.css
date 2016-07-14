@@ -1,11 +1,8 @@
 body {
-    background-color: #e1e1e1;
+    background-color: #e6e7e8;
     width: 100%;
     position: relative;
 }
-
-
-
 
 /*Font*/
 .font-helvetica-medium{
@@ -19,6 +16,11 @@ body {
 h1, h2, h3 ,h4, h5{
     font-family: "Helvetica Neue",  Arial, sans-serif;
     outline: none;}
+
+.compareTo{
+    color: #b07c83;
+    font-weight: bold;
+}
 
 /*Top Menu*/
 .menu-link-top span,
@@ -164,8 +166,16 @@ h1, h2, h3 ,h4, h5{
     margin-right: 2em;
     text-align: center;}
 
+.name-date-header>h1{
+    margin: 4%;
+}
+
 .nameOfSite{
     font-size: 1.5em;}
+
+#dateInHeaderCompareTo{
+    font-weight: normal;
+}
 
 .vertical-line{
     display: inline-block;
@@ -177,14 +187,6 @@ h1, h2, h3 ,h4, h5{
     font-weight: bold;
     font-size: 1.8em;}
 
-.compareTo{
-    color: #b07c83;
-    font-weight: bold;
-}
-
-
-
-
 /*--sub header--*/
 
 .subHeaderDate{
@@ -193,7 +195,6 @@ h1, h2, h3 ,h4, h5{
     width: 92%;
     padding: 1%;
     background-color: #fff;}
-
 
 .subHeader{
     display: inline-block;
@@ -210,7 +211,6 @@ h1, h2, h3 ,h4, h5{
     margin: 0;
     float: right;
     line-height: 0.8em;}
-
 
 #compareToInput{
     margin: 0 2%;
@@ -312,6 +312,20 @@ h1, h2, h3 ,h4, h5{
 
 .accordionBrukere{
     vertical-align: middle;}
+
+.table>tbody>tr>td,
+.table>thead>tr>th {
+    text-align: right;
+}
+
+.table>thead>tr>.actualCompareTo,
+.table>tbody>tr>.actualCompareTo{
+    text-align: left;
+}
+
+.actualCompareTo{
+    font-weight: normal;
+}
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top: 1px solid #fff;}
