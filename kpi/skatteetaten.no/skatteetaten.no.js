@@ -14,19 +14,14 @@ var menulink = $('.sidemenu-link');
 var submenulink =  $('.sub-sidemenu-link');
 
 //dates
-var dateInput; //start date + end date
+var start_date = moment().subtract(29, 'days');
+var end_date = moment();
 
-var sd = moment().subtract(29, 'days');
-var ed = moment();
-
-var start_date = moment().subtract(29, 'days').format('DD.MM.YYYY');
-var end_date = moment().format('DD.MM.YYYY');
+var compareToStartDate = moment(start_date).subtract(1, 'year');
+var compareToEndDate = moment(end_date).subtract(1, 'year');
 
 var start_dateJSONformat = moment().subtract(29, 'days').format('MM.DD.YY');
 var end_dateJSONformat = moment().format('MM.DD.YY');
-
-var compareToStartDate;
-var compareToEndDate;
 
 
 $(document).ready(function () {
@@ -74,11 +69,11 @@ $(document).ready(function () {
             }
         },
             function(start, end, label) {
-                sd = start;
-                ed = end;
+                start_date = start;
+                end_date = end;
 
-                start_date = start.format('DD.MM.YYYY');
-                end_date = end.format('DD.MM.YYYY');
+                compareToStartDate = moment(start).subtract(1, 'year');
+                compareToEndDate = moment(end).subtract(1, 'year');
 
                 start_dateJSONformat = start.format('MM.DD.YY');
                 end_dateJSONformat = end.format('MM.DD.YY');
@@ -88,15 +83,8 @@ $(document).ready(function () {
 
     //Update date in header
         datePicker.change(function() {
-            dateInput = datePicker.val();
-
-            var diffDays = ed.diff(sd, 'days') // 1
-
-            console.log(diffDays);
-
-            var compareToDate = sd-diffDays.format + ' - ' + end_date-diffDays;
-
-
+            var dateInput = datePicker.val();
+            var compareToDate = compareToStartDate.format('DD.MM.YYYY') + ' - ' + compareToEndDate.format('DD.MM.YYYY');
             $("#dateInHeader").text(dateInput);
             $("#dateInHeaderCompareTo").text(compareToDate);
         });
@@ -149,14 +137,11 @@ $(document).ready(function () {
             $.each(data.top_pages, function (index, element) {
 
 
-                $(function(){ //default state when page is loaded
-                    $(".compareTo").hide();
-                });
-
                 //Note that values are set in the bottom of this loop
 
                 /*--CREATE HEADER--*/
                 var accordionH4 = document.createElement('h4');
+                accordionH4.className = 'accordion-H4';
 
                 //Number of URL
                 var accordionNumberSpan = document.createElement('span');
@@ -188,6 +173,7 @@ $(document).ready(function () {
                 /*--INNER CONTENT/TABLE--*/
                 //Create column labels
                 var accordionTableDiv = document.createElement('div');
+                accordionTableDiv.className = 'accordionDiv';
                 var accordionTable = document.createElement('table');
                 accordionTable.className = 'table font-helvetica-small';
                 var thead = document.createElement('thead');
@@ -361,8 +347,83 @@ $(document).ready(function () {
             //Create the final accordion from Jquery UI
             $(function () {
                 acc.accordion();
+                limitRowsAccordion(5);
             });
         }});
+
+
+    //Show int amount of rows in accordion
+    function limitRowsAccordion(int){
+        var count = 0;
+        $('.accordion-H4').each(function (index) {
+            if(count < int){
+                $(this).show();
+                $('.accordionDiv').eq(0).show();
+
+            }
+            else{
+                $(this).hide();
+                $('.accordionDiv').eq(index).hide();
+            }
+            count ++;
+            });
+        }
+
+
+    $('#showPages').change(function() {
+        limitRowsAccordion($(this).val());
+    });
+
+
+
+    $("#searchLink").keyup(function(){
+
+        var searchTerm = $("#searchLink").val();
+
+        if(searchTerm == ''){
+            $("#results").empty();
+            $('#showPages').show();
+            $('#showPagesLabel').show();
+            limitRowsAccordion($('#showPages').val());
+            return false;
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8000/standard-report-1month.json',
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+
+                var b = true;
+                $("#results").empty();
+
+                $.each(data.top_pages, function(i, element) {
+                    if (element.url.search(new RegExp(searchTerm)) != -1) {
+
+                        $('.accordionLink').each(function (index) {
+
+                            if($(this).text() == element.url){
+
+                                $('.accordion-H4').eq(index).show();
+                                if(b==true){
+                                    $('.accordionDiv').eq(index).show();
+                                    b=false;}
+                            }
+                            else{
+                                $('.accordion-H4').eq(index).hide();
+                                $('.accordionDiv').eq(index).hide();}
+
+                        });
+
+                        $("#results").append("<p>" + element.url + "</p>");
+
+                    }
+                });
+            }
+        });
+    });
+
 
     //calculate status of accordion
     function calculateStatusBounceRate(actualPercentage){

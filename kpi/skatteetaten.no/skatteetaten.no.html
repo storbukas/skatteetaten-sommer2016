@@ -134,7 +134,7 @@
                 <option>Mest aktive sider</option>
                 <option>Mest kristiske sider</option>
             </select>
-           <input type="text" id="pasteLink" class="font-helvetica-medium" placeholder="&#xf0c1; Lim inn inn en spesifisert side" style="font-family:Helvetica, FontAwesome">
+           <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="&#xf0c1; Lim inn inn en spesifisert side" style="font-family:Helvetica, FontAwesome">
         </div>
 
         <!--box with tables/accordion from jquery UI-->
@@ -205,11 +205,12 @@
         <!--Feedback box-->
         <div class="feedbackWrapper">
             <div class="feedback-header"><h3 class="font-helvetica-medium">Tilbakemeldinger</h3></div>
+            <div id="results"></div>
         </div>
 
         <!--show limited amount of pages div-->
         <div id="showPagesDiv">
-            <label class="font-helvetica-small" for="showPages">Vis antall rader: </label>
+            <label id="showPagesLabel" class="font-helvetica-small" for="showPages">Vis antall rader: </label>
             <select name="showPages" id="showPages" class="font-helvetica-medium">
                 <option>5</option>
                 <option>10</option>
