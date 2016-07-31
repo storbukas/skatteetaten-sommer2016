@@ -2,11 +2,11 @@
 	"name": "jquery-ui",
 	"title": "jQuery UI",
 	"description": "A curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.",
-	"version": "1.12.0",
+	"version": "1.12.0-rc.2",
 	"homepage": "http://jqueryui.com",
 	"author": {
 		"name": "jQuery Foundation and other contributors",
-		"url": "https://github.com/jquery/jquery-ui/blob/1.12.0/AUTHORS.txt"
+		"url": "https://github.com/jquery/jquery-ui/blob/1.12.0-rc.2/AUTHORS.txt"
 	},
 	"main": "ui/widget.js",
 	"maintainers": [
@@ -55,7 +55,6 @@
 		"commitplease": "2.3.0",
 		"grunt": "0.4.5",
 		"grunt-bowercopy": "1.2.4",
-		"grunt-cli": "0.1.13",
 		"grunt-compare-size": "0.4.0",
 		"grunt-contrib-concat": "0.5.1",
 		"grunt-contrib-csslint": "0.5.0",

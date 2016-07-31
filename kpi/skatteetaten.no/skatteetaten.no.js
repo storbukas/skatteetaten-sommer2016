@@ -24,6 +24,7 @@ var start_dateJSONformat = moment().subtract(29, 'days').format('MM.DD.YY');
 var end_dateJSONformat = moment().format('MM.DD.YY');
 
 
+
 $(document).ready(function () {
 
     //Changes active class on buttons in side menu and sub side menu
@@ -56,7 +57,31 @@ $(document).ready(function () {
                 format: 'DD.MM.YYYY',
                 applyLabel: 'Velg',
                 cancelLabel: '<i class="fa fa-times" aria-hidden="true"></i>',
-                customRangeLabel: 'Egendefinert'
+                customRangeLabel: 'Egendefinert',
+                firstDay: 1,
+                daysOfWeek: [
+                    "Søn",
+                    "Man",
+                    "Tir",
+                    "Ons",
+                    "Tor",
+                    "Fre",
+                    "Lør"
+                ],
+                monthNames: [
+                    "Januar",
+                    "Februar",
+                    "Mars",
+                    "April",
+                    "Mai",
+                    "Juni",
+                    "Juli",
+                    "August",
+                    "September",
+                    "Oktober",
+                    "November",
+                    "Desember"
+                ],
             },
             autoUpdateInput: true,
             ranges: {
@@ -90,11 +115,7 @@ $(document).ready(function () {
         });
 
 
-    //Show last year if compare to is checked
-    $(function(){ //default state when page is loaded
-        $(".compareTo").hide();
-    });
-
+    //Show last year if compare to is checked --  note that the default value is set to hide after creating the accordion
     $('#compareToInput').change(function() {
         if ($(this).is(':checked')) {
             $(".compareTo").show();
@@ -159,16 +180,19 @@ $(document).ready(function () {
                 smilySpan.appendChild(smily);
 
                 //Number of users
-                var amountUsersSpan = document.createElement('span');
-                var amountUsersP = document.createElement('p');
-                amountUsersSpan.className = 'accordionBrukere font-helvetica-small';
-                amountUsersSpan.appendChild(amountUsersP);
+                var amountPageviewsSpan = document.createElement('span');
+                var amountPageviewsP = document.createElement('p');
+                var amountPageviewsPCompareTo = document.createElement('p');
+                amountPageviewsPCompareTo.className = 'compareTo pageviewsPCompareTo';
+                amountPageviewsSpan.className = 'accordionUniquePageviews font-helvetica-small';
+                amountPageviewsSpan.appendChild(amountPageviewsP);
+                amountPageviewsSpan.appendChild(amountPageviewsPCompareTo);
 
                 //Append to header
                 accordionH4.appendChild(accordionNumberSpan);
-                accordionH4.appendChild(pageURLSpan)
+                accordionH4.appendChild(pageURLSpan);
                 accordionH4.appendChild(smilySpan);
-                accordionH4.appendChild(amountUsersSpan);
+                accordionH4.appendChild(amountPageviewsSpan);
 
                 /*--INNER CONTENT/TABLE--*/
                 //Create column labels
@@ -265,7 +289,8 @@ $(document).ready(function () {
                 accordionNumberSpan.innerHTML = index + 1;
                 pageURLSpan.innerHTML = element.url;
                 smily.className = 'fa fa-frown-o'; /*******ENDRE*/
-                amountUsersP.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
+                amountPageviewsP.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
+                amountPageviewsPCompareTo.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
 
                 //Set values of inner content
                     //Column labels
@@ -279,10 +304,21 @@ $(document).ready(function () {
                 var br_calculateStatus = calculateStatusBounceRate(bounceRate);
                 thBounceRate.innerHTML = "Fluktfrekvens";
                 tdBR_actual.innerHTML = bounceRate + '%';
-
                 tdBR_actualCompareTo.innerHTML = "heiheiheiehi";
-
                 tdBR_goal.innerHTML = "< 25%";
+                
+
+                var br_trendDivMin = document.createElement('div');
+                br_trendDivMin.className = "bouncerateTrend trendMinimized";
+                br_trendDivMin.id = "bouncerateTrend_click";
+                tdBR_trend.appendChild(br_trendDivMin);
+
+
+
+
+              
+
+
                 tdBR_status.innerHTML = statusName[br_calculateStatus];
                 tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
 
@@ -349,17 +385,23 @@ $(document).ready(function () {
                 acc.accordion();
                 limitRowsAccordion(5);
             });
+
+            //Hide compare to values by default
+            $(function(){
+                $(".compareTo").hide();
+            });
+
         }});
 
 
     //Show int amount of rows in accordion
     function limitRowsAccordion(int){
+        $("#accordion").show();
         var count = 0;
         $('.accordion-H4').each(function (index) {
             if(count < int){
                 $(this).show();
-                $('.accordionDiv').eq(0).show();
-
+                $( "#accordion" ).accordion( "option", "active", 0);
             }
             else{
                 $(this).hide();
@@ -376,55 +418,40 @@ $(document).ready(function () {
 
 
 
-    $("#searchLink").keyup(function(){
+  $("#searchLink").keyup(function(){
 
-        var searchTerm = $("#searchLink").val();
+        var searchTerm = $("#searchLink").val().toLowerCase();
 
         if(searchTerm == ''){
-            $("#results").empty();
             $('#showPages').show();
             $('#showPagesLabel').show();
             limitRowsAccordion($('#showPages').val());
             return false;
         }
 
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:8000/standard-report-1month.json',
-            data: { get_param: 'value' },
-            dataType: 'json',
-            success: function (data) {
-
-                var b = true;
-                $("#results").empty();
-
-                $.each(data.top_pages, function(i, element) {
-                    if (element.url.search(new RegExp(searchTerm)) != -1) {
-
-                        $('.accordionLink').each(function (index) {
-
-                            if($(this).text() == element.url){
-
-                                $('.accordion-H4').eq(index).show();
-                                if(b==true){
-                                    $('.accordionDiv').eq(index).show();
-                                    b=false;}
-                            }
-                            else{
-                                $('.accordion-H4').eq(index).hide();
-                                $('.accordionDiv').eq(index).hide();}
-
-                        });
-
-                        $("#results").append("<p>" + element.url + "</p>");
-
+        else{
+            b = true;
+            $('#showPages').hide();
+            $('#showPagesLabel').hide();
+            $('.accordionLink').each(function (index) {
+                urlText = $(this).text().toLowerCase();
+                if(urlText.indexOf(searchTerm) != -1){
+                    $(".accordion-H4").eq(index).show();
+                    if(b == true){
+                        $( "#accordion" ).accordion( "option", "active", index);
+                        $('.accordionDiv').eq(index).show();
+                        b = false;
                     }
-                });
-            }
-        });
+                }
+                else{
+                    $(".accordion-H4").eq(index).hide();
+                    $(".accordionDiv").eq(index).hide();
+                }
+            });
+        }
     });
 
-
+    
     //calculate status of accordion
     function calculateStatusBounceRate(actualPercentage){
         var status;
