@@ -2,26 +2,170 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffa3132-5ba3-43d6-b836-096617aca955" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_555555_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_777777_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_444444_256x240.png" afterPath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_444444_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_777620_256x240.png" afterPath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_777620_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_cc0000_256x240.png" afterPath="$PROJECT_DIR$/kpi/jquery-ui/images/ui-icons_cc0000_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/banner.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/icheck.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/arrow-bottom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/arrow-top.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/header-line.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/icon-fork.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/icon-github.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/icon-lab.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/icon-options.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/ie/icon-star.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-bold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/aero.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/aero@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/blue@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/flat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/flat@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/green@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/grey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/grey@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/orange.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/orange@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/pink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/pink@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/purple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/purple@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/red@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/yellow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/futurico/futurico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/futurico/futurico@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/line.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/line@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/aero.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/aero@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/blue@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/green@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/grey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/grey@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/minimal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/minimal@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/orange.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/orange@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/pink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/pink@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/purple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/purple@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/red@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/yellow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/polaris/polaris.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/polaris/polaris@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/aero.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/aero@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/blue@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/green@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/grey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/grey@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/orange.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/orange@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/pink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/pink@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/purple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/purple@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/red@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/square.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/square@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/yellow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-bold.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/montserrat-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/css/normalize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/js/custom.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/demo/js/zepto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/icheck.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/icheck.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/icheck.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/_all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/aero.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/flat.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/green.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/grey.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/orange.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/pink.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/purple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/red.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/flat/yellow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/futurico/futurico.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/_all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/aero.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/green.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/grey.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/line.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/orange.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/pink.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/purple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/red.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/line/yellow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/_all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/aero.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/green.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/grey.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/minimal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/orange.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/pink.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/purple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/red.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/minimal/yellow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/polaris/polaris.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/_all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/aero.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/green.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/grey.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/orange.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/pink.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/purple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/red.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/square.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/checkbox/skins/square/yellow.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/AUTHORS.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/external/jquery/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_444444_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_555555_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_777620_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_777777_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_cc0000_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/images/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.structure.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.structure.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/jquery-ui.theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kpi/jquery-ui_old/package.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/AUTHORS.txt" afterPath="$PROJECT_DIR$/kpi/jquery-ui/AUTHORS.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/LICENSE.txt" afterPath="$PROJECT_DIR$/kpi/jquery-ui/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/external/jquery/jquery.js" afterPath="$PROJECT_DIR$/kpi/jquery-ui/external/jquery/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/index.html" afterPath="$PROJECT_DIR$/kpi/jquery-ui/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.min.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.min.js" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.structure.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.structure.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.structure.min.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.structure.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.theme.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.theme.min.css" afterPath="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.theme.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/jquery-ui/package.json" afterPath="$PROJECT_DIR$/kpi/jquery-ui/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/kpi.css" afterPath="$PROJECT_DIR$/kpi/kpi.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js" />
@@ -48,48 +192,18 @@
       <file leaf-file-name="skatteetaten.no.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="129" column="50" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="skatteetaten.no.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="453" column="4" selection-start-line="453" selection-start-column="4" selection-end-line="453" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kpi.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kpi.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="361" column="22" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-ui.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9078">
-              <caret line="534" column="1" selection-start-line="534" selection-start-column="1" selection-end-line="534" selection-end-column="1" />
+            <state relative-caret-position="241">
+              <caret line="218" column="20" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -133,7 +247,7 @@
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/Person.html" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css" />
         <option value="$PROJECT_DIR$/kpi/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css" />
+        <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" />
         <option value="$USER_HOME$/AppData/Local/Temp/bootstrap-select.scss" />
         <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.theme.css" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/person.html" />
@@ -146,23 +260,24 @@
         <option value="$PROJECT_DIR$/kpi/datepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/standard-report-1month.json" />
         <option value="$PROJECT_DIR$/standard-report-1month.json" />
-        <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" />
+        <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css" />
+        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" />
         <option value="$PROJECT_DIR$/kpi/kpi.css" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -190,7 +305,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,26 +337,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten.no" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,20 +455,18 @@
       <workItem from="1468391743652" duration="18717000" />
       <workItem from="1468479387352" duration="21459000" />
       <workItem from="1468564535923" duration="16545000" />
-      <workItem from="1468596239406" duration="8126000" />
-      <workItem from="1469899740179" duration="9260000" />
-      <workItem from="1469985171307" duration="8965000" />
+      <workItem from="1470031650875" duration="24319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310779000" />
+    <option name="totallyTimeSpent" value="308747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19568452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19599578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -398,9 +493,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19568452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16741072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.035714287" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -423,20 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kpi/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -492,11 +573,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/external/jquery/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="2767" column="34" selection-start-line="2767" selection-start-column="32" selection-end-line="2767" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -515,7 +605,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/Person.html">
+    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/person.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
@@ -583,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kpi/datepicker/daterangepicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
@@ -598,64 +681,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/index.html">
+    <entry file="file://$PROJECT_DIR$/standard-report-1month.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+        <state relative-caret-position="3604">
+          <caret line="212" column="28" selection-start-line="212" selection-start-column="28" selection-end-line="212" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard-report-1month.json">
+    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9078">
-          <caret line="534" column="1" selection-start-line="534" selection-start-column="1" selection-end-line="534" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="6771" column="17" selection-start-line="6771" selection-start-column="17" selection-end-line="6771" selection-end-column="17" />
+        <state relative-caret-position="357">
+          <caret line="9048" column="19" selection-start-line="9048" selection-start-column="19" selection-end-line="9048" selection-end-column="19" />
           <folding>
-            <marker date="1469906631018" expanded="true" signature="22451:22522" placeholder="..." />
-            <marker date="1469906631018" expanded="true" signature="22545:22569" placeholder="..." />
-            <marker date="1469906631018" expanded="true" signature="105475:105492" placeholder="..." />
-            <marker date="1469906631018" expanded="true" signature="120107:120123" placeholder="..." />
-            <marker date="1469906631018" expanded="true" signature="277239:277283" placeholder="..." />
-            <marker date="1469906631018" expanded="true" signature="326812:327161" placeholder="..." />
+            <marker date="1470031752691" expanded="true" signature="22451:22522" ph="..." />
+            <marker date="1470031752691" expanded="true" signature="22545:22569" ph="..." />
+            <marker date="1470031752691" expanded="true" signature="105475:105492" ph="..." />
+            <marker date="1470031752691" expanded="true" signature="120107:120123" ph="..." />
+            <marker date="1470031752691" expanded="true" signature="277239:277283" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
+    <entry file="file://$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="361" column="22" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
+        <state relative-caret-position="280">
+          <caret line="1046" column="0" selection-start-line="1046" selection-start-column="0" selection-end-line="1052" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/checkbox/skins/square/red.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/checkbox/skins/square/red.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding>
+            <marker date="1470055436180" expanded="false" signature="0:50" ph="/** Created by Administrator on 30.06.2016. ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="129" column="50" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js">
+    <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="453" column="4" selection-start-line="453" selection-start-column="4" selection-end-line="453" selection-end-column="4" />
+        <state relative-caret-position="241">
+          <caret line="218" column="20" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
           <folding />
         </state>
       </provider>

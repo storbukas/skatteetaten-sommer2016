@@ -121,13 +121,21 @@
         <div class="subHeaderDate font-helvetica-small">
             <h2 class="subHeader"></h2>
             <input id="datepickerInput"><br>
+
             <div id="compareToDiv">
-                <input id="compareToInput" type="checkbox" name="compareToLastYear" value=""><p>Sammenligne med forrige år</p>
+
+                <label class="compareToLabel compareTo-checkbox" for="compareToInput">
+                    <input id="compareToInput" type="checkbox" name="compareToLastYear" value="">
+                    Sammenligne med forrige år
+                    <div class="compareTo-checkDiv"></div>
+
+                </label>
             </div>
+
         </div>
 
     <!--main box with information-->
-    <div class="white-bg-wrapper">
+    <div id="white-bg-wrapper">
         <!--sort by, or copy paste link div-->
         <div id="sortAccordionDiv">
             <select id="sortPagesBy" class="font-helvetica-medium">
@@ -201,15 +209,7 @@
             </div>-->
 
         </div>
-        <div class="bouncerateTrend trendMaximized"></div>
-        <div></div>
-        <div></div>
 
-        <!--Feedback box-->
-        <div class="feedbackWrapper">
-            <div class="feedback-header"><h3 class="font-helvetica-medium">Tilbakemeldinger</h3></div>
-            <div id="results"></div>
-        </div>
 
         <!--show limited amount of pages div-->
         <div id="showPagesDiv">

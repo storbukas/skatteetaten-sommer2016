@@ -191,10 +191,10 @@ h1, h2, h3 ,h4, h5{
 
 .subHeaderDate{
     display: inline-block;
-    margin: 4% 4% 0 4%;
-    width: 92%;
-    padding: 1%;
-    background-color: #fff;}
+    width: 90%;
+    margin: 2% 5% 2% 5%;
+    padding: 0;
+    background: none;}
 
 .subHeader{
     display: inline-block;
@@ -205,39 +205,80 @@ h1, h2, h3 ,h4, h5{
 
 #datepickerInput,
 #compareToDiv{
-    width: 25%;
+    width: 15%;
     text-align: center;
     display: inline-block;
     margin: 0;
     float: right;
-    line-height: 0.8em;}
+    line-height: 0.7em;}
 
-#compareToInput{
-    margin: 0 2%;
-    padding: 0;}
+/************Checkbox styling from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes *******/
 
-.subHeaderDate p{
-    display: inline-block;
-    font-size: 0.8em;
-    margin: 0;
-    vertical-align: top;
-    margin-top: 1%;
-}
+.compareToLabel {
+    position: relative;
+    cursor: pointer;}
+
+#compareToInput {
+    opacity: 0;}
+
+.compareTo-checkDiv {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: solid 1px #a9a9a9;}
+
+/* Hover and focus states */
+.compareToLabel:hover input ~ .compareTo-checkDiv,
+.compareToLabel input:focus ~ .compareTo-checkDiv{
+    background: #fff;
+    border: solid 2px #1178bd;}
+
+/* Checked state */
+.compareToLabel input:checked ~ .compareTo-checkDiv,
+.compareToLabel input:checked:focus ~ .compareTo-checkDiv{
+    background: #1178bd;
+    border: solid 2px #1178bd;}
+
+/* Check mark */
+.compareTo-checkDiv:after {
+    position: absolute;
+    display: none;
+    content: '';}
+
+/* Show check mark */
+.compareToLabel input:checked ~ .compareTo-checkDiv:after {
+    display: block;}
+
+/* Checkbox tick */
+.compareTo-checkbox .compareTo-checkDiv:after {
+    top: 1.5px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0 2px 2px 0;}
+
+/****Checkbox end**********/
+
+
 
 /*white background on content*/
-.white-bg-wrapper{
+#white-bg-wrapper{
     display: inline-block;
     background-color: #fff;
-    width: 92%;
+    width: 90%;
     border-radius: 0px;
-    margin: 1% 4% 4% 4%;
+    margin: 0 5% 0 5%;
 }
 
 /*--main box--*/
-
 #sortAccordionDiv{
-    width: 69%;
-    margin: 1% 0 0.3% 1%;
+    width: 100%;
+    margin: 0;
     padding: 1%;
     background-color: #848FBA;}
 
@@ -255,15 +296,15 @@ h1, h2, h3 ,h4, h5{
 
 #showPagesDiv{
     text-align: right;
-    width: 69%;
+    width: 100%;
     display: inline-block;
-    margin: 0 0 1% 1%;
+    margin: 0;
     font-size: 0.9em;}
 
 #accordion{
-    width: 69%;
+    width: 100%;
     display: inline-block;
-    margin: 0 0 1% 1%;}
+    margin: 0;}
 
 #accordion .ui-accordion-header{
     border: none;
@@ -352,14 +393,34 @@ h1, h2, h3 ,h4, h5{
 
 .trendMaximized{
     background-color: red;
-    width: 100%;
+    width: 50%;
     height: 400px;
     position: fixed;
     left: calc(50% - 440px);
     top: calc(50% - 230px);
     z-index: 999;
     -webkit-transition: opacity 1.5s;
-    visibility: hidden;
+
+}
+
+
+.trendMaxBg{
+    background-color: #8594ff;
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    left: calc(50% - 440px);
+    top: calc(50% - 230px);
+    z-index: 999;
+    -webkit-transition: opacity 1.5s;
+}
+
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+    opacity: .65;
+    filter:Alpha(Opacity=65); /* support: IE8 */
+    background-image: none;
 }
 
 
@@ -371,30 +432,7 @@ h1, h2, h3 ,h4, h5{
 }*/
 
 
-/*feedback box*/
-.feedbackWrapper{
-    display: inline-block;
-    width: 28%;
-    background-color: #c7ceee;
-    height: 250px;
-    float: right;
-    margin: 0 1% 0.5% 1%;
-    padding: 0;
-}
 
-.feedback-header{
-    background-color: #8094DD;
-    margin: 0;
-    font-size: 1.5em;
-    text-align: center;
-    vertical-align: middle;
-    padding: 1%;
-}
-
-.feedback-header h3{
-    margin: 0;
-    color: #fff;
-}
 
 
 

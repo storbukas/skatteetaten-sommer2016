@@ -124,6 +124,8 @@ $(document).ready(function () {
         }
     });
 
+
+
     //Read JSON object
     $.ajax({
         type: 'GET',
@@ -308,19 +310,37 @@ $(document).ready(function () {
                 tdBR_goal.innerHTML = "< 25%";
                 
 
+
+//--------------------------------------
                 var br_trendDivMin = document.createElement('div');
-                br_trendDivMin.className = "bouncerateTrend trendMinimized";
-                br_trendDivMin.id = "bouncerateTrend_click";
+                var br_trendDivMax = document.createElement('div');
+                var br_trendMaxBackground = document.createElement('div');
+
+
+                br_trendDivMin.className = "bouncerateTrend trendMinimized bouncerateTrend_click";
+                br_trendDivMax.className = "bouncerateTrend trendMaximized brTrendMax";
+                br_trendMaxBackground.className = "brTrendMaxBg trendMaxBg";
+
                 tdBR_trend.appendChild(br_trendDivMin);
+                br_trendMaxBackground.appendChild(br_trendDivMax);
+
+                document.getElementById("white-bg-wrapper").appendChild(br_trendMaxBackground);
 
 
+                $(".bouncerateTrend_click").click(function(){
+                    openBrTrend();
+                });
 
-
-              
-
+                $(".brTrendMaxBg").click(function(){
+                    closeBrTrend();
+                });
+//------------------------------
 
                 tdBR_status.innerHTML = statusName[br_calculateStatus];
                 tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
+
+
+
 
                     //Pageviews
                 var pageviews = Math.round((element.pageviews / element.unique_pageviews) * 10) / 10;
@@ -389,9 +409,39 @@ $(document).ready(function () {
             //Hide compare to values by default
             $(function(){
                 $(".compareTo").hide();
+                $('.brTrendMaxBg').hide();
+                $('.brTrendMax').hide();
+
+
             });
 
         }});
+
+
+    //Trend view
+    function openBrTrend (){
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.brTrendMaxBg').eq(activeAcc).show();
+        $('.brTrendMax').eq(activeAcc).show();
+
+        $( "#accordion" ).accordion( "disable" );
+        $('#sortPagesBy').prop('disabled', 'disabled');
+        $('#searchLink').prop('disabled', 'disabled');
+
+
+    }
+
+    function closeBrTrend (){
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.brTrendMaxBg').eq(activeAcc).hide();
+        $('.brTrendMax').eq(activeAcc).hide();
+
+        $( "#accordion" ).accordion( "enable" );
+        $('#sortPagesBy').prop('disabled', false);
+        $('#searchLink').prop('disabled', false);
+    }
+
+
 
 
     //Show int amount of rows in accordion
