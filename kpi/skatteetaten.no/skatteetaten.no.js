@@ -24,7 +24,6 @@ var start_dateJSONformat = moment().subtract(29, 'days').format('MM.DD.YY');
 var end_dateJSONformat = moment().format('MM.DD.YY');
 
 
-
 $(document).ready(function () {
     //Changes active class on buttons in side menu and sub side menu
     $(function changeActive() {
@@ -287,7 +286,7 @@ $(document).ready(function () {
                 //Set values of header
                 accordionNumberSpan.innerHTML = index + 1;
                 pageURLSpan.innerHTML = element.url;
-                smily.className = 'fa fa-frown-o'; /*******ENDRE*/
+                smily.className = 'fa fa-smile-o'; /*******ENDRE*/
                 amountPageviewsP.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
                 amountPageviewsPCompareTo.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
 
@@ -307,10 +306,25 @@ $(document).ready(function () {
                 tdPV_actualCompareTo.innerHTML = "heiehie";
                 tdPV_goal.innerHTML = "< 1.3";
 
+                //average time on page trend div
+                var pv_trendDivMin = document.createElement('div');
+                var pv_trendDivMax = document.createElement('div');
+                var pv_trendExit = document.createElement('i');
+                pv_trendExit.setAttribute("aria-hidden", "true");
+                pv_trendDivMin.className = "pageviewTrend trendMinimized pvTrend_click";
+                pv_trendDivMax.className = "pageviewTrend trendMaximized pvTrendMax";
+                pv_trendExit.className = "pvTrendExit trendExit fa fa-times";
+                tdPV_trend.appendChild(pv_trendDivMin);
+                pv_trendDivMax.appendChild(pv_trendExit);
+                document.getElementById("accordion-wrapper").appendChild(pv_trendDivMax);
+                $(".pvTrend_click").click(function(){
+                    openPvTrend();
+                });
+                $(".pvTrendExit").click(function(){
+                    closePvTrend();
+                });
 
-
-
-
+                //averagetime status
                 tdPV_status.innerHTML = statusName[pv_calculateStatus];
                 tdPV_status.style.cssText = 'color: ' + statusColor[pv_calculateStatus];
 
@@ -324,9 +338,6 @@ $(document).ready(function () {
                 thAverageTime.innerHTML = "Gjennomsnittstid";
                 tdAT_actual.innerHTML = avg_time_on_page;
                 tdAT_actualCompareTo.innerHTML = "heiehie";
-
-
-
                 $.ajax({ //get URL using ajax
                     url: element.url,
                     type: 'GET',
@@ -344,6 +355,23 @@ $(document).ready(function () {
                         tdAT_status.style.cssText = 'color: ' + statusColor[at_calculateStatus];
                     }
                 });
+                //average time on page trend div
+                var at_trendDivMin = document.createElement('div');
+                var at_trendDivMax = document.createElement('div');
+                var at_trendExit = document.createElement('i');
+                at_trendExit.setAttribute("aria-hidden", "true");
+                at_trendDivMin.className = "averageTimeTrend trendMinimized atTrend_click";
+                at_trendDivMax.className = "averageTimeTrend trendMaximized atTrendMax";
+                at_trendExit.className = "atTrendExit trendExit fa fa-times";
+                tdAT_trend.appendChild(at_trendDivMin);
+                at_trendDivMax.appendChild(at_trendExit);
+                document.getElementById("accordion-wrapper").appendChild(at_trendDivMax);
+                $(".atTrend_click").click(function(){
+                    openAtTrend();
+                });
+                $(".atTrendExit").click(function(){
+                    closeAtTrend();
+                });
 
 
                 //Bounce Rate
@@ -354,32 +382,25 @@ $(document).ready(function () {
                 tdBR_actualCompareTo.innerHTML = "heiheiheiehi";
                 tdBR_goal.innerHTML = "< 25%";
 
-
-
-//--------------------------------------
+                //bounce rate trend div
                 var br_trendDivMin = document.createElement('div');
                 var br_trendDivMax = document.createElement('div');
-                var br_trendExit = document.createElement('div');
-
-
+                var br_trendExit = document.createElement('i');
+                br_trendExit.setAttribute("aria-hidden", "true");
                 br_trendDivMin.className = "bouncerateTrend trendMinimized bouncerateTrend_click";
                 br_trendDivMax.className = "bouncerateTrend trendMaximized brTrendMax";
-                br_trendExit.className = "brTrendExit";
-
+                br_trendExit.className = "brTrendExit trendExit fa fa-times";
                 tdBR_trend.appendChild(br_trendDivMin);
                 br_trendDivMax.appendChild(br_trendExit);
-
                 document.getElementById("accordion-wrapper").appendChild(br_trendDivMax);
-
                 $(".bouncerateTrend_click").click(function(){
                     openBrTrend();
                 });
-
                 $(".brTrendExit").click(function(){
                     closeBrTrend();
                 });
-//------------------------------
 
+                //bounce rate status
                 tdBR_status.innerHTML = statusName[br_calculateStatus];
                 tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
 
@@ -412,7 +433,8 @@ $(document).ready(function () {
             //Hide compare to values by default
             $(function(){
                 $(".compareTo").hide();
-                $('.brTrendMaxBg').hide();
+                $('.pvTrendMax').hide();
+                $('.atTrendMax').hide();
                 $('.brTrendMax').hide();
 
 
@@ -421,27 +443,71 @@ $(document).ready(function () {
         }});
 
 
-    //Trend view
+    //Trend view open and close functions
+    function disableFuntions(){
+        $("#accordion" ).accordion( "disable" );
+        $('#sortPagesBy').prop('disabled', 'disabled');
+        $('#searchLink').prop('disabled', 'disabled');
+        $('#showPages').prop('disabled', 'disabled');
+        $('#datepickerInput').prop('disabled', 'disabled');
+        $('#compareToInput').prop('disabled', 'disabled');
+        $('.compareToLabel').css("cursor", "auto");
+        $('.compareToLabel').css("color", "#bababa");
+        $('#showPagesLabel').css("color", "#bababa");
+    }
+
+    function enableFunctions(){
+        $("#accordion" ).accordion( "enable" );
+        $('#sortPagesBy').prop('disabled', false);
+        $('#searchLink').prop('disabled', false);
+        $('#showPages').prop('disabled', false);
+        $('#datepickerInput').prop('disabled', false);
+        $('#compareToInput').prop('disabled', false);
+        $('.compareToLabel').css("cursor", "pointer");
+        $('.compareToLabel').css("color", "#000");
+        $('#showPagesLabel').css("color", "#000");
+    }
+
     function openBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
         $('.brTrendMaxBg').eq(activeAcc).show();
         $('.brTrendMax').eq(activeAcc).show();
-
-        $( "#accordion" ).accordion( "disable" );
-        $('#sortPagesBy').prop('disabled', 'disabled');
-        $('#searchLink').prop('disabled', 'disabled');
-
-
+        disableFuntions();
     }
 
     function closeBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
         $('.brTrendMaxBg').eq(activeAcc).hide();
         $('.brTrendMax').eq(activeAcc).hide();
+        enableFunctions()
+    }
 
-        $( "#accordion" ).accordion( "enable" );
-        $('#sortPagesBy').prop('disabled', false);
-        $('#searchLink').prop('disabled', false);
+    function openAtTrend () {
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.atTrendMaxBg').eq(activeAcc).show();
+        $('.atTrendMax').eq(activeAcc).show();
+        disableFuntions();
+    }
+
+    function closeAtTrend (){
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.atTrendMaxBg').eq(activeAcc).hide();
+        $('.atTrendMax').eq(activeAcc).hide();
+        enableFunctions()
+    }
+
+    function openPvTrend (){
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.pvTrendMaxBg').eq(activeAcc).show();
+        $('.pvTrendMax').eq(activeAcc).show();
+        disableFuntions();
+    }
+
+    function closePvTrend (){
+        var activeAcc = $('#accordion').accordion('option', 'active');
+        $('.pvTrendMaxBg').eq(activeAcc).hide();
+        $('.pvTrendMax').eq(activeAcc).hide();
+        enableFunctions()
     }
 
 

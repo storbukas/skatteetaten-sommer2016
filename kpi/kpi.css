@@ -7,7 +7,8 @@ body {
 .label-font{
     font-family: Helvetica, sans-serif;
     font-size: 16px;
-    font-weight: normal;}
+    font-weight: normal;
+    color: #000;}
 
 .font-helvetica-small{
     font-family: Helvetica, sans-serif;
@@ -31,6 +32,10 @@ h1{
 
 h2{
     font-size: 30px;
+}
+
+input{
+    color: #000;
 }
 
 .compareTo{
@@ -219,13 +224,26 @@ tbody th{
 
 #datepickerInput{
     height: 1.8em;
-    width: 14em;
+    width: 14.05em;
     text-align: center;
     display: inline-block;
     margin: 0;
     float: right;
     line-height: 0.7em;
     border: solid 1px #bababa;}
+
+#datepickerInput:hover,
+#datepickerInput:active{
+    border: solid 1px #1178bd;
+    cursor: pointer;
+}
+
+#datepickerInput:disabled{
+    cursor: auto;
+    border: solid 1px #bababa;
+    background-color: #ebebe4;
+    color: #bababa;
+}
 
 /*Checkbox styling from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes*/
 #date-checkbox-div{
@@ -255,13 +273,21 @@ tbody th{
 .compareToLabel:hover input ~ .compareTo-checkDiv,
 .compareToLabel input:focus ~ .compareTo-checkDiv{
     background: #fff;
-    border: solid 2px #1178bd;}
+    border: solid 1px #1178bd;}
 
 /* Checked state */
 .compareToLabel input:checked ~ .compareTo-checkDiv,
 .compareToLabel input:checked:focus ~ .compareTo-checkDiv{
     background: #1178bd;
     border: solid 2px #1178bd;}
+
+/* Disabled state */
+.compareToLabel input:disabled ~ .compareTo-checkDiv{
+    cursor: auto;
+    border: solid 1px #bababa;
+    background-color: #ebebe4;
+    color: #bababa;
+}
 
 /* Check mark */
 .compareTo-checkDiv:after {
@@ -309,6 +335,19 @@ tbody th{
     width: 25%;
     border: solid 1px #bababa;}
 
+#sortPagesBy:hover{
+    cursor: pointer;
+    border: solid 1px #1178bd;
+}
+
+#sortPagesBy:disabled{
+    cursor: auto;
+    border: solid 1px #bababa;
+    background-color: #ebebe4;
+    color: #bababa;
+}
+
+
 #searchLink{
     display: inline-block;
     height: 1.8em;
@@ -317,10 +356,6 @@ tbody th{
     border: solid 1px #bababa;} /*sort and search end*/
 
 /*Limit of pages shown in accordion*/
-#showPages{
-    height: 1.8em;
-    text-align: center;
-    }
 #showPagesDiv{
     width: 100%;
     margin: 0;
@@ -330,7 +365,22 @@ tbody th{
     border-left: solid 1px #bababa;
     border-top: solid 1px #bababa;
     border-right: solid 1px #bababa;
-    display: inline-block;} /*Limit of pages shown end*/
+    display: inline-block;}
+
+#showPages{
+    height: 1.8em;
+    text-align: center;
+    border: solid 1px #bababa;}
+
+#showPages:hover{
+    cursor: pointer;
+    border: solid 1px #1178bd;}
+
+#showPages:disabled{
+    cursor: auto;
+    border: solid 1px #bababa;
+    background-color: #ebebe4;
+    color: #bababa;}/*Limit of pages shown end*/
 
 /*accordion with table*/
 #accordion{
@@ -343,42 +393,47 @@ tbody th{
 #accordion .ui-accordion-header{
     border: none;
     margin: 0;
+    height: 4.5em;
     margin-bottom: 2px;}
 
 #accordion .ui-accordion-header-icon{
     float: right;
     vertical-align: top;
-    margin-top: 0.6em;}
+    margin-top: 1.1em;}
 
 .accordionNumberSpan{
-    display: inline-block;
-    font-size: 22px;
-    vertical-align: top;
-    text-align: center;
     width: 5%;
-    margin-top: 0.7em;}
+    display: inline-block;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 1.5%;}
 
 .accordionLink{
     display: inline-block;
-    width: 55%;
     vertical-align: top;
-    margin-top: 1em;}
+    margin-top: 1em;
+    text-align: left;
+    width: 50%;}
 
 .smilyIcon{
     display:inline-block;
-    font-size: 28px;
-    width: 5%;
+    font-size: 35px;
+    width: 15%;
     text-align: center;
-    vertical-align: top;
     margin-top: 0.25em;}
 
 .accordionUniquePageviews{
     display: inline-block;
-    line-height: 0.35em;
     vertical-align: top;
-    margin-top: 1.35em;
-    text-align: center;
-    width: 30%;}
+    margin-top: 1em;
+    margin-right: 1.5%;
+    text-align: left;
+    width: 25%;
+    float: right;}
+
+.accordionUniquePageviews p{
+    margin: 0;
+}
 
 .pageviewsPCompareTo{
     color: #f59fa7;} /*accordion header end*/
@@ -396,6 +451,10 @@ tbody th{
 .table>tbody>tr>.actualCompareTo{
     text-align: left;}
 
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+    padding: 0.3em;
+}
 
 .table>thead>tr>th {
     border-bottom: 2px solid #554f4f;
@@ -409,33 +468,36 @@ tbody th{
 /*Trend Div*/
 .trendMinimized{
     display: inline-block;
-    background-color: #fff;
+    background-color: #cff2f8;
     border: solid 1px #bababa;
     width: 6em;
     height: 2em;
+    margin-top: 0.3em;
     transition: opacity 1.5s;
     opacity: 100;}
+
+.trendMinimized:hover{
+    cursor: pointer;
+}
 
 .trendMaximized{
     background-color: #cff2f8;
     border: solid 1px #bababa;
     width: 50%;
-    height: 400px;
+    height: 350px;
     position: fixed;
     left: 27%;
     right: 23%;
-    top: 40%;}
+    top: 30%;}
 
+.trendExit{
+    background: none;
+    position: relative;
+    left: 96%;
+    top: 3%;}
 
-.brTrendExit{
-    background-color: #8594ff;
-    width: 10%;
-    height: 2em;
-    position: fixed;
-    right: calc(50% - 440px);
-    top: calc(50% - 230px);
-    z-index: 999;
-    -webkit-transition: opacity 1.5s;}
+.trendExit:hover{
+    cursor: pointer;}
 
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
