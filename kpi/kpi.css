@@ -1,26 +1,53 @@
 body {
-    background-color: #e6e7e8;
+    background-color: #f6f6f6;
     width: 100%;
-    position: relative;
-}
+    position: relative;}
 
 /*Font*/
-.font-helvetica-medium{
-    font-family: "Helvetica Neue",  Arial, sans-serif;
-    font-size: 1.20em;}
+.label-font{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;}
 
 .font-helvetica-small{
-    font-family: "Helvetica Neue",  Arial, sans-serif;
-    font-size: 1.15em;}
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;}
 
-h1, h2, h3 ,h4, h5{
-    font-family: "Helvetica Neue",  Arial, sans-serif;
+.font-helvetica-medium{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;}
+
+.bold{
+    font-weight: bold;}
+
+h1, h2, h3 ,h4{
+    font-family: Helvetica, sans-serif;
     outline: none;}
 
-.compareTo{
-    color: #b07c83;
-    font-weight: bold;
+h1{
+    font-size: 22px;}
+
+h2{
+    font-size: 30px;
 }
+
+.compareTo{
+    color: #bf7878;}
+
+
+.header-numbers{
+    font-size: 1.8em;}
+
+#dateInHeaderCompareTo{
+    font-weight: normal;
+}
+
+tbody th{
+    font-weight: normal;
+}
+
 
 /*Top Menu*/
 .menu-link-top span,
@@ -147,7 +174,7 @@ h1, h2, h3 ,h4, h5{
     padding: 1%;
     position: static;}
 
-/*--header--*/
+/*--header with numbers--*/
 .content-header{
     margin: auto;
     margin-top: 2%;
@@ -167,68 +194,62 @@ h1, h2, h3 ,h4, h5{
     text-align: center;}
 
 .name-date-header>h1{
-    margin: 4%;
-}
-
-.nameOfSite{
-    font-size: 1.5em;}
-
-#dateInHeaderCompareTo{
-    font-weight: normal;
-}
+    margin: 4%;}
 
 .vertical-line{
     display: inline-block;
     background-color: #000;
     width: 2px;
-    height: 6em;}
+    height: 6em;} /*header with numbers end*/
 
-.header-numbers{
-    font-weight: bold;
-    font-size: 1.8em;}
 
-/*--sub header--*/
 
+/*--sub header with datepicker and compare to-functioanlity--*/
 .subHeaderDate{
     display: inline-block;
     width: 90%;
-    margin: 2% 5% 2% 5%;
+    margin: 5% 5% 0.5% 5%;
     padding: 0;
     background: none;}
 
 .subHeader{
     display: inline-block;
     color: #000;
-    margin: 0;
-    margin-top: 1%;
-    vertical-align: top;}
+    margin-top: 0;}
 
-#datepickerInput,
-#compareToDiv{
-    width: 15%;
+#datepickerInput{
+    height: 1.8em;
+    width: 14em;
     text-align: center;
     display: inline-block;
     margin: 0;
     float: right;
-    line-height: 0.7em;}
+    line-height: 0.7em;
+    border: solid 1px #bababa;}
 
-/************Checkbox styling from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes *******/
+/*Checkbox styling from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes*/
+#date-checkbox-div{
+    text-align: right;
+    display: inline-block;
+    float: right;}
 
 .compareToLabel {
     position: relative;
-    cursor: pointer;}
+    cursor: pointer;
+    padding-left: 0.3em;
+    top: 2.5px;}
 
 #compareToInput {
     opacity: 0;}
 
 .compareTo-checkDiv {
     position: absolute;
-    top: 2px;
+    top: 2.5px;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: #ffffff;
-    border: solid 1px #a9a9a9;}
+    border: solid 1px #bababa;;}
 
 /* Hover and focus states */
 .compareToLabel:hover input ~ .compareTo-checkDiv,
@@ -254,85 +275,90 @@ h1, h2, h3 ,h4, h5{
 
 /* Checkbox tick */
 .compareTo-checkbox .compareTo-checkDiv:after {
-    top: 1.5px;
-    left: 6px;
+    left: 4.5px;
     width: 6px;
     height: 12px;
     transform: rotate(45deg);
     border: solid #fff;
-    border-width: 0 2px 2px 0;}
-
-/****Checkbox end**********/
+    border-width: 0 2px 2px 0;} /*Checkbox end*/ /*Subheader end*/
 
 
-
-/*white background on content*/
-#white-bg-wrapper{
+/*Accordion with table + sort and search functionality*/
+/*accordion wrapper*/
+#accordion-wrapper{
     display: inline-block;
     background-color: #fff;
     width: 90%;
     border-radius: 0px;
     margin: 0 5% 0 5%;
-}
+    border-top: solid 3px #bababa;
+    border-bottom: solid 1px #bababa;} /*wrapper end*/
 
-/*--main box--*/
-#sortAccordionDiv{
+/*sort and search*/
+#sortSearch-accordionDiv{
     width: 100%;
     margin: 0;
     padding: 1%;
-    background-color: #848FBA;}
+    background: none;
+    border-left: solid 1px #bababa;
+    border-right: solid 1px #bababa;}
 
 #sortPagesBy{
     display: inline-block;
-    font-size: 1.1em;
-    height: 1.7em;}
+    height: 1.8em;
+    width: 25%;
+    border: solid 1px #bababa;}
 
 #searchLink{
     display: inline-block;
+    height: 1.8em;
     float: right;
-    font-size: 1.1em;
     width: 45%;
-    height: 1.7em;}
+    border: solid 1px #bababa;} /*sort and search end*/
 
+/*Limit of pages shown in accordion*/
+#showPages{
+    height: 1.8em;
+    text-align: center;
+    }
 #showPagesDiv{
-    text-align: right;
     width: 100%;
-    display: inline-block;
     margin: 0;
-    font-size: 0.9em;}
+    padding: 1%;
+    background: none;
+    text-align: right;
+    border-left: solid 1px #bababa;
+    border-top: solid 1px #bababa;
+    border-right: solid 1px #bababa;
+    display: inline-block;} /*Limit of pages shown end*/
 
+/*accordion with table*/
 #accordion{
     width: 100%;
     display: inline-block;
-    margin: 0;}
+    margin: 0;
+    border: solid 1px #554f4f;}
 
+/*accordion header*/
 #accordion .ui-accordion-header{
     border: none;
-    border-bottom: 1px solid #dde0e9;}
+    margin: 0;
+    margin-bottom: 2px;}
 
 #accordion .ui-accordion-header-icon{
     float: right;
     vertical-align: top;
     margin-top: 0.6em;}
 
-#accordion .ui-accordion-content{
-    border-radius: 0;
-    border-bottom: 1px solid #ffffff;}
-
-.table{
-    font-size: 1em;
-}
-
 .accordionNumberSpan{
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 22px;
     vertical-align: top;
     text-align: center;
     width: 5%;
     margin-top: 0.7em;}
 
 .accordionLink{
-    font-size: 0.85em;
     display: inline-block;
     width: 55%;
     vertical-align: top;
@@ -340,7 +366,7 @@ h1, h2, h3 ,h4, h5{
 
 .smilyIcon{
     display:inline-block;
-    font-size: 1.7em;
+    font-size: 28px;
     width: 5%;
     text-align: center;
     vertical-align: top;
@@ -348,7 +374,6 @@ h1, h2, h3 ,h4, h5{
 
 .accordionUniquePageviews{
     display: inline-block;
-    font-size: 0.85em;
     line-height: 0.35em;
     vertical-align: top;
     margin-top: 1.35em;
@@ -356,72 +381,68 @@ h1, h2, h3 ,h4, h5{
     width: 30%;}
 
 .pageviewsPCompareTo{
-    font-weight: normal;}
+    color: #f59fa7;} /*accordion header end*/
+
+/*accordion content/table*/
+#accordion .ui-accordion-content{
+    border: none;}
 
 
-.table>tbody>tr>td,
-.table>thead>tr>th {
-    text-align: right;
-}
+.table tbody td,
+.table thead th {
+    text-align: right;}
 
 .table>thead>tr>.actualCompareTo,
 .table>tbody>tr>.actualCompareTo{
-    text-align: left;
-}
+    text-align: left;}
 
-.actualCompareTo{
-    font-weight: normal;
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #554f4f;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    border-top: 1px solid #fff;}
-
-.table>thead>tr>th {
-    border-bottom: 2px solid #fff;}
+    border-top: 1px solid #bababa;
+}
 
 
 /*Trend Div*/
 .trendMinimized{
     display: inline-block;
-    background-color: red;
-    width: 95%;
-    height: 100%;
+    background-color: #fff;
+    border: solid 1px #bababa;
+    width: 6em;
+    height: 2em;
     transition: opacity 1.5s;
-    opacity: 100;
-
-}
+    opacity: 100;}
 
 .trendMaximized{
-    background-color: red;
+    background-color: #cff2f8;
+    border: solid 1px #bababa;
     width: 50%;
     height: 400px;
     position: fixed;
-    left: calc(50% - 440px);
-    top: calc(50% - 230px);
-    z-index: 999;
-    -webkit-transition: opacity 1.5s;
-
-}
+    left: 27%;
+    right: 23%;
+    top: 40%;}
 
 
-.trendMaxBg{
+.brTrendExit{
     background-color: #8594ff;
-    width: 100%;
-    min-height: 100%;
+    width: 10%;
+    height: 2em;
     position: fixed;
-    left: calc(50% - 440px);
+    right: calc(50% - 440px);
     top: calc(50% - 230px);
     z-index: 999;
-    -webkit-transition: opacity 1.5s;
-}
+    -webkit-transition: opacity 1.5s;}
 
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
     opacity: .65;
     filter:Alpha(Opacity=65); /* support: IE8 */
-    background-image: none;
-}
+    background-image: none;} /*accordion content end*/ /*accordion end*/
 
 
 /*.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {

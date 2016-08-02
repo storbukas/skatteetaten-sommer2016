@@ -26,7 +26,6 @@ var end_dateJSONformat = moment().format('MM.DD.YY');
 
 
 $(document).ready(function () {
-
     //Changes active class on buttons in side menu and sub side menu
     $(function changeActive() {
         menulink.parents('li, ul').removeClass('active');
@@ -34,7 +33,7 @@ $(document).ready(function () {
         menulink.each(function () {
             if ($(this).attr("href") !== "#" && $(this).attr("href").split("skatteetaten.no/")[1].substr(0, 4) === current_sideMenu_path.substr(0, 4)) {
                 $(this).parent('li').addClass('active');
-                $('div.subHeaderDate h2.subHeader').text($(this).text());
+                $('div.subHeaderDate h2.subHeader').text($(this).text().toUpperCase());
             }
         });
         submenulink.each(function () {
@@ -106,6 +105,7 @@ $(document).ready(function () {
         );
     });
 
+    
     //Update date in header
         datePicker.change(function() {
             var dateInput = datePicker.val();
@@ -113,8 +113,7 @@ $(document).ready(function () {
             $("#dateInHeader").text(dateInput);
             $("#dateInHeaderCompareTo").text(compareToDate);
         });
-
-
+    
     //Show last year if compare to is checked --  note that the default value is set to hide after creating the accordion
     $('#compareToInput').change(function() {
         if ($(this).is(':checked')) {
@@ -123,9 +122,7 @@ $(document).ready(function () {
             $(".compareTo").hide();
         }
     });
-
-
-
+    
     //Read JSON object
     $.ajax({
         type: 'GET',
@@ -154,7 +151,7 @@ $(document).ready(function () {
 
             /*create content of table/accordion Jquery UI*/
             var statusName = ["Bra", "Advarsel", "Kritisk"];
-            var statusColor = ["green", "#ffaa00", "red"];
+            var statusColor = ["#328279", "#FFB72E", "#b70202"];
             var acc = $("#accordion");
 
             $.each(data.top_pages, function (index, element) {
@@ -185,7 +182,7 @@ $(document).ready(function () {
                 var amountPageviewsSpan = document.createElement('span');
                 var amountPageviewsP = document.createElement('p');
                 var amountPageviewsPCompareTo = document.createElement('p');
-                amountPageviewsPCompareTo.className = 'compareTo pageviewsPCompareTo';
+                amountPageviewsPCompareTo.className = 'compareTo pageviewsPCompareTo font-helvetica-small';
                 amountPageviewsSpan.className = 'accordionUniquePageviews font-helvetica-small';
                 amountPageviewsSpan.appendChild(amountPageviewsP);
                 amountPageviewsSpan.appendChild(amountPageviewsPCompareTo);
@@ -224,23 +221,6 @@ $(document).ready(function () {
                 //Create table body
                 var tbody = document.createElement('tbody');
 
-                //Bounce rate row
-                var trBounceRate = document.createElement('tr');
-                var thBounceRate = document.createElement('th');
-                var tdBR_actual = document.createElement('td');
-                var tdBR_actualCompareTo = document.createElement('td');
-                var tdBR_goal = document.createElement('td');
-                var tdBR_trend = document.createElement('td');
-                var tdBR_status = document.createElement('td');
-                tdBR_actualCompareTo.className = 'compareTo actualCompareTo';
-                thBounceRate.setAttribute("scope", "row");
-                trBounceRate.appendChild(thBounceRate);
-                trBounceRate.appendChild(tdBR_actual);
-                trBounceRate.appendChild(tdBR_actualCompareTo);
-                trBounceRate.appendChild(tdBR_goal);
-                trBounceRate.appendChild(tdBR_trend);
-                trBounceRate.appendChild(tdBR_status);
-
                 //Pageviews VS unique row
                 var trPageviews = document.createElement('tr');
                 var thPageviews = document.createElement('th');
@@ -275,10 +255,27 @@ $(document).ready(function () {
                 trAverageTime.appendChild(tdAT_trend);
                 trAverageTime.appendChild(tdAT_status);
 
+                //Bounce rate row
+                var trBounceRate = document.createElement('tr');
+                var thBounceRate = document.createElement('th');
+                var tdBR_actual = document.createElement('td');
+                var tdBR_actualCompareTo = document.createElement('td');
+                var tdBR_goal = document.createElement('td');
+                var tdBR_trend = document.createElement('td');
+                var tdBR_status = document.createElement('td');
+                tdBR_actualCompareTo.className = 'compareTo actualCompareTo';
+                thBounceRate.setAttribute("scope", "row");
+                trBounceRate.appendChild(thBounceRate);
+                trBounceRate.appendChild(tdBR_actual);
+                trBounceRate.appendChild(tdBR_actualCompareTo);
+                trBounceRate.appendChild(tdBR_goal);
+                trBounceRate.appendChild(tdBR_trend);
+                trBounceRate.appendChild(tdBR_status);
+
                 //Append rows to body
-                tbody.appendChild(trBounceRate);
                 tbody.appendChild(trPageviews);
                 tbody.appendChild(trAverageTime);
+                tbody.appendChild(trBounceRate);
                 accordionTable.appendChild(thead);
                 accordionTable.appendChild(tbody);
                 accordionTableDiv.appendChild(accordionTable);
@@ -296,63 +293,31 @@ $(document).ready(function () {
 
                 //Set values of inner content
                     //Column labels
-                actual.innerHTML = 'Faktiske';
-                goal.innerHTML = 'Mål';
-                trend.innerHTML = 'Trend';
-                status.innerHTML = 'Status';
-
-                    //Bounce Rate
-                var bounceRate = Math.round(element.bounce_rate * 10) / 10;
-                var br_calculateStatus = calculateStatusBounceRate(bounceRate);
-                thBounceRate.innerHTML = "Fluktfrekvens";
-                tdBR_actual.innerHTML = bounceRate + '%';
-                tdBR_actualCompareTo.innerHTML = "heiheiheiehi";
-                tdBR_goal.innerHTML = "< 25%";
-                
-
-
-//--------------------------------------
-                var br_trendDivMin = document.createElement('div');
-                var br_trendDivMax = document.createElement('div');
-                var br_trendMaxBackground = document.createElement('div');
-
-
-                br_trendDivMin.className = "bouncerateTrend trendMinimized bouncerateTrend_click";
-                br_trendDivMax.className = "bouncerateTrend trendMaximized brTrendMax";
-                br_trendMaxBackground.className = "brTrendMaxBg trendMaxBg";
-
-                tdBR_trend.appendChild(br_trendDivMin);
-                br_trendMaxBackground.appendChild(br_trendDivMax);
-
-                document.getElementById("white-bg-wrapper").appendChild(br_trendMaxBackground);
-
-
-                $(".bouncerateTrend_click").click(function(){
-                    openBrTrend();
-                });
-
-                $(".brTrendMaxBg").click(function(){
-                    closeBrTrend();
-                });
-//------------------------------
-
-                tdBR_status.innerHTML = statusName[br_calculateStatus];
-                tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
-
-
-
+                actual.innerHTML = 'FAKTISK';
+                actualCompareTo.innerHTML = 'FORRIGE ÅR';
+                goal.innerHTML = 'MÅL';
+                trend.innerHTML = 'TREND';
+                status.innerHTML = 'STATUS';
 
                     //Pageviews
                 var pageviews = Math.round((element.pageviews / element.unique_pageviews) * 10) / 10;
                 var pv_calculateStatus = calculateStatusPageviews(pageviews);
                 thPageviews.innerHTML = "Sidevisninger ÷ Unike";
                 tdPV_actual.innerHTML = pageviews;
-
                 tdPV_actualCompareTo.innerHTML = "heiehie";
-
                 tdPV_goal.innerHTML = "< 1.3";
+
+
+
+
+
                 tdPV_status.innerHTML = statusName[pv_calculateStatus];
                 tdPV_status.style.cssText = 'color: ' + statusColor[pv_calculateStatus];
+
+
+
+
+
 
                     //Average time on page
                 var avg_time_on_page = moment.duration(Math.round(element.avg_time_on_page), "seconds").format("mm:ss", {trim: false});
@@ -379,6 +344,44 @@ $(document).ready(function () {
                         tdAT_status.style.cssText = 'color: ' + statusColor[at_calculateStatus];
                     }
                 });
+
+
+                //Bounce Rate
+                var bounceRate = Math.round(element.bounce_rate * 10) / 10;
+                var br_calculateStatus = calculateStatusBounceRate(bounceRate);
+                thBounceRate.innerHTML = "Fluktfrekvens";
+                tdBR_actual.innerHTML = bounceRate + '%';
+                tdBR_actualCompareTo.innerHTML = "heiheiheiehi";
+                tdBR_goal.innerHTML = "< 25%";
+
+
+
+//--------------------------------------
+                var br_trendDivMin = document.createElement('div');
+                var br_trendDivMax = document.createElement('div');
+                var br_trendExit = document.createElement('div');
+
+
+                br_trendDivMin.className = "bouncerateTrend trendMinimized bouncerateTrend_click";
+                br_trendDivMax.className = "bouncerateTrend trendMaximized brTrendMax";
+                br_trendExit.className = "brTrendExit";
+
+                tdBR_trend.appendChild(br_trendDivMin);
+                br_trendDivMax.appendChild(br_trendExit);
+
+                document.getElementById("accordion-wrapper").appendChild(br_trendDivMax);
+
+                $(".bouncerateTrend_click").click(function(){
+                    openBrTrend();
+                });
+
+                $(".brTrendExit").click(function(){
+                    closeBrTrend();
+                });
+//------------------------------
+
+                tdBR_status.innerHTML = statusName[br_calculateStatus];
+                tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
 
                 /*
                  //VOC

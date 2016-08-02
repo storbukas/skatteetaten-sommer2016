@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Skatteetaten | KPI</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
     <!--Customized downloaded jquery UI-->
     <script src="../jquery-ui/external/jquery/jquery.js"></script>
     <script src="../jquery-ui/jquery-ui.js"></script>
     <link href="../jquery-ui/jquery-ui.css" rel="stylesheet">
+
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -20,10 +24,9 @@
     <script type="text/javascript" src="../datepicker/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="../datepicker/daterangepicker.css" />
 
-
-
-    <!-- Custom Fonts -->
+    <!-- Font Awesome -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <!-- Custom CSS -->
     <link href="../kpi.css" rel="stylesheet">
 
@@ -73,81 +76,77 @@
     <!--Header-->
     <div class="content-header">
         <div class="name-date-header header-block">
-            <h1 class="nameOfSite font-helvetica-medium"></h1> <!-- name is set in the script in headerMenu.html -->
+            <h1 class="nameOfSite"></h1> <!-- name is set in the script in headerMenu.html -->
             <span id="dateInHeader" class="date font-helvetica-medium"></span><br>
-            <span id="dateInHeaderCompareTo" class="date font-helvetica-medium compareTo"></span>
+            <span id="dateInHeaderCompareTo" class="date font-helvetica-medium compareTo bold"></span>
         </div>
         <div class="vertical-line"></div>
 
         <div class="header-block">
-            <span class="font-helvetica-medium">Brukere</span><br>
-            <span id="usersAmount" class="header-numbers"></span><br>
-            <span id="usersAmountCompare" class="font-helvetica-medium compareTo"></span>
+            <span class="label-font">Brukere</span><br>
+            <span id="usersAmount" class="header-numbers bold"></span><br>
+            <span id="usersAmountCompare" class="font-helvetica-medium compareTo bold"></span>
         </div>
 
         <div class="vertical-line"></div>
         <div class="header-block">
-            <span class="font-helvetica-medium">Økter</span><br>
-            <span id="sessionsAmount" class="header-numbers"></span><br>
-            <span id="sessionsAmountCompare" class="font-helvetica-medium compareTo"></span>
+            <span class="label-font">Økter</span><br>
+            <span id="sessionsAmount" class="header-numbers bold"></span><br>
+            <span id="sessionsAmountCompare" class="font-helvetica-medium compareTo bold"></span>
         </div>
 
         <div class="vertical-line"></div>
         <div class="header-block">
-            <span class="font-helvetica-medium">Sider per økt</span><br>
-            <span id="pagesPerSession" class="header-numbers"></span><br>
-            <span id="pagesPerSessionCompare" class="font-helvetica-medium compareTo"></span>
+            <span class="label-font">Sider per økt</span><br>
+            <span id="pagesPerSession" class="header-numbers bold"></span><br>
+            <span id="pagesPerSessionCompare" class="font-helvetica-medium compareTo bold"></span>
         </div>
 
         <div class="vertical-line"></div>
         <div class="header-block">
-            <span class="font-helvetica-medium">Sidevisninger</span><br>
-            <span id="pageviews" class="header-numbers"></span><br>
-            <span id="pageviewsCompare" class="font-helvetica-medium compareTo"></span>
+            <span class="label-font">Sidevisninger</span><br>
+            <span id="pageviews" class="header-numbers bold"></span><br>
+            <span id="pageviewsCompare" class="font-helvetica-medium compareTo bold"></span>
         </div>
 
         <div class="vertical-line"></div>
         <div class="header-block">
-            <span class="font-helvetica-medium">Unike sidevisninger</span><br>
-            <span id="uniquePageviews" class="header-numbers"></span><br>
-            <span id="uniquePageviewsCompare" class="font-helvetica-medium compareTo"></span>
+            <span class="label-font">Unike sidevisninger</span><br>
+            <span id="uniquePageviews" class="header-numbers bold"></span><br>
+            <span id="uniquePageviewsCompare" class="font-helvetica-medium compareTo bold"></span>
         </div>
     </div>
 
 
 
 
-        <!--sub header with datepicker-->
-        <div class="subHeaderDate font-helvetica-small">
-            <h2 class="subHeader"></h2>
-            <input id="datepickerInput"><br>
-
-            <div id="compareToDiv">
-
-                <label class="compareToLabel compareTo-checkbox" for="compareToInput">
-                    <input id="compareToInput" type="checkbox" name="compareToLastYear" value="">
-                    Sammenligne med forrige år
-                    <div class="compareTo-checkDiv"></div>
-
-                </label>
-            </div>
-
+    <!--sub header with datepicker-->
+    <div class="subHeaderDate">
+        <h2 class="subHeader"></h2>
+        <div id="date-checkbox-div">
+            <input class="font-helvetica-medium" id="datepickerInput"><br>
+            <label class="compareToLabel compareTo-checkbox label-font" for="compareToInput">
+                <input id="compareToInput" type="checkbox" name="compareToLastYear" value="">
+                <div class="compareTo-checkDiv"></div>
+                Sammenligne med forrige år
+            </label>
         </div>
+    </div>
 
     <!--main box with information-->
-    <div id="white-bg-wrapper">
+    <div id="accordion-wrapper">
         <!--sort by, or copy paste link div-->
-        <div id="sortAccordionDiv">
+
+        <div id="sortSearch-accordionDiv">
             <select id="sortPagesBy" class="font-helvetica-medium">
                 <option>Mest aktive sider</option>
                 <option>Mest kristiske sider</option>
             </select>
-           <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="&#xf002; Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
+           <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="   &#xf002;   Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
         </div>
 
         <!--box with tables/accordion from jquery UI-->
         <div id="accordion">
-
 
             <!--<h4>
                 <span class="accordionNumber font-helvetica-medium">1 </span>
@@ -213,7 +212,7 @@
 
         <!--show limited amount of pages div-->
         <div id="showPagesDiv">
-            <label id="showPagesLabel" class="font-helvetica-small" for="showPages">Vis antall rader: </label>
+            <label id="showPagesLabel" class="label-font" for="showPages">Vis antall rader: </label>
             <select name="showPages" id="showPages" class="font-helvetica-medium">
                 <option>5</option>
                 <option>10</option>
