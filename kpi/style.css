@@ -1,7 +1,6 @@
 body {
     background-color: #f6f6f6;
-    width: 100%;
-    position: relative;}
+    overflow-x: hidden;}
 
 /*Font*/
 .label-font{
@@ -89,32 +88,35 @@ tbody th{
 }
 
 /*Side Menu*/
-.activeSideMenu,
-.activeSideMenu:focus{
-    color: #000;
-    font-weight: bold;
-    background-color: #f6f6f6;
-    border-top: solid 1px #bababa;
-    border-bottom: solid 3px #bababa;
-}
+/* toggeling sidemenu*/
+#wrapper {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;}
 
-#emptySpaceTop{
-    height: 1.5em;
-    border-right: solid 1px #bababa;
-    background-color: #fff;}
+#wrapper.toggled {
+    padding-left: 225px;}
 
-#emptySpaceBottom{
-    border-right: solid 1px #bababa;
-    background-color: red;
-    height: 100%;
-}
-
-/*.sidebar .navbar-nav .active > .sidemenu-link{
-    color: #000;
-    background-color: #f6f6f6;}*/
-
-.side-nav {
+#sidebar-wrapper {
+    z-index: 1000;
     position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 15em;}
+
+/* styling sidemenu */
+.side-nav {
+    position: absolute;
     top: 65px;
     left: 225px;
     width: 15em;
@@ -124,13 +126,32 @@ tbody th{
     overflow-y: auto;
     background-color: #ffffff;
     bottom: 0;
-    overflow-x: hidden;
-    padding-bottom: 40px;}
+    overflow-x: hidden;}
+
+#emptySpaceTop{
+    height: 1.5em;
+    border-right: solid 1px #bababa;
+    background-color: #fff;}
+
+.sidebar-wrapper .activeSideMenu > .menu-link-side{
+    border-right: solid 1px #f6f6f6 !important;}
+
+.side-nav {
+    position: absolute;
+    top: 65px;
+    left: 225px;
+    width: 15em;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #ffffff;
+    bottom: 0;
+    overflow-x: hidden;}
 
 .menu-button-side {
     width: 15em;
-    /*height: 4.7em;}*/
-}
+    border-right: solid 1px #bababa}
 
 .menu-link-side {
     color: black !important;}
@@ -140,8 +161,17 @@ tbody th{
     outline: none;
     background-color: #cff2f8 !important;}
 
+.activeSideMenu,
+.activeSideMenu:focus{
+    color: #000;
+    font-weight: bold;
+    background-color: #f6f6f6;
+    border-top: solid 1px #bababa;
+    border-bottom: solid 3px #bababa;}
 
-/*Sub Side Menu
+/*------------------------------------------------------------------------------------------------------------*/
+
+/*Sub Side Menu*/
 .sub-side-nav li{
     height: 3em;}
 
@@ -181,14 +211,13 @@ tbody th{
 #person ul{
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: #f4f4f4;}*/
+    border-bottom-color: #f4f4f4;}
 
 
 /*Content*/
 .content-wrapper {
-    margin: 4.65em 0 0 14.5em;
-    padding: 1%;
-    position: static;}
+    margin-top: 4.65em;
+    padding: 1%;}
 
 /*--header with numbers--*/
 .content-header{
@@ -453,14 +482,15 @@ tbody th{
 #accordion .ui-accordion-content{
     border: none;}
 
-
 .table tbody td,
 .table thead th {
     text-align: right;}
 
 .table>thead>tr>.actualCompareTo,
 .table>tbody>tr>.actualCompareTo{
-    text-align: left;}
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;}
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     vertical-align: middle;

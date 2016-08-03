@@ -37,42 +37,38 @@
     $("#menu" ).load("http://localhost:8000/kpi/headerMenu.html" );
 </script>
 
-
+<div id="wrapper">
 <!--Side Menu-->
-<nav class="navbar-default sidebar">
-    <div class="container">
-        <ul class="nav navbar-nav side-nav">
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/"> Oversikt</a>
-            </li>
-            <li class="menu-button-side" id="person">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/person.html" id="personMenu"> Person</a>
-                <ul class="nav sub-side-nav">
-                    <li><a class="sub-sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/person/skattekort.html"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Skattekort og forsk...</span></a></li>
-                    <li><a class="sub-sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/person/selvangivelse.html"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Selvangivelse</span></a></li>
-                    <!--<li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Skatteoppgjør</span></a></li>
-                    <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Folkeregister</span></a></li>
-                    <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Aksjer og verdipap...</span></a></li>
-                    <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Bil og andre kjøretøy</span></a></li>-->
-                </ul>
-            </li>
-            <!--<li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="#"> Bedrift og organis...</a>
-            </li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="#"> Rådgiver</a>
-            </li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="#"> Om Skatteetaten</a>
-            </li>-->
-
+<ul class="nav navbar-nav side-nav" id="sidebar-wrapper">
+    <li id="emptySpaceTop" class="menu-button-side"></li>
+    <li class="menu-button-side">
+        <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/"> Oversikt</a>
+    </li>
+    <li class="menu-button-side" id="person">
+        <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/person.html" id="personMenu"> Person</a>
+        <ul class="nav sub-side-nav">
+            <li><a class="sub-sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/person/skattekort.html"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Skattekort og forsk...</span></a></li>
+            <li><a class="sub-sidemenu-link" href="http://localhost:8000/kpi/skatteetaten.no/person/selvangivelse.html"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Selvangivelse</span></a></li>
+            <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Skatteoppgjør</span></a></li>
+            <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Folkeregister</span></a></li>
+            <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Aksjer og verdipap...</span></a></li>
+            <li><a class="sub-sidemenu-link" href="#"><div class="sidebar-line"></div><div class="sidebar-dot"></div><span> Bil og andre kjøretøy</span></a></li>
         </ul>
-    </div> <!-- /.container-fluid -->
-</nav>
-
+    </li>
+    <li class="menu-button-side">
+        <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/bedrift_og_organisasjon.html"> Bedrift og organis...</a>
+    </li>
+    <li class="menu-button-side">
+        <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/radgiver.html"> Rådgiver</a>
+    </li>
+    <li class="menu-button-side">
+        <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/om_skatteetaten.html"> Om Skatteetaten</a>
+    </li>
+</ul>
 
 <!--Content-->
 <div class="content-wrapper">
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 
     <!--Header-->
     <div class="content-header">
@@ -121,7 +117,7 @@
 
     <!--sub header with datepicker-->
     <div class="subHeaderDate">
-        <h2 class="subHeader"></h2>
+        <h2 class="subHeader">PERSON</h2>
         <div id="date-checkbox-div">
             <input class="font-helvetica-medium" id="datepickerInput"><br>
             <label class="compareToLabel compareTo-checkbox label-font" for="compareToInput">
@@ -145,68 +141,7 @@
         </div>
 
         <!--box with tables/accordion from jquery UI-->
-        <div id="accordion">
 
-            <!--<h4>
-                <span class="accordionNumber font-helvetica-medium">1 </span>
-                <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
-                <span class="smilyIcon"><i class="fa fa-frown-o" aria-hidden="true"></i></span>
-                <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
-            </h4>
-
-
-            <div>
-                <table class="table font-helvetica-small">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Faktiske</th>
-                            <th>Mål</th>
-                            <th>Trend</th>
-                            <th>Mål %</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Fluktfrekvens</th>
-                            <td>20,42%</td>
-                            <td>30%</td>
-                            <td></td>
-                            <td>5%</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sidevisninger vs unike</th>
-                            <td>20,42%</td>
-                            <td>30%</td>
-                            <td></td>
-                            <td>5%</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Gjennomsnittstid</th>
-                            <td>20,42%</td>
-                            <td>30%</td>
-                            <td></td>
-                            <td>5%</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">VOC</th>
-                            <td>20,42%</td>
-                            <td>30%</td>
-                            <td></td>
-                            <td>5%</td>
-                        </tr>
-                        <tr class="VOCyes">
-                            <th scope="row">"JA"</th>
-                            <td>20,42%</td>
-                            <td>30%</td>
-                            <td></td>
-                            <td>5%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>-->
-
-        </div>
 
 
         <!--show limited amount of pages div-->
@@ -222,7 +157,7 @@
 
     </div>
 
-
+</div>
 
 
 </div>

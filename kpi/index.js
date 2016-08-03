@@ -21,13 +21,43 @@ var end_dateJSONformat = moment().format('MM.DD.YY');
 
 $(document).ready(function () {
 
+    
+
     //Changes active class on buttons in side menu and sub side menu
     if(active_sideMenu_url == "/"){
         $(".menu-link-side").eq(0).addClass('activeSideMenu');
+        $(".menu-button-side").eq(1).css("border-right", "none");
     }
-    else if(active_top_url == "/person.html"){
+    else if(active_sideMenu_url == "/person.html"){
         $(".menu-link-side").eq(1).addClass('activeSideMenu');
+        $(".menu-button-side").eq(2).css("border-right", "none");
     }
+    else if(active_sideMenu_url == "/bedrift_og_organisasjon.html"){
+        $(".menu-link-side").eq(2).addClass('activeSideMenu');
+        $(".menu-button-side").eq(3).css("border-right", "none");
+    }
+    else if(active_sideMenu_url == "/radgiver.html"){
+        $(".menu-link-side").eq(3).addClass('activeSideMenu');
+        $(".menu-button-side").eq(4).css("border-right", "none");
+    }
+    else if(active_sideMenu_url == "/om_skatteetaten.html"){
+        $(".menu-link-side").eq(4).addClass('activeSideMenu');
+        $(".menu-button-side").eq(5).css("border-right", "none");
+    }
+
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+
+        if($("#wrapper").hasClass('toggled')){
+            $("#menu-toggle").html("Skjul meny");
+        }
+        else{
+            $("#menu-toggle").html("Vis meny");
+        }
+
+    });
 
 
     //DatePicker
@@ -103,9 +133,9 @@ $(document).ready(function () {
     //Show last year if compare to is checked --  note that the default value is set to hide after creating the accordion
     $('#compareToInput').change(function() {
         if ($(this).is(':checked')) {
-            $(".compareTo").show();
+            $(".compareTo").show(100, "easeOutSine");
         } else {
-            $(".compareTo").hide();
+            $(".compareTo").hide(100, "easeInSine");
         }
     });
     
@@ -413,7 +443,11 @@ $(document).ready(function () {
             });
             //Create the final accordion from Jquery UI
             $(function () {
-                acc.accordion();
+                acc.accordion({
+                    heightStyle: "content",
+                    autoHeight: false,
+                    clearStyle: true
+                });
                 limitRowsAccordion(5);
             });
 
