@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Skatteetaten | KPI</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!--Customized downloaded jquery UI-->
+    <script src="jquery-ui/external/jquery/jquery.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--moment and date picker, documentation: http://www.daterangepicker.com/-->
+    <script src="datepicker/moment.min.js"></script>
+    <script src="moment-duration-format/moment-duration-format.js"></script>
+    <script type="text/javascript" src="datepicker/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="datepicker/daterangepicker.css" />
+
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+<body>
+
+<!--Load top menu-->
+<div id="menu"></div>
+<script>
+    $("#menu" ).load("http://localhost:8000/kpi/headerMenu.html" );
+</script>
+
+<!--Content-->
+<div class="content-wrapper">
+    <!--Header-->
+    <h1 class="nameOfSite">Publikumsdata</h1>
+</div>
+</body>
+</html>

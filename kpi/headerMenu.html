@@ -1,102 +1,42 @@
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid" style="padding-left:0">
 
-
-
-        <div class="nav">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" id="navbar-top" style="width: 92%">
-                <li class="menu-button-top" id="homeButton">
-                    <a class="menu-link-top" href="http://localhost:8000/kpi/index.html">
-                       <span class="font-helvetica-medium"> Hjem</span>
-                    </a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="http://localhost:8000/kpi/skatteetaten.no/skatteetaten.no.html">
-                        <i class="fa fa-external-link" aria-hidden="true"></i><span class="font-helvetica-medium"> Skatteetaten.no</span>
-                    </a>
-                </li>
 
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="font-helvetica-medium"> Intranettet</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="font-helvetica-medium"> Publikumsdata</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-globe" aria-hidden="true"></i><span class="font-helvetica-medium"> I media</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="font-helvetica-medium"> Hendelser</span></a>
-                </li>
-            </ul>
-            <!--<ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>-->
-        </div> <!-- /.container-fluid -->
+        <ul class="nav navbar-nav" id="navbar-top" style="width: 92%">
+            <li class="menu-button-top">
+                <img id="logo" alt="Brand" src="http://localhost:8000/kpi/images/LOGO.png">
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/">
+                    <i class="fa fa-external-link" aria-hidden="true"></i><span class="font-helvetica-large"> Skatteetaten.no</span>
+                </a>
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/intranettet.html"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="font-helvetica-large"> Intranettet</span></a>
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/publikumsdata.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="font-helvetica-large"> Publikumsdata</span></a>
+            </li>
+        </ul>
+
     </div><!-- /.container-fluid -->
 </nav>
-<script>
-    $(".menu-link-top").each(function () {
-        if ($(this).attr("href") !== "#" && $(this).attr("href").split("kpi/")[1].substring(0, 4) === current_top_URL.substring(0, 4)) {
-            $('.menu-link-top').parents('li, ul').removeClass('active');
-            $(this).parent('li').addClass('active');
-            $('div.name-date-header h1.nameOfSite').text($(this).text());
 
+<script>
+    var active_top_url = location.href.split("/kpi")[1];
+    $(document).ready(function () {
+        if(active_top_url == "/"
+        || active_top_url == "/person.html"){
+            $(".menu-link-top").eq(0).addClass('activeTopMenu');
+        }
+
+        else if(active_top_url == "/intranettet.html"){
+            $(".menu-link-top").eq(1).addClass('activeTopMenu');
+        }
+
+        else if(active_top_url == "/publikumsdata.html"){
+            $(".menu-link-top").eq(2).addClass('activeTopMenu');
         }
     });
 </script>
