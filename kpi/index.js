@@ -24,39 +24,45 @@ $(document).ready(function () {
     
 
     //Changes active class on buttons in side menu and sub side menu
+    $(".sub-sidemenu-link").each(function(){
+        if($(this).attr("href") == location.href){
+            $(this).addClass('activeSubSideMenu');
+        }
+    });
     if(active_sideMenu_url == "/"){
         $(".menu-link-side").eq(0).addClass('activeSideMenu');
-        $(".menu-button-side").eq(1).css("border-right", "none");
+        $(".menu-button-side").eq(0).css("border-right", "none");
     }
-    else if(active_sideMenu_url == "/person.html"){
+    else if(active_sideMenu_url == "/person.html"
+        || active_sideMenu_url == "/skattekort.html"
+        || active_sideMenu_url == "/selvangivelse.html"){
         $(".menu-link-side").eq(1).addClass('activeSideMenu');
-        $(".menu-button-side").eq(2).css("border-right", "none");
+        $(".menu-button-side").eq(1).css("border-right", "none");
     }
     else if(active_sideMenu_url == "/bedrift_og_organisasjon.html"){
         $(".menu-link-side").eq(2).addClass('activeSideMenu');
-        $(".menu-button-side").eq(3).css("border-right", "none");
+        $(".menu-button-side").eq(2).css("border-right", "none");
     }
     else if(active_sideMenu_url == "/radgiver.html"){
         $(".menu-link-side").eq(3).addClass('activeSideMenu');
-        $(".menu-button-side").eq(4).css("border-right", "none");
+        $(".menu-button-side").eq(3).css("border-right", "none");
     }
     else if(active_sideMenu_url == "/om_skatteetaten.html"){
         $(".menu-link-side").eq(4).addClass('activeSideMenu');
-        $(".menu-button-side").eq(5).css("border-right", "none");
+        $(".menu-button-side").eq(4).css("border-right", "none");
     }
 
 
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle-open").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+        $("#menu-toggle-open").hide(100, "easeOutSine");
+    });
 
-        if($("#wrapper").hasClass('toggled')){
-            $("#menu-toggle").html("Skjul meny");
-        }
-        else{
-            $("#menu-toggle").html("Vis meny");
-        }
-
+    $("#menu-toggle-close").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $("#menu-toggle-open").show(250, "easeInSine");
     });
 
 
@@ -149,17 +155,17 @@ $(document).ready(function () {
 
             /*create top header*/
             $(function createHeader(){
-                $("#usersAmount").text("heihei");
-                $("#sessionsAmount").text("heihei");
-                $("#pagesPerSession").text("heihei");
-                $("#pageviews").text("heihei");
-                $("#uniquePageviews").text("heihei");
+                $("#usersAmount").text("18473622");
+                $("#sessionsAmount").text("18473622");
+                $("#pagesPerSession").text("18473622");
+                $("#pageviews").text("18473622");
+                $("#uniquePageviews").text("18473622");
 
-                $("#usersAmountCompare").text("heihei");
-                $("#sessionsAmountCompare").text("heihei");
-                $("#pagesPerSessionCompare").text("heihei");
-                $("#pageviewsCompare").text("heihei");
-                $("#uniquePageviewsCompare").text("heihei");
+                $("#usersAmountCompare").text("18473622");
+                $("#sessionsAmountCompare").text("18473622");
+                $("#pagesPerSessionCompare").text("18473622");
+                $("#pageviewsCompare").text("18473622");
+                $("#uniquePageviewsCompare").text("18473622");
             });
 
 

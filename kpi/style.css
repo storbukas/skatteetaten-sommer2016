@@ -44,7 +44,7 @@ input{
     color: #bf7878;}
 
 .header-numbers{
-    font-size: 1.8em;}
+    font-size: 22px;}
 
 #dateInHeaderCompareTo{
     font-weight: normal;}
@@ -105,7 +105,8 @@ tbody th{
     width: 0;
     height: 100%;
     margin-left: -250px;
-    overflow-y: auto;
+    overflow-y: hidden;
+    border-bottom: solid 1px #bababa;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -113,6 +114,16 @@ tbody th{
 
 #wrapper.toggled #sidebar-wrapper {
     width: 15em;}
+
+
+
+#menu-toggle-close{
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    display: inline-block;
+    margin: 4% 5% 0 0;}
+
 
 /* styling sidemenu */
 .side-nav {
@@ -123,37 +134,35 @@ tbody th{
     margin-left: -225px;
     border: none;
     border-radius: 0;
-    overflow-y: auto;
+
     background-color: #ffffff;
-    bottom: 0;
     overflow-x: hidden;}
 
 #emptySpaceTop{
-    height: 1.5em;
+    height: 3em;
     border-right: solid 1px #bababa;
-    background-color: #fff;}
+    background-color: #fff;
+    text-align: right;}
+
+#emptySpaceBottom{
+    border-right: solid 1px #bababa;
+    background-color: #fff;
+    width: 15em;
+    height: 100%;
+    display: inline-block;
+}
 
 .sidebar-wrapper .activeSideMenu > .menu-link-side{
     border-right: solid 1px #f6f6f6 !important;}
 
-.side-nav {
-    position: absolute;
-    top: 65px;
-    left: 225px;
-    width: 15em;
-    margin-left: -225px;
-    border: none;
-    border-radius: 0;
-    overflow-y: auto;
-    background-color: #ffffff;
-    bottom: 0;
-    overflow-x: hidden;}
 
 .menu-button-side {
     width: 15em;
+
     border-right: solid 1px #bababa}
 
 .menu-link-side {
+    height: 4.2em;
     color: black !important;}
 
 .menu-link-side:hover,
@@ -204,8 +213,12 @@ tbody th{
     margin-bottom: 1em;
     border-radius: 50%;}
 
-.sidebar .navbar-nav .active > .sub-sidemenu-link{
-    color: #000;
+.activeSubSideMenu{
+    color: red!important;
+}
+
+#sidebar-wrapper  > .activeSubSideMenu{
+    color: red;
     background-color: #ececec;}
 
 #person ul{
@@ -217,26 +230,54 @@ tbody th{
 /*Content*/
 .content-wrapper {
     margin-top: 4.65em;
-    padding: 1%;}
+    padding: 1%;
+    padding-top: 0.5%;}
+
+
 
 /*--header with numbers--*/
+#menuButtonWrapper{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 0.3%;}
+
+#menu-toggle-open{
+    width: 2%;
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;}
+
 .content-header{
-    margin: auto;
-    margin-top: 2%;
+    width: 85%;
+    margin-top: 3%;
     position: relative;
-    text-align: center;}
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block}
 
 .header-block{
     display: inline-block;
-    width: 14.5%;
+    width: 14.9%;
     color: #000;
     vertical-align: top;
     text-align: left;}
 
 .name-date-header{
-    width: auto;
-    margin-right: 2em;
+    width: 13.5%;
+    margin-right: 7%;
     text-align: center;}
+
+.name-date-header>h1 {
+    margin-top: 0 !important;
+    margin-bottom: 2% !important;
+}
 
 .name-date-header>h1{
     margin: 4%;}
@@ -252,8 +293,8 @@ tbody th{
 /*--sub header with datepicker and compare to-functioanlity--*/
 .subHeaderDate{
     display: inline-block;
-    width: 90%;
-    margin: 5% 5% 0.5% 5%;
+    width: 80%;
+    margin: 3% 10% 0.5% 10%;
     padding: 0;
     background: none;}
 
@@ -354,9 +395,9 @@ tbody th{
 #accordion-wrapper{
     display: inline-block;
     background-color: #fff;
-    width: 90%;
+    width: 80%;
     border-radius: 0px;
-    margin: 0 5% 0 5%;
+    margin: 0 10% 0 10%;
     border-top: solid 3px #bababa;
     border-bottom: solid 1px #bababa;} /*wrapper end*/
 
@@ -372,7 +413,7 @@ tbody th{
 #sortPagesBy{
     display: inline-block;
     height: 1.8em;
-    width: 25%;
+    width: 20%;
     border: solid 1px #bababa;}
 
 #sortPagesBy:hover{
@@ -392,7 +433,7 @@ tbody th{
     display: inline-block;
     height: 1.8em;
     float: right;
-    width: 45%;
+    width: 36.5%;
     border: solid 1px #bababa;} /*sort and search end*/
 
 /*Limit of pages shown in accordion*/
@@ -446,29 +487,31 @@ tbody th{
     display: inline-block;
     font-size: 25px;
     text-align: left;
-    margin-left: 1.5%;}
+    margin-left: 3.5%;}
 
 .accordionLink{
     display: inline-block;
     vertical-align: top;
     margin-top: 1em;
     text-align: left;
-    width: 50%;}
+    width: 30%;
+    margin-left: 0.7%;
+    word-break: break-all;}
 
 .smilyIcon{
     display:inline-block;
     font-size: 35px;
-    width: 15%;
+    width: 3%;
     text-align: center;
-    margin-top: 0.25em;}
+    margin-top: 0.25em;
+    margin-left: 2em;}
 
 .accordionUniquePageviews{
     display: inline-block;
     vertical-align: top;
     margin-top: 1em;
-    margin-right: 1.5%;
     text-align: left;
-    width: 25%;
+    width: 25.7%;
     float: right;}
 
 .accordionUniquePageviews p{
@@ -480,7 +523,9 @@ tbody th{
 
 /*accordion content/table*/
 #accordion .ui-accordion-content{
-    border: none;}
+    border: none;
+    width: 85%;
+    margin: 0 7.5% 0 7.5%;}
 
 .table tbody td,
 .table thead th {

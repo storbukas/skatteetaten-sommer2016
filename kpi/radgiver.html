@@ -37,120 +37,124 @@
     $("#menu" ).load("http://localhost:8000/kpi/headerMenu.html" );
 </script>
 
+<div id="wrapper">
 
-<!--Side Menu-->
-<nav class="navbar-default sidebar">
-    <div class="container">
-        <ul class="nav navbar-nav side-nav">
-            <li id="emptySpaceTop" class="menu-button-side"></li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/"> Oversikt</a>
-            </li>
-            <li class="menu-button-side" id="person">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/person.html" id="personMenu"> Person</a>
-            </li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/bedrift_og_organisasjon.html"> Bedrift og organis...</a>
-            </li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/radgiver.html"> Rådgiver</a>
-            </li>
-            <li class="menu-button-side">
-                <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/om_skatteetaten.html"> Om Skatteetaten</a>
-            </li>
-            <li id="emptySpaceBottom" class="menu-button-side"></li>
-        </ul>
-    </div> <!-- /.container-fluid -->
-</nav>
+    <!--Side Menu-->
+    <ul class="nav navbar-nav side-nav" id="sidebar-wrapper">
+        <div id="emptySpaceTop"><a href="#menu-toggle-close" class="font-helvetica-large" id="menu-toggle-close"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 
-<!--Content-->
-<div class="content-wrapper">
+        <li class="menu-button-side">
+            <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/"> Oversikt</a>
+        </li>
+        <li class="menu-button-side" id="person">
+            <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/person.html" id="personMenu"> Person</a>
+        </li>
+        <li class="menu-button-side">
+            <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/bedrift_og_organisasjon.html"> Bedrift og organis...</a>
+        </li>
+        <li class="menu-button-side">
+            <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/radgiver.html"> Rådgiver</a>
+        </li>
+        <li class="menu-button-side">
+            <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/om_skatteetaten.html"> Om Skatteetaten</a>
+        </li>
 
-    <!--Header-->
-    <div class="content-header">
-        <div class="name-date-header header-block">
-            <h1 class="nameOfSite">Skatteetaten.no</h1>
-            <span id="dateInHeader" class="date font-helvetica-medium"></span><br>
-            <span id="dateInHeaderCompareTo" class="date font-helvetica-medium compareTo bold"></span>
-        </div>
-        <div class="vertical-line"></div>
+        <div id="emptySpaceBottom"></div>
 
-        <div class="header-block">
-            <span class="label-font">Brukere</span><br>
-            <span id="usersAmount" class="header-numbers bold"></span><br>
-            <span id="usersAmountCompare" class="font-helvetica-medium compareTo bold"></span>
-        </div>
-
-        <div class="vertical-line"></div>
-        <div class="header-block">
-            <span class="label-font">Økter</span><br>
-            <span id="sessionsAmount" class="header-numbers bold"></span><br>
-            <span id="sessionsAmountCompare" class="font-helvetica-medium compareTo bold"></span>
-        </div>
-
-        <div class="vertical-line"></div>
-        <div class="header-block">
-            <span class="label-font">Sider per økt</span><br>
-            <span id="pagesPerSession" class="header-numbers bold"></span><br>
-            <span id="pagesPerSessionCompare" class="font-helvetica-medium compareTo bold"></span>
-        </div>
-
-        <div class="vertical-line"></div>
-        <div class="header-block">
-            <span class="label-font">Sidevisninger</span><br>
-            <span id="pageviews" class="header-numbers bold"></span><br>
-            <span id="pageviewsCompare" class="font-helvetica-medium compareTo bold"></span>
-        </div>
-
-        <div class="vertical-line"></div>
-        <div class="header-block">
-            <span class="label-font">Unike sidevisninger</span><br>
-            <span id="uniquePageviews" class="header-numbers bold"></span><br>
-            <span id="uniquePageviewsCompare" class="font-helvetica-medium compareTo bold"></span>
-        </div>
-    </div>
+    </ul>
 
 
-    <!--sub header with datepicker-->
-    <div class="subHeaderDate">
-        <h2 class="subHeader">RÅDGIVER</h2>
-        <div id="date-checkbox-div">
-            <input class="font-helvetica-medium" id="datepickerInput"><br>
-            <label class="compareToLabel compareTo-checkbox label-font" for="compareToInput">
-                <input id="compareToInput" type="checkbox" name="compareToLastYear" value="">
-                <div class="compareTo-checkDiv"></div>
-                Sammenligne med forrige år
-            </label>
-        </div>
-    </div>
+    <!--Content-->
+    <div class="content-wrapper">
 
-    <!--main box with information-->
-    <div id="accordion-wrapper">
-        <!--sort by, or copy paste link div-->
+        <div id="menuButtonWrapper">
+            <a href="#menu-toggle-open" class="font-helvetica-large" id="menu-toggle-open"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-        <div id="sortSearch-accordionDiv">
-            <select id="sortPagesBy" class="font-helvetica-medium">
-                <option>Mest aktive sider</option>
-                <option>Mest kristiske sider</option>
-            </select>
-            <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="   &#xf002;   Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
+            <!--Header-->
+            <div class="content-header">
+                <div class="name-date-header header-block">
+                    <h1 class="nameOfSite">Skatteetaten.no</h1>
+                    <span id="dateInHeader" class="date font-helvetica-medium"></span><br>
+                    <span id="dateInHeaderCompareTo" class="date font-helvetica-medium compareTo bold"></span>
+                </div>
+                <div class="vertical-line"></div>
+
+                <div class="header-block">
+                    <span class="label-font">Brukere</span><br>
+                    <span id="usersAmount" class="header-numbers bold"></span><br>
+                    <span id="usersAmountCompare" class="font-helvetica-large compareTo bold"></span>
+                </div>
+
+                <div class="vertical-line"></div>
+                <div class="header-block">
+                    <span class="label-font">Økter</span><br>
+                    <span id="sessionsAmount" class="header-numbers bold"></span><br>
+                    <span id="sessionsAmountCompare" class="font-helvetica-large compareTo bold"></span>
+                </div>
+
+                <div class="vertical-line"></div>
+                <div class="header-block">
+                    <span class="label-font">Sider per økt</span><br>
+                    <span id="pagesPerSession" class="header-numbers bold"></span><br>
+                    <span id="pagesPerSessionCompare" class="font-helvetica-large compareTo bold"></span>
+                </div>
+
+                <div class="vertical-line"></div>
+                <div class="header-block">
+                    <span class="label-font">Sidevisninger</span><br>
+                    <span id="pageviews" class="header-numbers bold"></span><br>
+                    <span id="pageviewsCompare" class="font-helvetica-large compareTo bold"></span>
+                </div>
+
+                <div class="vertical-line"></div>
+                <div class="header-block">
+                    <span class="label-font">Unike sidevisninger</span><br>
+                    <span id="uniquePageviews" class="header-numbers bold"></span><br>
+                    <span id="uniquePageviewsCompare" class="font-helvetica-large compareTo bold"></span>
+                </div>
+            </div>
         </div>
 
-        <!--box with tables/accordion from jquery UI-->
 
-
-
-        <!--show limited amount of pages div-->
-        <div id="showPagesDiv">
-            <label id="showPagesLabel" class="label-font" for="showPages">Vis antall rader: </label>
-            <select name="showPages" id="showPages" class="font-helvetica-medium">
-                <option>5</option>
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-            </select>
+        <!--sub header with datepicker-->
+        <div class="subHeaderDate">
+            <h2 class="subHeader">RÅDGIVER</h2>
+            <div id="date-checkbox-div">
+                <input class="font-helvetica-medium" id="datepickerInput"><br>
+                <label class="compareToLabel compareTo-checkbox label-font" for="compareToInput">
+                    <input id="compareToInput" type="checkbox" name="compareToLastYear" value="">
+                    <div class="compareTo-checkDiv"></div>
+                    Sammenligne med forrige år
+                </label>
+            </div>
         </div>
 
+        <!--main box with information-->
+        <div id="accordion-wrapper">
+            <!--sort by, or copy paste link div-->
+
+            <div id="sortSearch-accordionDiv">
+                <select id="sortPagesBy" class="font-helvetica-medium">
+                    <option>Mest aktive sider</option>
+                    <option>Mest kristiske sider</option>
+                </select>
+                <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="   &#xf002;   Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
+            </div>
+
+
+
+            <!--show limited amount of pages div-->
+            <div id="showPagesDiv">
+                <label id="showPagesLabel" class="label-font" for="showPages">Vis antall rader: </label>
+                <select name="showPages" id="showPages" class="font-helvetica-medium">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                </select>
+            </div>
+
+        </div>
     </div>
 
 
@@ -161,5 +165,4 @@
 <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
-
 
