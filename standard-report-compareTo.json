@@ -1,5 +1,15 @@
 {
-    "url": [
+    "users": "1717205",
+
+    "sessions": "2599528",
+
+    "pages_per_session": "3,55",
+
+    "pageviews": "9574646",
+
+    "unique_pageviews": "5794784",
+
+    "top_pages": [
         {
             "url": "/no/Skjemaer/Flyttemelding-til-folkeregisteret/",
             "pageviews": "1825246",
