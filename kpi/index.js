@@ -4,55 +4,61 @@
 
 var active_sideMenu_url = location.href.split("/kpi")[1];
 
-//Side menu link & sub side menu link/Selectors of <a>
-var menulink = $('.sidemenu-link');
-var submenulink =  $('.sub-sidemenu-link');
-
 //dates
 var start_date = moment().subtract(29, 'days');
 var end_date = moment();
-
 var compareToStartDate = moment(start_date).subtract(1, 'year');
 var compareToEndDate = moment(end_date).subtract(1, 'year');
-
 var start_dateJSONformat = moment().subtract(29, 'days').format('MM.DD.YY');
 var end_dateJSONformat = moment().format('MM.DD.YY');
 
+//Url lists with data
 var top_pages_list = [];
+var top_pages_data = [];
+var top_pages_data_last_year = [];
+var numberOfWordsMap = new Map();
 
+//Jquery UI widget - accordion
+var acc = $("#accordion");
 
 $(document).ready(function () {
 
-    
-
-    //Changes active class on buttons in side menu and sub side menu
-    $(".sub-sidemenu-link").each(function(){
-        if($(this).attr("href") == location.href){
-            $(this).addClass('activeSubSideMenu');
+    $(function activeButtonsControl(){ /*Sets active class on buttons in side menu and sub side menu*/
+        $(".sub-sidemenu-link").each(function(){
+            if($(this).attr("href") == location.href){
+                $(this).addClass('activeSubSideMenu');
+            }
+        });
+        if(active_sideMenu_url == "/"){
+            $(".menu-link-side").eq(0).addClass('activeSideMenu');
+            $(".menu-button-side").eq(0).css("border-right", "none");
+        }
+        else if(active_sideMenu_url == "/person.html"
+            || active_sideMenu_url == "/skattekort.html"
+            || active_sideMenu_url == "/selvangivelse.html"){
+            $(".menu-link-side").eq(1).addClass('activeSideMenu');
+            $(".menu-button-side").eq(1).css("border-right", "none");
+        }
+        else if(active_sideMenu_url == "/bedrift_og_organisasjon.html"){
+            $(".menu-link-side").eq(2).addClass('activeSideMenu');
+            $(".menu-button-side").eq(2).css("border-right", "none");
+        }
+        else if(active_sideMenu_url == "/radgiver.html"){
+            $(".menu-link-side").eq(3).addClass('activeSideMenu');
+            $(".menu-button-side").eq(3).css("border-right", "none");
+        }
+        else if(active_sideMenu_url == "/om_skatteetaten.html"){
+            $(".menu-link-side").eq(4).addClass('activeSideMenu');
+            $(".menu-button-side").eq(4).css("border-right", "none");
         }
     });
-    if(active_sideMenu_url == "/"){
-        $(".menu-link-side").eq(0).addClass('activeSideMenu');
-        $(".menu-button-side").eq(0).css("border-right", "none");
-    }
-    else if(active_sideMenu_url == "/person.html"
-        || active_sideMenu_url == "/skattekort.html"
-        || active_sideMenu_url == "/selvangivelse.html"){
-        $(".menu-link-side").eq(1).addClass('activeSideMenu');
-        $(".menu-button-side").eq(1).css("border-right", "none");
-    }
-    else if(active_sideMenu_url == "/bedrift_og_organisasjon.html"){
-        $(".menu-link-side").eq(2).addClass('activeSideMenu');
-        $(".menu-button-side").eq(2).css("border-right", "none");
-    }
-    else if(active_sideMenu_url == "/radgiver.html"){
-        $(".menu-link-side").eq(3).addClass('activeSideMenu');
-        $(".menu-button-side").eq(3).css("border-right", "none");
-    }
-    else if(active_sideMenu_url == "/om_skatteetaten.html"){
-        $(".menu-link-side").eq(4).addClass('activeSideMenu');
-        $(".menu-button-side").eq(4).css("border-right", "none");
-    }
+
+    //Hide content and show loading gif until loading is done
+    $("#accordion-wrapper").hide();
+
+    //Control of toggle button of menu in left corner
+    $("#wrapper").toggleClass("toggled");
+    $("#menu-toggle-open").hide();
 
     $("#menu-toggle-open").click(function(e) {
         e.preventDefault();
@@ -65,7 +71,6 @@ $(document).ready(function () {
         $("#wrapper").toggleClass("toggled");
         $("#menu-toggle-open").show(250, "easeInSine");
     });
-
 
     //Date Range Picker
     var datePicker = $("#datepickerInput");
@@ -115,6 +120,7 @@ $(document).ready(function () {
                 'Forrige måned': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
         },
+            /*Set values of all dates*/
             function(start, end, label) {
                 start_date = start;
                 end_date = end;
@@ -128,16 +134,16 @@ $(document).ready(function () {
         );
     });
 
+    //Synchronize date in main header
+    datePicker.change(function() {
+        var dateInput = datePicker.val();
+        var compareToDate = compareToStartDate.format('DD.MM.YYYY') + ' - ' + compareToEndDate.format('DD.MM.YYYY');
+        $("#dateInHeader").text(dateInput);
+        $("#dateInHeaderCompareTo").text(compareToDate);
+        hideCompareTo();
+    });
     
-    //Update date in header
-        datePicker.change(function() {
-            var dateInput = datePicker.val();
-            var compareToDate = compareToStartDate.format('DD.MM.YYYY') + ' - ' + compareToEndDate.format('DD.MM.YYYY');
-            $("#dateInHeader").text(dateInput);
-            $("#dateInHeaderCompareTo").text(compareToDate);
-        });
-    
-    //Show last year if compare to is checked --  note that the default value is set to hide after creating the accordion
+    //Show last year if compare to is checked /*note that the default value is set to hide*/
     $('#compareToInput').change(function() {
         if ($(this).is(':checked')) {
             $(".compareTo").show(100, "easeOutSine");
@@ -146,392 +152,569 @@ $(document).ready(function () {
         }
     });
 
-    //Read JSON object with top pages and values for main header
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8000/report.json',
-        data: {get_param: 'value'},
-        dataType: 'json',
-        success: function (data) {
-            $(function createHeader(){
-                $("#usersAmount").text(data.users);
-                $("#sessionsAmount").text(data.sessions);
-                $("#pagesPerSession").text(data.pages_per_session);
-                $("#pageviews").text(data.pageviews);
-                $("#uniquePageviews").text(data.unique_pageviews);
-                });
-
-            $.each(data.top_pages, function (index, element) {
-                top_pages_list.push(element.url);
-            });
-            createTables();
-        }
-    });
-
-    ////Read JSON object with top pages and values for main header a year ago - "Compare to last year"
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8000/standard-report-compareTo.json',
-        data: { get_param: 'value' },
-        dataType: 'json',
-        success: function (data) {
-            $("#usersAmountCompare").text(data.users);
-            $("#sessionsAmountCompare").text(data.sessions);
-            $("#pagesPerSessionCompare").text(data.pages_per_session);
-            $("#pageviewsCompare").text(data.pageviews);
-            $("#uniquePageviewsCompare").text(data.unique_pageviews);
-        }
-    });
+    function hideCompareTo(){
+        $(".compareTo").hide();
+    }
 
 
-
-    
-    //Read JSON object from date input and create content
-    /*read JSON object*/
-    function createTables() {
-
+    $(function createMainHeader (){
+        //Read JSON object with top pages and values for main header
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8000/standard-report-1month.json',
+            url: 'http://localhost:8000/json/report.json',
             data: {get_param: 'value'},
             dataType: 'json',
             success: function (data) {
-
-                /*Create content of accordion (Accordion from Jquery UI framework)*/
-                var statusName = ["Bra", "Advarsel", "Kritisk"];
-                var statusColor = ["#328279", "#FFB72E", "#b70202"];
-                var acc = $("#accordion");
+                $(function createHeader(){
+                    $("#usersAmount").text(data.users);
+                    $("#sessionsAmount").text(data.sessions);
+                    $("#pagesPerSession").text(data.pages_per_session);
+                    $("#pageviews").text(data.pageviews);
+                    $("#uniquePageviews").text(data.unique_pageviews);
+                });
 
                 $.each(data.top_pages, function (index, element) {
-
-                    //First the HTML structure with DOM elements are created, and the values of each element is set in the bottom of this loop
-
-                    /*--HEADER OF ACCORDION--*/
-                    var accordionH4 = document.createElement('h4');
-                    accordionH4.className = 'accordion-H4';
-
-                    //Number of the element in the accordion
-                    var accordionNumberSpan = document.createElement('span');
-                    accordionNumberSpan.className = 'accordionNumberSpan font-helvetica-medium';
-
-                    //URL
-                    var pageURLSpan = document.createElement('span');
-                    pageURLSpan.className = 'accordionLink font-helvetica-small';
-
-                    //Smily
-                    var smilySpan = document.createElement('span');
-                    var smily = document.createElement('i');
-                    smilySpan.className = 'smilyIcon';
-                    smily.setAttribute("aria-hidden", "true");
-                    smilySpan.appendChild(smily);
-
-                    //Number of users
-                    var amountPageviewsSpan = document.createElement('span');
-                    var amountPageviewsP = document.createElement('p');
-                    var amountPageviewsPCompareTo = document.createElement('p');
-                    amountPageviewsPCompareTo.className = 'compareTo pageviewsPCompareTo font-helvetica-small';
-                    amountPageviewsSpan.className = 'accordionUniquePageviews font-helvetica-small';
-                    amountPageviewsSpan.appendChild(amountPageviewsP);
-                    amountPageviewsSpan.appendChild(amountPageviewsPCompareTo);
-
-                    //Append to header
-                    accordionH4.appendChild(accordionNumberSpan);
-                    accordionH4.appendChild(pageURLSpan);
-                    accordionH4.appendChild(smilySpan);
-                    accordionH4.appendChild(amountPageviewsSpan);
-                    /*--HEADER OF ACCORDION END--*/
-
-                    /*--INNER CONTENT/TABLE--*/
-                    //Column labels
-                    var accordionTableDiv = document.createElement('div');
-                    accordionTableDiv.className = 'accordionDiv';
-                    var accordionTable = document.createElement('table');
-                    accordionTable.className = 'table font-helvetica-small';
-                    var thead = document.createElement('thead');
-                    var trHead = document.createElement('tr');
-                    var empty_th = document.createElement('th');
-                    var actual = document.createElement('th');
-                    var actualCompareTo = document.createElement('th');
-                    var goal = document.createElement('th');
-                    var trend = document.createElement('th');
-                    var status = document.createElement('th');
-                    actualCompareTo.className = 'compareTo actualCompareTo';
-
-                    //Append labels to table head (thead)
-                    trHead.appendChild(empty_th);
-                    trHead.appendChild(actual);
-                    trHead.appendChild(actualCompareTo);
-                    trHead.appendChild(goal);
-                    trHead.appendChild(trend);
-                    trHead.appendChild(status);
-                    thead.appendChild(trHead);
-
-                    //Table body
-                    var tbody = document.createElement('tbody');
-
-                    //Pageviews VS unique row
-                    var trPageviews = document.createElement('tr');
-                    var thPageviews = document.createElement('th');
-                    var tdPV_actual = document.createElement('td');
-                    var tdPV_actualCompareTo = document.createElement('td');
-                    var tdPV_goal = document.createElement('td');
-                    var tdPV_trend = document.createElement('td');
-                    var tdPV_status = document.createElement('td');
-                    tdPV_actualCompareTo.className = 'compareTo actualCompareTo';
-                    thPageviews.setAttribute("scope", "row");
-                    trPageviews.appendChild(thPageviews);
-                    trPageviews.appendChild(tdPV_actual);
-                    trPageviews.appendChild(tdPV_actualCompareTo);
-                    trPageviews.appendChild(tdPV_goal);
-                    trPageviews.appendChild(tdPV_trend);
-                    trPageviews.appendChild(tdPV_status);
-
-                    //Average time spent on page
-                    var trAverageTime = document.createElement('tr');
-                    var thAverageTime = document.createElement('th');
-                    var tdAT_actual = document.createElement('td');
-                    var tdAT_actualCompareTo = document.createElement('td');
-                    tdAT_actualCompareTo.className = 'compareTo actualCompareTo';
-                    var tdAT_goal = document.createElement('td');
-                    var tdAT_trend = document.createElement('td');
-                    var tdAT_status = document.createElement('td');
-                    thAverageTime.setAttribute("scope", "row");
-                    trAverageTime.appendChild(thAverageTime);
-                    trAverageTime.appendChild(tdAT_actual);
-                    trAverageTime.appendChild(tdAT_actualCompareTo);
-                    trAverageTime.appendChild(tdAT_goal);
-                    trAverageTime.appendChild(tdAT_trend);
-                    trAverageTime.appendChild(tdAT_status);
-
-                    //Bounce rate row
-                    var trBounceRate = document.createElement('tr');
-                    var thBounceRate = document.createElement('th');
-                    var tdBR_actual = document.createElement('td');
-                    var tdBR_actualCompareTo = document.createElement('td');
-                    var tdBR_goal = document.createElement('td');
-                    var tdBR_trend = document.createElement('td');
-                    var tdBR_status = document.createElement('td');
-                    tdBR_actualCompareTo.className = 'compareTo actualCompareTo';
-                    thBounceRate.setAttribute("scope", "row");
-                    trBounceRate.appendChild(thBounceRate);
-                    trBounceRate.appendChild(tdBR_actual);
-                    trBounceRate.appendChild(tdBR_actualCompareTo);
-                    trBounceRate.appendChild(tdBR_goal);
-                    trBounceRate.appendChild(tdBR_trend);
-                    trBounceRate.appendChild(tdBR_status);
-
-                    //External click
-                    var trExternalClick = document.createElement('tr');
-                    var thExternalClick = document.createElement('th');
-                    var tdEC_actual = document.createElement('td');
-                    var tdEC_actualCompareTo = document.createElement('td');
-                    var tdEC_goal = document.createElement('td');
-                    var tdEC_trend = document.createElement('td');
-                    var tdEC_status = document.createElement('td');
-                    tdEC_actualCompareTo.className = 'compareTo actualCompareTo';
-                    thExternalClick.setAttribute("scope", "row");
-                    trExternalClick.appendChild(thExternalClick);
-                    trExternalClick.appendChild(tdEC_actual);
-                    trExternalClick.appendChild(tdEC_actualCompareTo);
-                    trExternalClick.appendChild(tdEC_goal);
-                    trExternalClick.appendChild(tdEC_trend);
-                    trExternalClick.appendChild(tdEC_status);
-
-                    //Append rows to body
-                    tbody.appendChild(trPageviews);
-                    tbody.appendChild(trAverageTime);
-                    tbody.appendChild(trBounceRate);
-                    tbody.appendChild(trExternalClick);
-                    accordionTable.appendChild(thead);
-                    accordionTable.appendChild(tbody);
-                    accordionTableDiv.appendChild(accordionTable);
-                    /*--INNER CONTENT/TABLE END--*/
-
-
-                    /*APPEND HEADER AND INNER CONTENT/TABLE TO ACCORDION*/
-                    acc.append(accordionH4);
-                    acc.append(accordionTableDiv);
-
-
-                    /*SET VALUES*/
-                    //Set values of accordion element headers
-                    accordionNumberSpan.innerHTML = index + 1;
-                    pageURLSpan.innerHTML = element.url;
-                    smily.className = 'fa fa-smile-o';
-                    /*******ENDRE*/
-                    amountPageviewsP.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
-                    amountPageviewsPCompareTo.innerHTML = 'Unike sidevisninger: ' + element.unique_pageviews;
-
-                    //Set values of inner content
-                    //Column labels
-                    actual.innerHTML = 'FAKTISK';
-                    actualCompareTo.innerHTML = 'FORRIGE ÅR';
-                    goal.innerHTML = 'MÅL';
-                    trend.innerHTML = 'TREND';
-                    status.innerHTML = 'STATUS';
-
-                    //Pageviews
-                    var pageviews = Math.round((element.pageviews / element.unique_pageviews) * 10) / 10;
-                    var pv_calculateStatus = calculateStatusPageviews(pageviews);
-                    thPageviews.innerHTML = "Sidevisninger ÷ Unike";
-                    tdPV_actual.innerHTML = pageviews;
-                    tdPV_actualCompareTo.innerHTML = "heiehie";
-                    tdPV_goal.innerHTML = "< 1.3";
-
-                    //pageviews trend div
-                    var pv_trendDivMin = document.createElement('div');
-                    var pv_trendDivMax = document.createElement('div');
-                    var pv_trendExit = document.createElement('i');
-                    pv_trendExit.setAttribute("aria-hidden", "true");
-                    pv_trendDivMin.className = "pageviewTrend trendMinimized pvTrend_click";
-                    pv_trendDivMax.className = "pageviewTrend trendMaximized pvTrendMax";
-                    pv_trendExit.className = "pvTrendExit trendExit fa fa-times";
-                    tdPV_trend.appendChild(pv_trendDivMin);
-                    pv_trendDivMax.appendChild(pv_trendExit);
-                    document.getElementById("accordion-wrapper").appendChild(pv_trendDivMax);
-                    $(".pvTrend_click").click(function () {
-                        openPvTrend();
-                    });
-                    $(".pvTrendExit").click(function () {
-                        closePvTrend();
-                    });
-
-                    //pageviews status
-                    tdPV_status.innerHTML = statusName[pv_calculateStatus];
-                    tdPV_status.style.cssText = 'color: ' + statusColor[pv_calculateStatus];
-
-                    //Average time on page
-                    var avg_time_on_page = moment.duration(Math.round(element.avg_time_on_page), "seconds").format("mm:ss", {trim: false});
-                    thAverageTime.innerHTML = "Gjennomsnittstid";
-                    tdAT_actual.innerHTML = avg_time_on_page;
-                    tdAT_actualCompareTo.innerHTML = "heiehie";
-                    $.ajax({ //get URL using ajax
-                        url: "http://skatteetaten.no" + element.url,
-                        type: 'GET',
-                        success: function (response) {
-                            //removes all blank spaces and tags
-                            var text = response.responseText.replace(/[\n\r]/g, '').replace(/&#xd;/g, '').replace(/\//g, '').replace(/<.*?>/g, '').replace(/  +/g, ' ');
-                            //count the words
-                            var wordsCount = text.split(' ').length;
-                            tdAT_goal.innerHTML = (moment.duration((wordsCount / 500), "minutes").format("mm:ss", {trim: false}))
-                                + " - "
-                                + moment.duration((wordsCount / 150), "minutes").format("mm:ss", {trim: false});
-                            /*********Set manually*/
-                            var at_calculateStatus = calculateStatusAverageTime(element.avg_time_on_page, (wordsCount / 500) * 60, (wordsCount / 150) * 60);
-                            tdAT_status.innerHTML = statusName[at_calculateStatus];
-                            tdAT_status.style.cssText = 'color: ' + statusColor[at_calculateStatus];
-                        }
-                    });
-                    //average time on page trend div
-                    var at_trendDivMin = document.createElement('div');
-                    var at_trendDivMax = document.createElement('div');
-                    var at_trendExit = document.createElement('i');
-                    at_trendExit.setAttribute("aria-hidden", "true");
-                    at_trendDivMin.className = "averageTimeTrend trendMinimized atTrend_click";
-                    at_trendDivMax.className = "averageTimeTrend trendMaximized atTrendMax";
-                    at_trendExit.className = "atTrendExit trendExit fa fa-times";
-                    tdAT_trend.appendChild(at_trendDivMin);
-                    at_trendDivMax.appendChild(at_trendExit);
-                    document.getElementById("accordion-wrapper").appendChild(at_trendDivMax);
-                    $(".atTrend_click").click(function () {
-                        openAtTrend();
-                    });
-                    $(".atTrendExit").click(function () {
-                        closeAtTrend();
-                    });
-
-
-                    //Bounce Rate
-                    var bounceRate = Math.round(element.bounce_rate * 10) / 10;
-                    var br_calculateStatus = calculateStatusBounceRate(bounceRate);
-                    thBounceRate.innerHTML = "Fluktfrekvens";
-                    tdBR_actual.innerHTML = bounceRate + '%';
-                    tdBR_actualCompareTo.innerHTML = "heiheiheiehi";
-                    tdBR_goal.innerHTML = "< 25%";
-
-                    //bounce rate trend div
-                    var br_trendDivMin = document.createElement('div');
-                    var br_trendDivMax = document.createElement('div');
-                    var br_trendExit = document.createElement('i');
-                    br_trendExit.setAttribute("aria-hidden", "true");
-                    br_trendDivMin.className = "bouncerateTrend trendMinimized bouncerateTrend_click";
-                    br_trendDivMax.className = "bouncerateTrend trendMaximized brTrendMax";
-                    br_trendExit.className = "brTrendExit trendExit fa fa-times";
-                    tdBR_trend.appendChild(br_trendDivMin);
-                    br_trendDivMax.appendChild(br_trendExit);
-                    document.getElementById("accordion-wrapper").appendChild(br_trendDivMax);
-                    $(".bouncerateTrend_click").click(function () {
-                        openBrTrend();
-                    });
-                    $(".brTrendExit").click(function () {
-                        closeBrTrend();
-                    });
-
-                    //bounce rate status
-                    tdBR_status.innerHTML = statusName[br_calculateStatus];
-                    tdBR_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
-
-                    //External Click
-                    //var externalClick = Math.round(element.bounce_rate * 10) / 10;
-                    //var ec_calculateStatus = calculateStatusBounceRate(bounceRate);
-                    thExternalClick.innerHTML = "Handlingsknapp";
-                    //tdEC_actual.innerHTML = bounceRate + '%';
-                    tdEC_actualCompareTo.innerHTML = "heiheiheiehi";
-                    tdEC_goal.innerHTML = "> 70%";
-                    //External Click status
-                    //tdEC_status.innerHTML = statusName[br_calculateStatus];
-                    //tdEC_status.style.cssText = 'color: ' + statusColor[br_calculateStatus];
-
-
-                    /*
-                     //VOC
-                     //Number of answered "YES"
-                     <tr>
-                     <th scope="row">VOC</th>
-                     <td>20,42%</td>
-                     <td>30%</td>
-                     <td></td>
-                     <td>5%</td>
-                     </tr>
-                     <tr class="VOCyes">
-                     <th scope="row">"JA"</th>
-                     <td>20,42%</td>
-                     <td>30%</td>
-                     <td></td>
-                     <td>5%</td>
-                     </tr>
-                     */
-
+                    top_pages_list.push(element.url);
                 });
-
-
-                //Create the final accordion from Jquery UI
-                $(function () {
-                    acc.accordion({
-                        heightStyle: "content",
-                        autoHeight: false,
-                        clearStyle: true
-                    });
-                    limitRowsAccordion(5);
-                });
-
-                //Hide compare to values and maximized trend winsow by default
-                $(function () {
-                    $(".compareTo").hide();
-                    $('.pvTrendMax').hide();
-                    $('.atTrendMax').hide();
-                    $('.brTrendMax').hide();
-
-
-                });
-
+                /*Read JSON file for each url with containing data*/
+                topPagesData();
             }
+        });
+
+        //Read JSON object with top pages and values for main header a year ago - "Compare to last year"
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8000/json/report_last_year.json',
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                $("#usersAmountCompare").text(data.users);
+                $("#sessionsAmountCompare").text(data.sessions);
+                $("#pagesPerSessionCompare").text(data.pages_per_session);
+                $("#pageviewsCompare").text(data.pageviews);
+                $("#uniquePageviewsCompare").text(data.unique_pageviews);
+                hideCompareTo();
+            }
+        });
+    });
+
+    //Read Json object per page. Stores values in lists.
+    function topPagesData() { /*Read JSON for chose date*/
+        $.each(top_pages_list, function (index, url) {
+            var JSONurl = url.replace(/\//g, "") + ".json";
+            var JSONurl_lastyear = url.replace(/\//g, "") + "_lastyear.json";
+
+            //Chosen date input
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8000/json/' + JSONurl,
+                data: {get_param: 'value'},
+                dataType: 'json',
+                success: function (data) {
+                    var dataMap = new Map();
+                    dataMap.set("url", data.url);
+                    dataMap.set("pageviews", data.pageviews);
+                    dataMap.set("unique_pageviews", data.unique_pageviews);
+                    dataMap.set("avg_time_on_page", data.avg_time_on_page);
+                    dataMap.set("bounce_rate", data.bounce_rate);
+                    dataMap.set("external_link", data.external_link);
+                    dataMap.set("voc", data.voc);
+                    dataMap.set("chat", data.chat);
+                    dataMap.set("contact_us", data.contact_us);
+                    dataMap.set("search", data.search);
+                    top_pages_data.push(dataMap);
+                }
+            });
+
+            $.ajax({ /*Read JSON for last year*/
+                type: 'GET',
+                url: 'http://localhost:8000/json/' + JSONurl_lastyear,
+                data: {get_param: 'value'},
+                dataType: 'json',
+                success: function (data) {
+                    var dataMap = new Map();
+                    dataMap.set("url", data.url);
+                    dataMap.set("pageviews", data.pageviews);
+                    dataMap.set("unique_pageviews", data.unique_pageviews);
+                    dataMap.set("avg_time_on_page", data.avg_time_on_page);
+                    dataMap.set("bounce_rate", data.bounce_rate);
+                    dataMap.set("external_link", data.external_link);
+                    dataMap.set("voc", data.voc);
+                    dataMap.set("chat", data.chat);
+                    dataMap.set("contact_us", data.contact_us);
+                    dataMap.set("search", data.search);
+                    top_pages_data_last_year.push(dataMap);
+                }
+            });
+        });
+    }
+
+    //An ajax call to each page to count the amount of words of the content
+    /*note that this takes a few seconds to load, and the main content is set be created when loading is done at the end of this call*/
+    function wordCounter(){
+        $.each(top_pages_list, function(index, element){
+            $.ajax({ //get URL using ajax
+                url: "http://skatteetaten.no" + element,
+                data: {get_param: 'value'},
+                type: 'GET',
+                success: function(response){
+                    var text = response.responseText.replace(/[\n\r]/g, '').replace(/&#xd;/g, '').replace(/\//g, '').replace(/<.*?>/g, '').replace(/  +/g, ' ');
+                    var wordsCount = text.split(' ').length;
+                    numberOfWordsMap.set(element, wordsCount);
+                    if(top_pages_list.length == numberOfWordsMap.size){
+                        createContent(); /*creates content when loading and counting of all pages is done*/
+                    }
+                }
+            });
+        });
+    }
+
+    //Creates content - note that the content is a Jquery UI accordion widget containing element of <h4><div>
+    function createContent(){
+        $.each(top_pages_data, function(index, element){
+
+            /*List of values from last year*/
+            var last_year = top_pages_data_last_year[index];
+
+            /*Set header values*/
+            var page_number = index + 1;
+            var page_url = element.get("url");
+            var page_smily = 'fa fa-smile-o';
+            var unique_pageviews = element.get("unique_pageviews");
+            var unique_pageviews_last_year = last_year.get("unique_pageviews");
+
+            /*Creates <h4> element*/
+            createHeaderOfAccordion(page_number, page_url, page_smily, unique_pageviews, unique_pageviews_last_year);
+
+            /*Set div content values*/
+
+            var noOfWords = numberOfWordsMap.get(page_url); /*number of words for the url*/
+
+            /*Pageviews*/
+            var pageviewsName = "Sidevisninger ÷ Unike";
+            var pvActual = (element.get("pageviews") / unique_pageviews).toFixed(1);
+            var pvActualCompareTo = +(((last_year.get("pageviews") / (last_year.get("unique_pageviews"))) * 10) / 10).toFixed(1);
+            var pvGoal = "< 1.3";
+            var pvTrend = ["pageviewTrend trendMinimized pvTrend_click", "pageviewTrend trendMaximized pvTrendMax", "pvTrendExit trendExit fa fa-times"]
+            var pvStatus = calculateStatusPageviews(pvActual);
+
+            /*Average time on page*/
+            var averageTimeName = "Gjennomsnittstid";
+            var aTActual = moment.duration(Math.round(element.get("avg_time_on_page")), "seconds").format("mm:ss", {trim: false});
+            var aTActualCompareTo = moment.duration(Math.round(last_year.get("avg_time_on_page")), "seconds").format("mm:ss", {trim: false});
+            var aTGoal = (moment.duration((noOfWords / 500), "minutes").format("mm:ss", {trim: false}))
+                + " - "
+                + moment.duration((noOfWords / 150), "minutes").format("mm:ss", {trim: false});
+            var aTTrend = ["aTTrend trendMinimized aTTrend_click", "aTTrend trendMaximized aTTrendMax", "aTTrendExit trendExit fa fa-times"]
+            var aTStatus = calculateStatusAverageTime(element.get("avg_time_on_page"), (noOfWords / 500) * 60, (noOfWords / 150) * 60);
+
+            /*Bounce rate*/
+            var bounceRateName = "Fluktfrekvens";
+            var bRActual = (+element.get("bounce_rate")).toFixed(2) + "%";
+            var bRActualCompareTo = (+last_year.get("bounce_rate")).toFixed(2) + "%";
+            var bRGoal = "< 25%";
+            var bRTrend = ["bRTrend trendMinimized bRTrend_click", "bRTrend trendMaximized bRTrendMax", "bRTrendExit trendExit fa fa-times"]
+            var bRStatus = calculateStatusBounceRate((+last_year.get("bounce_rate")).toFixed(2));
+
+            /*External link*/
+            var externalClickRows = [];
+            $.each(element.get("external_link"), function(index, item){
+                last_year_external = last_year.get("external_link");
+                var externalClickName = item.type;
+                var eCActual = +(item.amount/unique_pageviews*100).toFixed(2) + "%";
+                var eCActualCompareTo = +(last_year_external[index].amount/unique_pageviews_last_year*100).toFixed(2) + "%";
+                var eCGoal = "> 70%";
+                var eCTrend = "";
+                var eCStatus = calculateStatusExternalClick((item.amount/unique_pageviews*100).toFixed(2));
+                var row = createRowOfTable(externalClickName, eCActual, eCActualCompareTo, eCGoal, eCTrend, eCStatus);
+                externalClickRows.push(row);
+            });
+
+            /*Question box/VOC*/
+            var questionBoxName = "Spørreboks - \"Nei\"";
+            var noAnswer = element.get("voc")[0].antall;
+            var yesAnswer = element.get("voc")[1].antall;
+            var noAnswerLastYear = last_year.get("voc")[0].antall;
+            var yesAnswerLastYear = last_year.get("voc")[1].antall;
+            var calcQBpercentage = +((noAnswer * 100) / (+noAnswer + +yesAnswer)).toFixed(2) + "%";
+            var calcQBpercentageLastYear = +((noAnswerLastYear * 100) / (+noAnswerLastYear + +yesAnswerLastYear)).toFixed(2) + "%";
+            var qBActual = noAnswer + " (" + calcQBpercentage + ")";
+            var qBActualCompareTo = noAnswerLastYear + " (" + calcQBpercentageLastYear + ")";
+            var qBGoal = "< 70%";
+            var qBTrend = "";
+            var qBStatus = calculateStatusVOC(+((noAnswer * 100) / (+noAnswer + +yesAnswer)).toFixed(2));
+
+            /*Chat*/
+            var chatName = "Chat";
+            var chatActual = element.get("chat") + " (" + (element.get("chat")/unique_pageviews*100).toFixed(2) + "%)";
+            var chatActualCompareTo = last_year.get("chat") + " (" + (last_year.get("chat")/unique_pageviews_last_year*100).toFixed(2) + "%)";
+            var chatGoal = "< 1.5%";
+            var chatTrend = "";
+            var chatStatus = calculateStatusChatContactSearch((element.get("chat")/unique_pageviews*100).toFixed(2));
+
+            /*Contact us*/
+            var contactUsName = "Kontakt oss";
+            var cUActual = element.get("contact_us") + " (" + (element.get("contact_us")/unique_pageviews*100).toFixed(2) + "%)";
+            var cUActualCompareTo = last_year.get("contact_us") + " (" + (last_year.get("contact_us")/unique_pageviews_last_year*100).toFixed(2) + "%)";
+            var cUGoal = "< 1.5%";
+            var cUTrend = "";
+            var cUStatus = calculateStatusChatContactSearch((element.get("contact_us")/unique_pageviews*100).toFixed(2));
+
+            /*Search*/
+            var searchName = "Søk";
+            var searchActual = element.get("search") + " (" + (element.get("search")/unique_pageviews*100).toFixed(2) + "%)";
+            var searchActualCompareTo = last_year.get("search") + " (" + (last_year.get("search")/unique_pageviews_last_year*100).toFixed(2) + "%)";
+            var searchGoal = "< 1.5%";
+            var searchTrend = "";
+            var searchStatus = calculateStatusChatContactSearch((element.get("search")/unique_pageviews*100).toFixed(2));
+
+            /*SUM*/
+            var sumName = "Sum:";
+            var calcSum = +noAnswer + +element.get("chat") + +element.get("contact_us") + +element.get("search");
+            var calcSumLastYear = +noAnswerLastYear + +last_year.get("chat") + +last_year.get("contact_us") + +last_year.get("search");
+            var sumActual = calcSum + " (" + (calcSum/unique_pageviews*100).toFixed(2) + "%)";
+            var sumActualCompareTo = calcSumLastYear + " (" + (calcSumLastYear/unique_pageviews_last_year*100).toFixed(2) + "%)";
+            var sumGoal = "< 2%";
+            var sumTrend = "";
+            var sumStatus = calculateStatusSum((calcSum/unique_pageviews*100).toFixed(2));
+
+            /*Create rows of table*/
+            var pageviewsRow = createRowOfTable(pageviewsName, pvActual, pvActualCompareTo, pvGoal, pvTrend, pvStatus);
+            var averageTimeRow = createRowOfTable(averageTimeName, aTActual, aTActualCompareTo, aTGoal, aTTrend, aTStatus);
+            var bounceRateRow = createRowOfTable(bounceRateName, bRActual, bRActualCompareTo, bRGoal, bRTrend, bRStatus);
+            var questionBoxRow = createRowOfTable(questionBoxName, qBActual, qBActualCompareTo, qBGoal, qBTrend, qBStatus);
+            var chatRow = createRowOfTable(chatName, chatActual, chatActualCompareTo, chatGoal, chatTrend, chatStatus);
+            var contactUsRow = createRowOfTable(contactUsName, cUActual, cUActualCompareTo, cUGoal, cUTrend, cUStatus);
+            var searchRow = createRowOfTable(searchName, searchActual, searchActualCompareTo, searchGoal, searchTrend, searchStatus);
+            var sumRow = createRowOfTable(sumName, sumActual, sumActualCompareTo, sumGoal, sumTrend, sumStatus);
+
+
+
+            /*Creates <div> element*/
+            createContentOfAccordion(pageviewsRow, averageTimeRow, bounceRateRow, externalClickRows, questionBoxRow,
+            chatRow, contactUsRow, searchRow, sumRow);
+
+            /*Control of trend boxes*/
+            $(function openCloseTrendControl(){
+                $(".pvTrend_click").click(function () {
+                    openPvTrend();
+                });
+                $(".pvTrendExit").click(function () {
+                    closePvTrend();
+                });
+                $(".aTTrend_click").click(function () {
+                    openAtTrend();
+                });
+                $(".aTTrendExit").click(function () {
+                    closeAtTrend();
+                });
+                $(".bRTrend_click").click(function () {
+                    openBrTrend();
+                });
+                $(".bRTrendExit").click(function () {
+                    closeBrTrend();
+                });
+            });
+        });
+
+        /*Create final accordion widget of all <h4><div> elements*/
+        $(function createAccordion(){
+            acc.accordion({
+                heightStyle: "content",
+                autoHeight: false,
+                clearStyle: true
+            });
+            limitRowsAccordion(5); /*Sets the accordion to show 5 elements by default*/
+            $("#accordion-wrapper").show(100);
+            $("#loading").hide();
         });
     }
 
 
-    //Trend view open and close functions
-    function disableFuntions(){
+    //Run wordCounter() when other ajax calls are finished
+    $(document).ajaxStop(function( event, xhr, settings ) {
+        wordCounter();
+    });
+
+    //Creates header <h4> of each accordion element
+    function createHeaderOfAccordion(number, url, smileIndicator, unique_pageviews, unique_pageviews_last_year){
+        /*<h4>*/
+        var accordionH4 = document.createElement('h4');
+        accordionH4.className = 'accordion-H4';
+
+        /*<span> with number of the element in the accordion*/
+        var accordionNumberSpan = document.createElement('span');
+        accordionNumberSpan.className = 'accordionNumberSpan font-helvetica-medium';
+        accordionNumberSpan.innerHTML = number;
+
+        /*<span> with URL*/
+        var pageURLSpan = document.createElement('span');
+        pageURLSpan.className = 'accordionLink font-helvetica-small';
+        pageURLSpan.innerHTML = url;
+
+        /* <span><i> with smily indicator */
+        var smilySpan = document.createElement('span');
+        var smily = document.createElement('i');
+        smilySpan.className = 'smilyIcon';
+        smily.setAttribute("aria-hidden", "true");
+        smilySpan.appendChild(smily);
+        smily.className = smileIndicator;
+
+        /*<span> with unique pageviews*/
+        var amountPageviewsSpan = document.createElement('span');
+
+        /*<p> with number of unique pageviews*/
+        var amountPageviewsP = document.createElement('p');
+        amountPageviewsSpan.className = 'accordionUniquePageviews font-helvetica-small';
+        amountPageviewsSpan.appendChild(amountPageviewsP);
+        amountPageviewsP.innerHTML = 'Unike sidevisninger: ' + unique_pageviews;
+
+        /*<p> with number of unique pageviews - last year*/
+        var amountPageviewsPCompareTo = document.createElement('p');
+        amountPageviewsPCompareTo.className = 'compareTo pageviewsPCompareTo font-helvetica-small';
+        amountPageviewsSpan.appendChild(amountPageviewsPCompareTo);
+        amountPageviewsPCompareTo.innerHTML = 'Unike sidevisninger: ' + unique_pageviews_last_year;
+
+        /*Append all tags to <h4>*/
+        accordionH4.appendChild(accordionNumberSpan);
+        accordionH4.appendChild(pageURLSpan);
+        accordionH4.appendChild(smilySpan);
+        accordionH4.appendChild(amountPageviewsSpan);
+
+        /*Append <h4> to accordion*/
+        acc.append(accordionH4);
+    }
+
+    function createContentOfAccordion(pageviews_row, averageTime_row, bounceRate_row, externalClick_rows, questionBox_row,
+    chat_row, contactUs_row, search_row, sum_row){
+        /*<div>*/
+        var accordionContentDiv = document.createElement('div');
+        accordionContentDiv.className = 'accordionDiv';
+
+        /*<table>*/
+        var table = document.createElement('table');
+
+        /*<thead><tr><th> - Column labels*/
+        var thead = document.createElement('thead');
+        var tr = document.createElement('tr');
+        var empty_th = document.createElement('th');
+        var actual = document.createElement('th');
+        var actualCompareTo = document.createElement('th');
+        var goal = document.createElement('th');
+        var trend = document.createElement('th');
+        var status = document.createElement('th');
+        table.className = 'table font-helvetica-small';
+        actualCompareTo.className = 'compareTo actualCompareTo';
+
+        /*Column label values*/
+        actual.innerHTML = 'FAKTISK';
+        actualCompareTo.innerHTML = 'FORRIGE ÅR';
+        goal.innerHTML = 'MÅL';
+        trend.innerHTML = 'TREND';
+        status.innerHTML = 'STATUS';
+
+        /*Append labels to table head <thead>*/
+        tr.appendChild(empty_th);
+        tr.appendChild(actual);
+        tr.appendChild(actualCompareTo);
+        tr.appendChild(goal);
+        tr.appendChild(trend);
+        tr.appendChild(status);
+        thead.appendChild(tr);
+
+        /*<tbody>*/
+        var tbody = document.createElement('tbody');
+        tbody.appendChild(pageviews_row);
+        tbody.appendChild(averageTime_row);
+        tbody.appendChild(bounceRate_row);
+
+        $.each(externalClick_rows, function(index, row){
+            tbody.appendChild(row);
+            if(index == externalClick_rows.length-1){
+                row.className = 'boldTableBorder';
+            }
+        });
+
+        questionBox_row.className = 'noBorder';
+        chat_row.className = 'noBorder';
+        contactUs_row.className = 'noBorder';
+        search_row.className = 'noBorder';
+        sum_row.className = 'boldTableBorder'
+        
+        tbody.appendChild(questionBox_row);
+        tbody.appendChild(chat_row);
+        tbody.appendChild(contactUs_row);
+        tbody.appendChild(search_row);
+        tbody.appendChild(sum_row);
+
+        /*Append <thead> and <tbody> to <table>*/
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        
+        /*Append <table> to <div>*/
+        accordionContentDiv.appendChild(table);
+
+        /*Append <div> to accordion widget*/
+        acc.append(accordionContentDiv);
+
+        hideCompareTo();
+    }
+
+    //Create row of table
+    function createRowOfTable(type, actual, actualCompareTo, goal, trend, status){
+
+        /*Status colors and values*/
+        var statusName = ["Bra", "Advarsel", "Kritisk"];
+        var statusColor = ["#328279", "#FFB72E", "#b70202"];
+
+        /*Create row element <tr><th><td>*/
+        var tr = document.createElement('tr');
+        var th = document.createElement('th');
+        var actualEntry = document.createElement('td');
+        var actualCompareToEntry = document.createElement('td');
+        var goalEntry = document.createElement('td');
+        var trendEntry = document.createElement('td');
+        var statusEntry = document.createElement('td');
+
+        /*Set type/name of row*/
+        th.innerHTML = type;
+        th.setAttribute("scope", "row");
+
+        /*Set actual, actual last year and goal values*/
+        actualEntry.innerHTML = actual;
+        actualCompareToEntry.innerHTML = actualCompareTo;
+        actualCompareToEntry.className = 'compareTo actualCompareTo';
+        goalEntry.innerHTML = goal;
+
+        /*Create trend <div> elements*/
+        var trendDivMin = document.createElement('div');
+        var trendDivMax = document.createElement('div');
+        var trendExit = document.createElement('i');
+        trendDivMin.className = trend[0];
+        trendDivMax.className = trend[1];
+        trendExit.className = trend[2];
+        trendExit.setAttribute("aria-hidden", "true");
+        trendEntry.appendChild(trendDivMin);
+        trendDivMax.appendChild(trendExit);
+        document.getElementById("accordion-wrapper").appendChild(trendDivMax);
+
+        /*Hide maximized trends by default*/
+        $('.pvTrendMax').hide();
+        $('.aTTrendMax').hide();
+        $('.bRTrendMax').hide();
+
+        /*Set status*/
+        statusEntry.innerHTML = statusName[status];
+        statusEntry.style.cssText = 'color: ' + statusColor[status];
+
+        /*Append entries to row*/
+        tr.appendChild(th);
+        tr.appendChild(actualEntry);
+        tr.appendChild(actualCompareToEntry);
+        tr.appendChild(goalEntry);
+        tr.appendChild(trendEntry);
+        tr.appendChild(statusEntry);
+        hideCompareTo();
+
+        return tr;
+    }
+
+    //Calculate status of rows
+    function calculateStatusPageviews(actualPageviews){
+        var status;
+        if(actualPageviews < 1.3){
+            status = 0;}
+        else if(actualPageviews >= 1.3 && actualPageviews < 1.5){
+            status = 1;}
+        else if(actualPageviews >= 1.5){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusAverageTime(actualAT, goalMinAT, goalMaxAT){
+        var status;
+        if((actualAT > goalMinAT && actualAT < goalMaxAT) || actualAT == goalMinAT || actualAT == goalMaxAT){
+            status = 0;}
+        else if((actualAT > goalMinAT-10 && actualAT < goalMinAT) || (actualAT > goalMaxAT && actualAT < goalMaxAT+10)){
+            status = 1;}
+        else if(actualAT <= goalMinAT-10 || actualAT >= goalMaxAT){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusBounceRate(actualPercentage){
+        var status;
+        if(actualPercentage < 25){
+            status = 0;}
+        else if(actualPercentage >= 25 && actualPercentage < 30){
+            status = 1;}
+        else if(actualPercentage >= 30){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusExternalClick(actualPercentage){
+        var status;
+        if(actualPercentage > 70){
+            status = 0;}
+        else if(actualPercentage <= 70 && actualPercentage > 60){
+            status = 1;}
+        else if(actualPercentage <= 60){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusVOC(actualPercentage){
+        var status;
+        if(actualPercentage < 70){
+            status = 0;}
+        else if(actualPercentage >= 70 && actualPercentage < 80){
+            status = 1;}
+        else if(actualPercentage >= 80){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusChatContactSearch(actualPercentage){
+        var status;
+        if(actualPercentage < 1.5){
+            status = 0;}
+        else if(actualPercentage >= 1.5 && actualPercentage < 2){
+            status = 1;}
+        else if(actualPercentage >= 2){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+    function calculateStatusSum(actualPercentage){
+        var status;
+        if(actualPercentage < 2){
+            status = 0;}
+        else if(actualPercentage >= 2 && actualPercentage < 2.5){
+            status = 1;}
+        else if(actualPercentage >= 2.5){
+            status = 2;}
+        else{
+            return false;}
+        return status;
+    }
+
+
+
+    //Disable functions - used when trend is clicked/maximized
+    function disableFunctions(){
         $("#accordion" ).accordion( "disable" );
         $('#sortPagesBy').prop('disabled', 'disabled');
         $('#searchLink').prop('disabled', 'disabled');
@@ -543,6 +726,7 @@ $(document).ready(function () {
         $('#showPagesLabel').css("color", "#bababa");
     }
 
+    //Enable functions - used when trendExit is clicked
     function enableFunctions(){
         $("#accordion" ).accordion( "enable" );
         $('#sortPagesBy').prop('disabled', false);
@@ -555,52 +739,39 @@ $(document).ready(function () {
         $('#showPagesLabel').css("color", "#000");
     }
 
+    //Functions for opening and closing trend <div> elements
     function openBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.brTrendMaxBg').eq(activeAcc).show();
         $('.brTrendMax').eq(activeAcc).show();
-        disableFuntions();
+        disableFunctions();
     }
-
     function closeBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.brTrendMaxBg').eq(activeAcc).hide();
         $('.brTrendMax').eq(activeAcc).hide();
         enableFunctions()
     }
-
     function openAtTrend () {
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.atTrendMaxBg').eq(activeAcc).show();
-        $('.atTrendMax').eq(activeAcc).show();
-        disableFuntions();
+        $('.aTTrendMax').eq(activeAcc).show();
+        disableFunctions();
     }
-
     function closeAtTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.atTrendMaxBg').eq(activeAcc).hide();
-        $('.atTrendMax').eq(activeAcc).hide();
+        $('.aTTrendMax').eq(activeAcc).hide();
         enableFunctions()
     }
-
     function openPvTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.pvTrendMaxBg').eq(activeAcc).show();
         $('.pvTrendMax').eq(activeAcc).show();
-        disableFuntions();
+        disableFunctions();
     }
-
     function closePvTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.pvTrendMaxBg').eq(activeAcc).hide();
         $('.pvTrendMax').eq(activeAcc).hide();
         enableFunctions()
     }
 
-
-
-
-    //Show int amount of rows in accordion
+    //Limit amount of accordion elements shown
     function limitRowsAccordion(int){
         $("#accordion").show();
         var count = 0;
@@ -617,24 +788,19 @@ $(document).ready(function () {
             });
         }
 
-
     $('#showPages').change(function() {
         limitRowsAccordion($(this).val());
     });
 
-
-
-  $("#searchLink").keyup(function(){
-
+    //Search function
+    $("#searchLink").keyup(function(){
         var searchTerm = $("#searchLink").val().toLowerCase();
-
         if(searchTerm == ''){
             $('#showPages').show();
             $('#showPagesLabel').show();
             limitRowsAccordion($('#showPages').val());
             return false;
         }
-
         else{
             b = true;
             $('#showPages').hide();
@@ -657,61 +823,8 @@ $(document).ready(function () {
         }
     });
 
-    
-    //calculate status of accordion
-    function calculateStatusBounceRate(actualPercentage){
-        var status;
-        if(actualPercentage < 25){
-            status = 0;
-        }
-        else if(actualPercentage >= 25 && actualPercentage < 30){
-            status = 1;
-        }
-        else if(actualPercentage >= 30){
-            status = 2;
-        }
-        else{
-            return false;
-        }
-        return status;
-    }
-
-    function calculateStatusPageviews(actualPageviews){
-        var status;
-        if(actualPageviews < 1.3){
-            status = 0;
-        }
-        else if(actualPageviews >= 1.3 && actualPageviews < 1.5){
-            status = 1;
-        }
-        else if(actualPageviews >= 1.5){
-            status = 2;
-        }
-        else{
-            return false;
-        }
-        return status;
-    }
-
-    function calculateStatusAverageTime(actualAT, goalMinAT, goalMaxAT){
-        var status;
-        if((actualAT > goalMinAT && actualAT < goalMaxAT) || actualAT == goalMinAT || actualAT == goalMaxAT){
-            status = 0;
-        }
-        else if((actualAT > goalMinAT-10 && actualAT < goalMinAT) || (actualAT > goalMaxAT && actualAT < goalMaxAT+10)){
-            status = 1;
-        }
-        else if(actualAT <= goalMinAT-10 || actualAT >= goalMaxAT){
-            status = 2;
-        }
-        else{
-            return false;
-        }
-        return status;
-    }
-
 //Temporary function to work around 'no Access-Control-Allow-Origin' from ajax calls
-    window.onload = function urlWordCounter() {
+   window.onload = function urlWordCounter() {
         // jquery.xdomainajax.js  ------ from padolsey
         jQuery.ajax = (function (_ajax) {
             var protocol = location.protocol,
@@ -759,7 +872,4 @@ $(document).ready(function () {
             };
         })(jQuery.ajax);
     }
-
-
-
 });

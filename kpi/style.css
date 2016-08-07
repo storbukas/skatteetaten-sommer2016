@@ -181,6 +181,7 @@ tbody th{
 /*------------------------------------------------------------------------------------------------------------*/
 
 /*Sub Side Menu*/
+/*
 .sub-side-nav li{
     height: 3em;}
 
@@ -226,6 +227,8 @@ tbody th{
     border-bottom-style: solid;
     border-bottom-color: #f4f4f4;}
 
+*/
+
 
 /*Content*/
 .content-wrapper {
@@ -233,7 +236,11 @@ tbody th{
     padding: 1%;
     padding-top: 0.5%;}
 
-
+#loading{
+    text-align: center;
+    margin-top: 12%;
+    color: #000;
+}
 
 /*--header with numbers--*/
 #menuButtonWrapper{
@@ -253,7 +260,7 @@ tbody th{
     overflow: hidden;
     float: left;}
 
-.content-header{
+.main-header{
     width: 85%;
     margin-top: 3%;
     position: relative;
@@ -522,7 +529,9 @@ tbody th{
     color: #f59fa7;} /*accordion header end*/
 
 /*accordion content/table*/
-#accordion .ui-accordion-content{
+
+.accordionDiv{
+    padding-top: 2%;
     border: none;
     width: 85%;
     margin: 0 7.5% 0 7.5%;}
@@ -546,8 +555,24 @@ tbody th{
     border-bottom: 2px solid #554f4f;
 }
 
+.table>tbody>tr {
+    height: 3.25em;
+}
+
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top: 1px solid #bababa;
+}
+
+.boldTableBorder{
+    border-bottom: 2px solid #554f4f;
+}
+
+.table>tbody>.noBorder>td, .table>tbody>.noBorder>th{
+    border: none;
+}
+
+.table>tbody>.noBorder {
+    height: 2.5em;
 }
 
 

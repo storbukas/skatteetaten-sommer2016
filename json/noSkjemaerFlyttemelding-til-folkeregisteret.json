@@ -1,0 +1,30 @@
+{
+    "url": "/no/Skjemaer/Flyttemelding-til-folkeregisteret/",
+    "pageviews": "1825246",
+    "unique_pageviews": "1402597",
+    "avg_time_on_page": "22.3323917050889",
+    "bounce_rate": "6.068973966699205",
+    "external_link":[
+        {"type" : "Altinn.no", "amount": "100645"},
+        {"type" : "Posten.no", "amount": "2724"}
+    ],
+    "voc": [
+        {"svar": "no", "antall": "105"},
+        {"svar": "yes", "antall": "12"}
+    ],
+    "chat": "1500",
+    "contact_us": "630",
+    "search": "3662",
+    "search_term_top10": [
+        {"frase": "skattekort", "amount": "221"},
+        {"frase": "frikort", "amount": "209"},
+        {"frase": "Frikort", "amount": "134"},
+        {"frase": "Skattekort", "amount": "130"},
+        {"frase": "skatteoppgjør", "amount": "77"},
+        {"frase": "Mine arbeidsgivere", "amount": "41"},
+        {"frase": "skatteoppgjøret", "amount": "33"},
+        {"frase": "mine arbeidsgivere", "amount": "31"},
+        {"frase": "faktura", "amount": "23"},
+        {"frase": "Skatteoppgjør", "amount": "23"}
+    ]
+}

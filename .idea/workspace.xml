@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffa3132-5ba3-43d6-b836-096617aca955" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eksempel.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report_last_year.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/standard-report-1month.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/standard-report-compareTo.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/index.html" afterPath="$PROJECT_DIR$/kpi/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/index.js" afterPath="$PROJECT_DIR$/kpi/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard-report-1month.json" afterPath="$PROJECT_DIR$/standard-report-1month.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/person.html" afterPath="$PROJECT_DIR$/kpi/person.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/style.css" afterPath="$PROJECT_DIR$/kpi/style.css" />
     </list>
     <ignored path="skatteetaten.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,41 +32,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="person.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kpi/person.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-268">
-              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kpi/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="190" column="29" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="29" />
+            <state relative-caret-position="379">
+              <caret line="559" column="24" selection-start-line="559" selection-start-column="24" selection-end-line="559" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard-report-1month.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard-report-1month.json">
+      <file leaf-file-name="report.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/report.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="204">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/report.json">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
+            <state relative-caret-position="442">
+              <caret line="574" column="15" selection-start-line="574" selection-start-column="15" selection-end-line="574" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -69,8 +65,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kpi/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="183" column="40" selection-start-line="183" selection-start-column="40" selection-end-line="183" selection-end-column="40" />
+            <state relative-caret-position="119">
+              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noSkjemaerFlyttemelding-til-folkeregisteret.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -93,12 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kpi/menu.html" />
-        <option value="$PROJECT_DIR$/kpi/topMenu.html" />
-        <option value="$PROJECT_DIR$/kpi/header.html" />
-        <option value="$PROJECT_DIR$/kpi/footer.html" />
-        <option value="$PROJECT_DIR$/test/index.html" />
-        <option value="$PROJECT_DIR$/kpi/includeHeader.js" />
         <option value="$PROJECT_DIR$/kpi/midlertidig.html" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no.html" />
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/bedriftOgOrganisasjon.html" />
@@ -128,34 +138,41 @@
         <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" />
         <option value="$PROJECT_DIR$/kpi/kpi.css" />
         <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" />
-        <option value="$PROJECT_DIR$/kpi/index.html" />
         <option value="$PROJECT_DIR$/kpi/publikumsdata.html" />
         <option value="$PROJECT_DIR$/kpi/radgiver.html" />
         <option value="$PROJECT_DIR$/kpi/om_skatteetaten.html" />
         <option value="$PROJECT_DIR$/kpi/bedrift_og_organisasjon.html" />
-        <option value="$PROJECT_DIR$/kpi/person.html" />
         <option value="$PROJECT_DIR$/kpi/selvangivelse.html" />
         <option value="$PROJECT_DIR$/kpi/skattekort.html" />
-        <option value="$PROJECT_DIR$/kpi/style.css" />
         <option value="$PROJECT_DIR$/standard-report-compareTo.json" />
         <option value="$PROJECT_DIR$/report_last_year.json" />
-        <option value="$PROJECT_DIR$/kpi/index.js" />
-        <option value="$PROJECT_DIR$/standard-report-1month.json" />
         <option value="$PROJECT_DIR$/report.json" />
+        <option value="$PROJECT_DIR$/standard-report-1month.json" />
+        <option value="$PROJECT_DIR$/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+        <option value="$PROJECT_DIR$/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+        <option value="$PROJECT_DIR$/kpi/person.html" />
+        <option value="$PROJECT_DIR$/kpi/index.html" />
+        <option value="$PROJECT_DIR$/json/report.json" />
+        <option value="$PROJECT_DIR$/json/report_last_year.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json" />
+        <option value="$PROJECT_DIR$/kpi/style.css" />
+        <option value="$PROJECT_DIR$/kpi/index.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -182,6 +199,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,18 +243,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="kpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datepicker" />
+              <option name="myItemId" value="json" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,17 +261,17 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\skatteetaten" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\images" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
       <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\moment-duration-format" />
       <recent name="C:\Users\Administrator\Documents\skatteetaten" />
       <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\skatteetaten.no" />
       <recent name="C:\Users\Daphne\Documents\jobb\skatteetaten\kpi\skatteetaten.no\person" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Documents\skatteetaten" />
-      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\images" />
-      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
     </key>
   </component>
   <component name="RunManager">
@@ -356,17 +369,21 @@
       <workItem from="1470296183161" duration="20158000" />
       <workItem from="1470318333004" duration="1426000" />
       <workItem from="1470382427824" duration="15471000" />
+      <workItem from="1470409242793" duration="20991000" />
+      <workItem from="1470439511088" duration="3324000" />
+      <workItem from="1470477468140" duration="30077000" />
+      <workItem from="1470589632608" duration="10051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345802000" />
+    <option name="totallyTimeSpent" value="410245000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19599578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17261904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -380,7 +397,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034669556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034369886" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -400,14 +417,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/server.js" />
-    <entry file="file://$PROJECT_DIR$/test/index.html" />
-    <entry file="file://$PROJECT_DIR$/test/header.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/server.js" />
-    <entry file="file://$PROJECT_DIR$/kpi/includeHeader.js" />
-    <entry file="file://$PROJECT_DIR$/kpi/intranettet/intranettet.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/omSkatteetaten.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/radgiver.html" />
     <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/bedriftOgOrganisasjon.html" />
     <entry file="file://$PROJECT_DIR$/kpi/head.html" />
     <entry file="file://$PROJECT_DIR$/kpi/css/sb-admin.css">
@@ -437,9 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="2767" column="34" selection-start-line="2767" selection-start-column="32" selection-end-line="2767" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -494,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="1046" column="0" selection-start-line="1046" selection-start-column="0" selection-end-line="1052" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -516,13 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="6801" column="31" selection-start-line="6801" selection-start-column="31" selection-end-line="6801" selection-end-column="31" />
-          <folding>
-            <marker date="1470311234829" expanded="true" signature="22451:22522" ph="..." />
-            <marker date="1470311234829" expanded="true" signature="22545:22569" ph="..." />
-            <marker date="1470311234829" expanded="true" signature="105475:105492" ph="..." />
-            <marker date="1470311234829" expanded="true" signature="120107:120123" ph="..." />
-            <marker date="1470311234829" expanded="true" signature="277239:277283" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -568,74 +565,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/style.css">
+    <entry file="file://$PROJECT_DIR$/eksempel.json" />
+    <entry file="file://$PROJECT_DIR$/report_last_year.json" />
+    <entry file="file://$PROJECT_DIR$/report.json" />
+    <entry file="file://$PROJECT_DIR$/standard-report-compareTo.json" />
+    <entry file="file://$PROJECT_DIR$/standard-report-1month.json" />
+    <entry file="file://$PROJECT_DIR$/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+    <entry file="file://$PROJECT_DIR$/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+    <entry file="file://$PROJECT_DIR$/kpi/person.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eksempel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="373" column="10" selection-start-line="373" selection-start-column="10" selection-end-line="373" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard-report-compareTo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report_last_year.json">
+    <entry file="file://$PROJECT_DIR$/json/report_last_year.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/person.html">
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        <state relative-caret-position="306">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/report.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kpi/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="183" column="40" selection-start-line="183" selection-start-column="40" selection-end-line="183" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="574" column="15" selection-start-line="574" selection-start-column="15" selection-end-line="574" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kpi/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="190" column="29" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="29" />
+        <state relative-caret-position="379">
+          <caret line="559" column="24" selection-start-line="559" selection-start-column="24" selection-end-line="559" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard-report-1month.json">
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report.json">
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
+        <state relative-caret-position="238">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding />
         </state>
       </provider>
