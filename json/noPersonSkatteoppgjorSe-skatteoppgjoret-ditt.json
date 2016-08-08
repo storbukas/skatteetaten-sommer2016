@@ -1,66 +1,17 @@
 {
     "url": "/no/Person/Skatteoppgjor/Se-skatteoppgjoret-ditt/",
-
-    "pageviews": "1424213",
-
-    "unique_pageviews": "1212741",
-
-    "avg_time_on_page": "257.6969465223422",
-
-    "bounce_rate": "19.404247047961515",
-
-    "external_link": [
-        {
-            "type" : "Altinn.no",
-            "amount": "52645"
-        }
+    "pageviews": "392483",
+    "unique_pageviews": "325008",
+    "avg_time_on_page": "259",
+    "bounce_rate": "19.82",
+    "external_click": [
+        {"type" : "Altinn.no", "amount": "253488"}
     ],
-
     "voc": [
-        {
-            "svar": "no",
-            "antall": "105"},
-        {
-            "svar": "yes",
-            "antall": "12"}
+        {"svar": "no", "antall": "284"},
+        {"svar": "yes", "antall": "53"}
     ],
-
-    "chat": "",
-
-    "contact_us": "730",
-
-    "search": "3262",
-
-    "search_term_top10": [
-        {
-            "frase": "skattekort", "amount": "221"
-        },
-        {
-            "frase": "frikort", "amount": "209"
-        },
-        {
-            "frase": "Frikort", "amount": "134"
-        },
-        {
-            "frase": "Skattekort", "amount": "130"
-        },
-        {
-            "frase": "skatteoppgjør", "amount": "77"
-        },
-        {
-            "frase": "Mine arbeidsgivere", "amount": "41"
-        },
-        {
-            "frase": "skatteoppgjøret", "amount": "33"
-        },
-        {
-            "frase": "mine arbeidsgivere", "amount": "31"
-        },
-        {
-            "frase": "faktura", "amount": "23"
-        },
-        {
-            "frase": "Skatteoppgjør", "amount": "23"
-        }
-    ]
+    "chat": "798",
+    "contact_us": "11",
+    "search": "100"
 }

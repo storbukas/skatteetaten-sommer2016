@@ -1,0 +1,17 @@
+{
+    "url": "/no/Person/Selvangivelse/Selvangivelse-for-lonnstakere-og-pensjonister/",
+    "pageviews": "106630",
+    "unique_pageviews": "92424",
+    "avg_time_on_page": "124",
+    "bounce_rate": "33.11",
+    "external_click":[
+        {"type" : "Altinn.no", "amount": "44552"}
+    ],
+    "voc": [
+        {"svar": "no", "antall": "158"},
+        {"svar": "yes", "antall": "0"}
+    ],
+    "chat": "578",
+    "contact_us": "20",
+    "search": "70"
+}

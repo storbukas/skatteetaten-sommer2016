@@ -1,0 +1,17 @@
+{
+    "url": "/no/Skjemaer/Skjema-for-a-bestille-skattekort/",
+    "pageviews": "43856",
+    "unique_pageviews": "31264",
+    "avg_time_on_page": "219",
+    "bounce_rate": "38.84",
+    "external_click":[
+        {"type" : "Altinn.no", "amount": "95"}
+    ],
+    "voc": [
+        {"svar": "no", "antall": "42"},
+        {"svar": "yes", "antall": "0"}
+    ],
+    "chat": "",
+    "contact_us": "730",
+    "search": "3262"
+}

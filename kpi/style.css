@@ -563,7 +563,11 @@ tbody th{
     border-top: 1px solid #bababa;
 }
 
-.boldTableBorder{
+.boldTableBorderTop{
+    border-top: 2px solid #554f4f;
+}
+
+.boldTableBorderBottom{
     border-bottom: 2px solid #554f4f;
 }
 
@@ -573,6 +577,11 @@ tbody th{
 
 .table>tbody>.noBorder {
     height: 2.5em;
+}
+
+.table>tbody>.sumRow>th,
+.table>tbody>.sumRow>td{
+    font-weight: bold !important;
 }
 
 

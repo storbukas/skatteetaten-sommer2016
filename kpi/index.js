@@ -140,7 +140,6 @@ $(document).ready(function () {
         var compareToDate = compareToStartDate.format('DD.MM.YYYY') + ' - ' + compareToEndDate.format('DD.MM.YYYY');
         $("#dateInHeader").text(dateInput);
         $("#dateInHeaderCompareTo").text(compareToDate);
-        hideCompareTo();
     });
     
     //Show last year if compare to is checked /*note that the default value is set to hide*/
@@ -217,7 +216,7 @@ $(document).ready(function () {
                     dataMap.set("unique_pageviews", data.unique_pageviews);
                     dataMap.set("avg_time_on_page", data.avg_time_on_page);
                     dataMap.set("bounce_rate", data.bounce_rate);
-                    dataMap.set("external_link", data.external_link);
+                    dataMap.set("external_click", data.external_click);
                     dataMap.set("voc", data.voc);
                     dataMap.set("chat", data.chat);
                     dataMap.set("contact_us", data.contact_us);
@@ -238,7 +237,7 @@ $(document).ready(function () {
                     dataMap.set("unique_pageviews", data.unique_pageviews);
                     dataMap.set("avg_time_on_page", data.avg_time_on_page);
                     dataMap.set("bounce_rate", data.bounce_rate);
-                    dataMap.set("external_link", data.external_link);
+                    dataMap.set("external_click", data.external_click);
                     dataMap.set("voc", data.voc);
                     dataMap.set("chat", data.chat);
                     dataMap.set("contact_us", data.contact_us);
@@ -281,7 +280,14 @@ $(document).ready(function () {
             var page_url = element.get("url");
             var page_smily = 'fa fa-smile-o';
             var unique_pageviews = element.get("unique_pageviews");
-            var unique_pageviews_last_year = last_year.get("unique_pageviews");
+            var unique_pageviews_last_year;
+
+            if(last_year.get("unique_pageviews") != ""){
+                unique_pageviews_last_year = last_year.get("unique_pageviews");
+            }
+            else{
+                unique_pageviews_last_year = "-"
+            };
 
             /*Creates <h4> element*/
             createHeaderOfAccordion(page_number, page_url, page_smily, unique_pageviews, unique_pageviews_last_year);
@@ -293,102 +299,211 @@ $(document).ready(function () {
             /*Pageviews*/
             var pageviewsName = "Sidevisninger ÷ Unike";
             var pvActual = (element.get("pageviews") / unique_pageviews).toFixed(1);
-            var pvActualCompareTo = +(((last_year.get("pageviews") / (last_year.get("unique_pageviews"))) * 10) / 10).toFixed(1);
+            var pvActualCompareTo;
+            if(last_year.get("pageviews") != ""){
+                pvActualCompareTo = +(((last_year.get("pageviews") / (last_year.get("unique_pageviews"))) * 10) / 10).toFixed(1);
+            }
+            else{
+                pvActualCompareTo = "-";
+            }
             var pvGoal = "< 1.3";
             var pvTrend = ["pageviewTrend trendMinimized pvTrend_click", "pageviewTrend trendMaximized pvTrendMax", "pvTrendExit trendExit fa fa-times"]
             var pvStatus = calculateStatusPageviews(pvActual);
+            var pageviewsRow = createRowOfTable(pageviewsName, pvActual, pvActualCompareTo, pvGoal, pvTrend, pvStatus);
 
             /*Average time on page*/
             var averageTimeName = "Gjennomsnittstid";
             var aTActual = moment.duration(Math.round(element.get("avg_time_on_page")), "seconds").format("mm:ss", {trim: false});
-            var aTActualCompareTo = moment.duration(Math.round(last_year.get("avg_time_on_page")), "seconds").format("mm:ss", {trim: false});
+            var aTActualCompareTo;
+            if(last_year.get("avg_time_on_page") != ""){
+                aTActualCompareTo = moment.duration(Math.round(last_year.get("avg_time_on_page")), "seconds").format("mm:ss", {trim: false});
+            }
+            else{
+                aTActualCompareTo = "-";
+            }
+
             var aTGoal = (moment.duration((noOfWords / 500), "minutes").format("mm:ss", {trim: false}))
                 + " - "
                 + moment.duration((noOfWords / 150), "minutes").format("mm:ss", {trim: false});
-            var aTTrend = ["aTTrend trendMinimized aTTrend_click", "aTTrend trendMaximized aTTrendMax", "aTTrendExit trendExit fa fa-times"]
+            var aTTrend = ["aTTrend trendMinimized aTTrend_click", "aTTrend trendMaximized aTTrendMax", "aTTrendExit trendExit fa fa-times"];
             var aTStatus = calculateStatusAverageTime(element.get("avg_time_on_page"), (noOfWords / 500) * 60, (noOfWords / 150) * 60);
+            var averageTimeRow = createRowOfTable(averageTimeName, aTActual, aTActualCompareTo, aTGoal, aTTrend, aTStatus);
 
             /*Bounce rate*/
             var bounceRateName = "Fluktfrekvens";
             var bRActual = (+element.get("bounce_rate")).toFixed(2) + "%";
-            var bRActualCompareTo = (+last_year.get("bounce_rate")).toFixed(2) + "%";
+            var bRActualCompareTo;
+            if(last_year.get("bounce_rate") != ""){
+                bRActualCompareTo = (+last_year.get("bounce_rate")).toFixed(2) + "%";
+            }
+            else{
+                bRActualCompareTo = "-";
+            }
             var bRGoal = "< 25%";
             var bRTrend = ["bRTrend trendMinimized bRTrend_click", "bRTrend trendMaximized bRTrendMax", "bRTrendExit trendExit fa fa-times"]
-            var bRStatus = calculateStatusBounceRate((+last_year.get("bounce_rate")).toFixed(2));
+            var bRStatus = calculateStatusBounceRate((+element.get("bounce_rate")).toFixed(2));
+            var bounceRateRow = createRowOfTable(bounceRateName, bRActual, bRActualCompareTo, bRGoal, bRTrend, bRStatus);
 
-            /*External link*/
+            /*External click*/
             var externalClickRows = [];
-            $.each(element.get("external_link"), function(index, item){
-                last_year_external = last_year.get("external_link");
+            var externalClickLength = element.get("external_click").length;
+            $.each(element.get("external_click"), function(index, item){
+                var last_year_external = last_year.get("external_click");
                 var externalClickName = item.type;
                 var eCActual = +(item.amount/unique_pageviews*100).toFixed(2) + "%";
-                var eCActualCompareTo = +(last_year_external[index].amount/unique_pageviews_last_year*100).toFixed(2) + "%";
-                var eCGoal = "> 70%";
+                var eCActualCompareTo
+                if(last_year_external[index].amount != ""){
+                    eCActualCompareTo = +(last_year_external[index].amount/unique_pageviews_last_year*100).toFixed(2) + "%";
+                }
+                else{
+                    eCActualCompareTo = "-"
+                }
+                var eCGoal = "> " + Math.round(70/externalClickLength) + "%";
                 var eCTrend = "";
-                var eCStatus = calculateStatusExternalClick((item.amount/unique_pageviews*100).toFixed(2));
+                var eCStatus = calculateStatusExternalClick((item.amount/unique_pageviews*100).toFixed(2), Math.round(70/externalClickLength));
                 var row = createRowOfTable(externalClickName, eCActual, eCActualCompareTo, eCGoal, eCTrend, eCStatus);
                 externalClickRows.push(row);
             });
 
+
+            /*List of VOC, chat, contact us and search*/
+            var sumList = [];
+            var sumListLastYear = [];
+
             /*Question box/VOC*/
-            var questionBoxName = "Spørreboks - \"Nei\"";
-            var noAnswer = element.get("voc")[0].antall;
-            var yesAnswer = element.get("voc")[1].antall;
-            var noAnswerLastYear = last_year.get("voc")[0].antall;
-            var yesAnswerLastYear = last_year.get("voc")[1].antall;
-            var calcQBpercentage = +((noAnswer * 100) / (+noAnswer + +yesAnswer)).toFixed(2) + "%";
-            var calcQBpercentageLastYear = +((noAnswerLastYear * 100) / (+noAnswerLastYear + +yesAnswerLastYear)).toFixed(2) + "%";
-            var qBActual = noAnswer + " (" + calcQBpercentage + ")";
-            var qBActualCompareTo = noAnswerLastYear + " (" + calcQBpercentageLastYear + ")";
-            var qBGoal = "< 70%";
-            var qBTrend = "";
-            var qBStatus = calculateStatusVOC(+((noAnswer * 100) / (+noAnswer + +yesAnswer)).toFixed(2));
+            if(element.get("voc") != ""){
+                var questionBoxName = "Spørreboks - \"Nei\"";
+                var noAnswer = element.get("voc")[0].antall;
+                var yesAnswer = element.get("voc")[1].antall;
+                var calcQBpercentage = 0;
+                if(noAnswer != 0){
+                    calcQBpercentage = +((noAnswer * 100) / (+noAnswer + +yesAnswer)).toFixed(2);
+                }
+                var calcQBpercentageLastYear;
+                if(last_year.get("voc") != ""){
+                    var noAnswerLastYear = last_year.get("voc")[0].antall;
+                    var yesAnswerLastYear = last_year.get("voc")[1].antall;
+                    if(noAnswerLastYear != 0){
+                        calcQBpercentageLastYear = noAnswerLastYear + " (" +((noAnswerLastYear * 100) / (+noAnswerLastYear + +yesAnswerLastYear)).toFixed(2) + "%)";
+
+                    }
+                    else{
+                        calcQBpercentageLastYear = "0%";
+                    }
+                    sumListLastYear.push(noAnswerLastYear);
+                }
+                else{
+                    calcQBpercentageLastYear = "-";
+                }
+                var qBActual = noAnswer + " (" + calcQBpercentage + "%)";
+                var qBActualCompareTo = calcQBpercentageLastYear;
+                var qBGoal = "< 70%";
+                var qBTrend = "";
+                var qBStatus = calculateStatusVOC(calcQBpercentage);
+                var questionBoxRow = createRowOfTable(questionBoxName, qBActual, qBActualCompareTo, qBGoal, qBTrend, qBStatus);
+                sumList.push(noAnswer);
+
+            }
+            else{
+                questionBoxRow = null;
+            }
 
             /*Chat*/
-            var chatName = "Chat";
-            var chatActual = element.get("chat") + " (" + (element.get("chat")/unique_pageviews*100).toFixed(2) + "%)";
-            var chatActualCompareTo = last_year.get("chat") + " (" + (last_year.get("chat")/unique_pageviews_last_year*100).toFixed(2) + "%)";
-            var chatGoal = "< 1.5%";
-            var chatTrend = "";
-            var chatStatus = calculateStatusChatContactSearch((element.get("chat")/unique_pageviews*100).toFixed(2));
+            if(element.get("chat") != "") {
+                var chatName = "Chat";
+                var chatActual = element.get("chat") + " (" + (element.get("chat") / unique_pageviews * 100).toFixed(2) + "%)";
+                var chatActualCompareTo;
+                if(last_year.get("chat") != ""){
+                    chatActualCompareTo = last_year.get("chat") + " (" + (last_year.get("chat") / unique_pageviews_last_year * 100).toFixed(2) + "%)";
+                    sumListLastYear.push(last_year.get("chat"));
+                }
+                else{
+                    chatActualCompareTo = "-"
+                }
+                var chatGoal = "< 1.5%";
+                var chatTrend = "";
+                var chatStatus = calculateStatusChatContactSearch((element.get("chat") / unique_pageviews * 100).toFixed(2));
+                var chatRow = createRowOfTable(chatName, chatActual, chatActualCompareTo, chatGoal, chatTrend, chatStatus);
+                sumList.push(element.get("chat"));
+
+            }
+            else{
+                chatRow = null;
+            }
 
             /*Contact us*/
-            var contactUsName = "Kontakt oss";
-            var cUActual = element.get("contact_us") + " (" + (element.get("contact_us")/unique_pageviews*100).toFixed(2) + "%)";
-            var cUActualCompareTo = last_year.get("contact_us") + " (" + (last_year.get("contact_us")/unique_pageviews_last_year*100).toFixed(2) + "%)";
-            var cUGoal = "< 1.5%";
-            var cUTrend = "";
-            var cUStatus = calculateStatusChatContactSearch((element.get("contact_us")/unique_pageviews*100).toFixed(2));
+            if(element.get("contact_us") != "") {
+                var contactUsName = "Kontakt oss";
+                var cUActual = element.get("contact_us") + " (" + (element.get("contact_us") / unique_pageviews * 100).toFixed(2) + "%)";
+                var cUActualCompareTo;
+                if(last_year.get("contact_us")!= ""){
+                    cUActualCompareTo = last_year.get("contact_us") + " (" + (last_year.get("contact_us") / unique_pageviews_last_year * 100).toFixed(2) + "%)";
+                    sumListLastYear.push(last_year.get("contact_us"));
+                }
+                else{
+                    cUActualCompareTo = "-"
+                }
+                var cUGoal = "< 1.5%";
+                var cUTrend = "";
+                var cUStatus = calculateStatusChatContactSearch((element.get("contact_us") / unique_pageviews * 100).toFixed(2));
+                var contactUsRow = createRowOfTable(contactUsName, cUActual, cUActualCompareTo, cUGoal, cUTrend, cUStatus);
+                sumList.push(element.get("contact_us"));
+
+            }
+            else{
+                contactUsRow = null;
+            }
 
             /*Search*/
-            var searchName = "Søk";
-            var searchActual = element.get("search") + " (" + (element.get("search")/unique_pageviews*100).toFixed(2) + "%)";
-            var searchActualCompareTo = last_year.get("search") + " (" + (last_year.get("search")/unique_pageviews_last_year*100).toFixed(2) + "%)";
-            var searchGoal = "< 1.5%";
-            var searchTrend = "";
-            var searchStatus = calculateStatusChatContactSearch((element.get("search")/unique_pageviews*100).toFixed(2));
+            if(element.get("search") != "") {
+                var searchName = "Søkt seg videre";
+                var searchActual = element.get("search") + " (" + (element.get("search") / unique_pageviews * 100).toFixed(2) + "%)";
+                var searchActualCompareTo;
+                if(last_year.get("search")!= ""){
+                    searchActualCompareTo = last_year.get("search") + " (" + (last_year.get("search") / unique_pageviews_last_year * 100).toFixed(2) + "%)";
+                    sumListLastYear.push(last_year.get("search"));
+                }
+                else{
+                    searchActualCompareTo = "-"
+                }
+                var searchGoal = "< 1.5%";
+                var searchTrend = "";
+                var searchStatus = calculateStatusChatContactSearch((element.get("search") / unique_pageviews * 100).toFixed(2));
+                var searchRow = createRowOfTable(searchName, searchActual, searchActualCompareTo, searchGoal, searchTrend, searchStatus);
+                sumList.push(element.get("search"));
+
+            }
+            else{
+                searchRow = null;
+            }
 
             /*SUM*/
             var sumName = "Sum:";
-            var calcSum = +noAnswer + +element.get("chat") + +element.get("contact_us") + +element.get("search");
-            var calcSumLastYear = +noAnswerLastYear + +last_year.get("chat") + +last_year.get("contact_us") + +last_year.get("search");
+
+            var calcSum = 0;
+            var calcSumLastYear = 0;
+
+            $.each(sumList, function(index, item){
+                calcSum += +item;
+            });
+            $.each(sumListLastYear, function(index, item){
+                calcSumLastYear += +item;
+            });
+
             var sumActual = calcSum + " (" + (calcSum/unique_pageviews*100).toFixed(2) + "%)";
-            var sumActualCompareTo = calcSumLastYear + " (" + (calcSumLastYear/unique_pageviews_last_year*100).toFixed(2) + "%)";
+
+            var sumActualCompareTo;
+            if(calcSumLastYear != 0){
+                sumActualCompareTo = calcSumLastYear + " (" + (calcSumLastYear/unique_pageviews_last_year*100).toFixed(2) + "%)";
+            }
+            else{
+                sumActualCompareTo = "-";
+            }
+
             var sumGoal = "< 2%";
             var sumTrend = "";
             var sumStatus = calculateStatusSum((calcSum/unique_pageviews*100).toFixed(2));
-
-            /*Create rows of table*/
-            var pageviewsRow = createRowOfTable(pageviewsName, pvActual, pvActualCompareTo, pvGoal, pvTrend, pvStatus);
-            var averageTimeRow = createRowOfTable(averageTimeName, aTActual, aTActualCompareTo, aTGoal, aTTrend, aTStatus);
-            var bounceRateRow = createRowOfTable(bounceRateName, bRActual, bRActualCompareTo, bRGoal, bRTrend, bRStatus);
-            var questionBoxRow = createRowOfTable(questionBoxName, qBActual, qBActualCompareTo, qBGoal, qBTrend, qBStatus);
-            var chatRow = createRowOfTable(chatName, chatActual, chatActualCompareTo, chatGoal, chatTrend, chatStatus);
-            var contactUsRow = createRowOfTable(contactUsName, cUActual, cUActualCompareTo, cUGoal, cUTrend, cUStatus);
-            var searchRow = createRowOfTable(searchName, searchActual, searchActualCompareTo, searchGoal, searchTrend, searchStatus);
             var sumRow = createRowOfTable(sumName, sumActual, sumActualCompareTo, sumGoal, sumTrend, sumStatus);
-
-
 
             /*Creates <div> element*/
             createContentOfAccordion(pageviewsRow, averageTimeRow, bounceRateRow, externalClickRows, questionBoxRow,
@@ -530,22 +645,39 @@ $(document).ready(function () {
 
         $.each(externalClick_rows, function(index, row){
             tbody.appendChild(row);
-            if(index == externalClick_rows.length-1){
-                row.className = 'boldTableBorder';
-            }
         });
 
-        questionBox_row.className = 'noBorder';
-        chat_row.className = 'noBorder';
-        contactUs_row.className = 'noBorder';
-        search_row.className = 'noBorder';
-        sum_row.className = 'boldTableBorder'
-        
-        tbody.appendChild(questionBox_row);
-        tbody.appendChild(chat_row);
-        tbody.appendChild(contactUs_row);
-        tbody.appendChild(search_row);
+
+        var list = [];
+        if(questionBox_row != null){
+            questionBox_row.className = 'noBorder';
+            tbody.appendChild(questionBox_row);
+            list.push(questionBox_row);
+        }
+
+        if(chat_row != null){
+            chat_row.className = 'noBorder';
+            tbody.appendChild(chat_row);
+            list.push(chat_row);
+        }
+
+        if(contactUs_row != null){
+            contactUs_row.className = 'noBorder';
+            tbody.appendChild(contactUs_row);
+            list.push(contactUs_row);
+        }
+
+        if(search_row != null){
+            search_row.className = 'noBorder';
+            tbody.appendChild(search_row);
+            list.push(search_row);
+        }
+
+        list[0].className = "boldTableBorderTop";
+
+        sum_row.className = 'boldTableBorderBottom sumRow';
         tbody.appendChild(sum_row);
+
 
         /*Append <thead> and <tbody> to <table>*/
         table.appendChild(thead);
@@ -619,6 +751,7 @@ $(document).ready(function () {
         return tr;
     }
 
+    
     //Calculate status of rows
     function calculateStatusPageviews(actualPageviews){
         var status;
@@ -648,6 +781,8 @@ $(document).ready(function () {
 
     function calculateStatusBounceRate(actualPercentage){
         var status;
+        console.log(actualPercentage);
+
         if(actualPercentage < 25){
             status = 0;}
         else if(actualPercentage >= 25 && actualPercentage < 30){
@@ -659,13 +794,13 @@ $(document).ready(function () {
         return status;
     }
 
-    function calculateStatusExternalClick(actualPercentage){
+    function calculateStatusExternalClick(actualPercentage, goal){
         var status;
-        if(actualPercentage > 70){
+        if(actualPercentage > goal){
             status = 0;}
-        else if(actualPercentage <= 70 && actualPercentage > 60){
+        else if(actualPercentage <= goal && actualPercentage > goal-(goal/7)){
             status = 1;}
-        else if(actualPercentage <= 60){
+        else if(actualPercentage <= goal){
             status = 2;}
         else{
             return false;}
@@ -742,12 +877,12 @@ $(document).ready(function () {
     //Functions for opening and closing trend <div> elements
     function openBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.brTrendMax').eq(activeAcc).show();
+        $('.bRTrendMax').eq(activeAcc).show();
         disableFunctions();
     }
     function closeBrTrend (){
         var activeAcc = $('#accordion').accordion('option', 'active');
-        $('.brTrendMax').eq(activeAcc).hide();
+        $('.bRTrendMax').eq(activeAcc).hide();
         enableFunctions()
     }
     function openAtTrend () {
