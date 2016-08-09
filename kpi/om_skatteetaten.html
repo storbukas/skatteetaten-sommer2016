@@ -48,6 +48,7 @@
         </li>
         <li class="menu-button-side" id="person">
             <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/person.html" id="personMenu"> Person</a>
+
         </li>
         <li class="menu-button-side">
             <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/bedrift_og_organisasjon.html"> Bedrift og organis...</a>
@@ -58,9 +59,7 @@
         <li class="menu-button-side">
             <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/om_skatteetaten.html"> Om Skatteetaten</a>
         </li>
-
         <div id="emptySpaceBottom"></div>
-
     </ul>
 
 
@@ -71,7 +70,7 @@
             <a href="#menu-toggle-open" class="font-helvetica-large" id="menu-toggle-open"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
             <!--Header-->
-            <div class="content-header">
+            <div class="main-header">
                 <div class="name-date-header header-block">
                     <h1 class="nameOfSite">Skatteetaten.no</h1>
                     <span id="dateInHeader" class="date font-helvetica-medium"></span><br>
@@ -129,18 +128,25 @@
             </div>
         </div>
 
+        <div id="loading">
+            <img src="http://localhost:8000/kpi/images/load.gif" alt="loading">
+            <p class="font-helvetica-small">Laster inn data...</p>
+        </div>
+
         <!--main box with information-->
         <div id="accordion-wrapper">
             <!--sort by, or copy paste link div-->
-
             <div id="sortSearch-accordionDiv">
                 <select id="sortPagesBy" class="font-helvetica-medium">
                     <option>Mest aktive sider</option>
-                    <option>Mest kristiske sider</option>
                 </select>
                 <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="   &#xf002;   Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
             </div>
 
+
+            <!--box with tables/accordion from jquery UI
+            <div id="accordion">
+            </div>-->
 
 
             <!--show limited amount of pages div-->
@@ -156,13 +162,12 @@
 
         </div>
     </div>
-
-
-
-
 </div>
-<script type="text/javascript" src="../standard-report-1month.json"></script>
 <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
+
+
+
+
 

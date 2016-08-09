@@ -27,7 +27,9 @@
     var active_top_url = location.href.split("/kpi")[1];
     $(document).ready(function () {
         if(active_top_url == "/"
-        || active_top_url == "/person.html"){
+        || active_top_url == "/person.html"
+        || active_top_url == "/skattekort.html"
+        || active_top_url == "/selvangivelse.html"){
             $(".menu-link-top").eq(0).addClass('activeTopMenu');
         }
 

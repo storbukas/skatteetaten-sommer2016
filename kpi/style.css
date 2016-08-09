@@ -159,7 +159,7 @@ tbody th{
 .menu-button-side {
     width: 15em;
 
-    border-right: solid 1px #bababa}
+    border-right: solid 1px #bababa;}
 
 .menu-link-side {
     height: 4.2em;
@@ -181,7 +181,7 @@ tbody th{
 /*------------------------------------------------------------------------------------------------------------*/
 
 /*Sub Side Menu*/
-/*
+
 .sub-side-nav li{
     height: 3em;}
 
@@ -190,12 +190,19 @@ tbody th{
     padding-bottom: 0;
     display: inline-block;
     height: 3em;
-    width: 205px;}
+    width: 15em;
+    border-right: solid 1px #bababa;
+    color: #000;
+}
+
+.sub-side-nav li a:hover{
+    background-color: #cff2f8 !important;
+  }
 
 .sub-side-nav li a span {
     vertical-align: top;
     line-height: 3em;
-    color: #000;}
+  }
 
 .sidebar-line{
     margin: 0 1em 0 0;
@@ -203,31 +210,33 @@ tbody th{
     display: inline-block;
     height: 3em;
     width: 0.2em;
-    background-color: #e1e1e1;}
+    background-color: #bababa;}
 
 .sidebar-dot{
-    margin: 0 0.3em 0 -1.60em;
+    margin: 0 0 0 -1.7em;
     display: inline-block;
-    height: 1em;
-    width: 1em;
-    background-color: #e1e1e1;
+    height: 1.2em;
+    width: 1.2em;
+    background-color: #bababa;
     margin-bottom: 1em;
     border-radius: 50%;}
 
-.activeSubSideMenu{
-    color: red!important;
+.active-dot{
+    border: solid 2px #000;
 }
 
-#sidebar-wrapper  > .activeSubSideMenu{
-    color: red;
-    background-color: #ececec;}
+.activeSubSideMenu{
+    font-weight: bold;
+    background-color: #cff2f8;
+}
+
 
 #person ul{
-    border-bottom-width: 2px;
+    border-bottom-width: 3px;
     border-bottom-style: solid;
-    border-bottom-color: #f4f4f4;}
+    border-bottom-color: #bababa;}
 
-*/
+
 
 
 /*Content*/

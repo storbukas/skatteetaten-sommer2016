@@ -24,9 +24,10 @@ var acc = $("#accordion");
 $(document).ready(function () {
 
     $(function activeButtonsControl(){ /*Sets active class on buttons in side menu and sub side menu*/
-        $(".sub-sidemenu-link").each(function(){
+        $(".sub-sidemenu-link").each(function(index){
             if($(this).attr("href") == location.href){
                 $(this).addClass('activeSubSideMenu');
+                $(".sidebar-dot").get(index).className = 'sidebar-dot active-dot';
             }
         });
         if(active_sideMenu_url == "/"){
