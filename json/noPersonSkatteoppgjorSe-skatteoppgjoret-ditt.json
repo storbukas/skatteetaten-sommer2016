@@ -1,0 +1,17 @@
+{
+    "url": "/no/Person/Skatteoppgjor/Se-skatteoppgjoret-ditt/",
+    "pageviews": "392483",
+    "unique_pageviews": "325008",
+    "avg_time_on_page": "259",
+    "bounce_rate": "19.82",
+    "external_click": [
+        {"type" : "Altinn.no", "amount": "253488"}
+    ],
+    "voc": [
+        {"svar": "no", "antall": "284"},
+        {"svar": "yes", "antall": "53"}
+    ],
+    "chat": "798",
+    "contact_us": "11",
+    "search": "100"
+}

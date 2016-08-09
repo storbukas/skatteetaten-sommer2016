@@ -1,80 +1,45 @@
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid" style="padding-left:0">
 
-            <ul class="nav navbar-nav" id="navbar-top" style="width: 92%">
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="file:///C:/Users/Administrator/Documents/skatteetaten/kpi/index.html">
-                       <!--<img src="http://10.42.0.1/skatteetatenLogo.jpg" alt="Skatteetaten logo" style="width: 20%">--><span class="font-helvetica-medium"> Hjem</span>
-                    </a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="file:///C:/Users/Administrator/Documents/skatteetaten/kpi/skatteetaten.no/skatteetaten.no.html">
-                        <i class="fa fa-external-link" aria-hidden="true"></i><span class="font-helvetica-medium"> Skatteetaten.no</span>
-                    </a>
-                </li>
+        <!-- Collect the nav links, forms, and other content for toggling -->
 
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-link" aria-hidden="true"></i><span class="font-helvetica-medium"> Intranettet</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="font-helvetica-medium"> Publikumsdata</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-globe" aria-hidden="true"></i><span class="font-helvetica-medium"> I media</span></a>
-                </li>
-                <li class="menu-button-top">
-                    <a class="menu-link-top" href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="font-helvetica-medium"> Hendelser</span></a>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <ul class="nav navbar-nav" id="navbar-top" style="width: 92%">
+            <li class="menu-button-top">
+                <img id="logo" alt="Brand" src="http://localhost:8000/kpi/images/LOGO.png">
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/">
+                    <i class="fa fa-external-link" aria-hidden="true"></i><span class="font-helvetica-large"> Skatteetaten.no</span>
+                </a>
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/intranettet.html"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="font-helvetica-large"> Intranettet</span></a>
+            </li>
+            <li class="menu-button-top">
+                <a class="menu-link-top" href="http://localhost:8000/kpi/publikumsdata.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="font-helvetica-large"> Publikumsdata</span></a>
+            </li>
+        </ul>
 
     </div><!-- /.container-fluid -->
 </nav>
+
+<script>
+    var active_top_url = location.href.split("/kpi")[1];
+    $(document).ready(function () {
+        if(active_top_url == "/"
+        || active_top_url == "/person.html"
+        || active_top_url == "/skattekort.html"
+        || active_top_url == "/selvangivelse.html"){
+            $(".menu-link-top").eq(0).addClass('activeTopMenu');
+        }
+
+        else if(active_top_url == "/intranettet.html"){
+            $(".menu-link-top").eq(1).addClass('activeTopMenu');
+        }
+
+        else if(active_top_url == "/publikumsdata.html"){
+            $(".menu-link-top").eq(2).addClass('activeTopMenu');
+        }
+    });
+</script>
 

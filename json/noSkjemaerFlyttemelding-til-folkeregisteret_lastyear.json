@@ -1,0 +1,18 @@
+{
+    "url": "/no/Skjemaer/Flyttemelding-til-folkeregisteret/",
+    "pageviews": "75825",
+    "unique_pageviews": "56621",
+    "avg_time_on_page": "204",
+    "bounce_rate": "29.28",
+    "external_click":[
+        {"type" : "Altinn.no", "amount": "38732"},
+        {"type" : "Posten.no", "amount": "1408"}
+    ],
+    "voc": [
+        {"svar": "no", "antall": "95"},
+        {"svar": "yes", "antall": "11"}
+    ],
+    "chat": "",
+    "contact_us": "730",
+    "search": "3262"
+}

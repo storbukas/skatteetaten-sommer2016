@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffa3132-5ba3-43d6-b836-096617aca955" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/bedrift_og_organisasjon.html" afterPath="$PROJECT_DIR$/kpi/bedrift_og_organisasjon.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/headerMenu.html" afterPath="$PROJECT_DIR$/kpi/headerMenu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/index.html" afterPath="$PROJECT_DIR$/kpi/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/kpi.css" afterPath="$PROJECT_DIR$/kpi/kpi.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/kpi.js" afterPath="$PROJECT_DIR$/kpi/kpi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/Person.html" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/Person.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/person/selvangivelse.html" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/person/selvangivelse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/person/skattekort.html" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/person/skattekort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" afterPath="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/index.js" afterPath="$PROJECT_DIR$/kpi/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/om_skatteetaten.html" afterPath="$PROJECT_DIR$/kpi/om_skatteetaten.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/person.html" afterPath="$PROJECT_DIR$/kpi/person.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/radgiver.html" afterPath="$PROJECT_DIR$/kpi/radgiver.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/selvangivelse.html" afterPath="$PROJECT_DIR$/kpi/selvangivelse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/skattekort.html" afterPath="$PROJECT_DIR$/kpi/skattekort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpi/style.css" afterPath="$PROJECT_DIR$/kpi/style.css" />
     </list>
     <ignored path="skatteetaten.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +32,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="skatteetaten.no.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="skatteetaten.no.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
+      <file leaf-file-name="headerMenu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selvangivelse.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/selvangivelse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skattekort.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/skattekort.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="530">
+              <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kpi/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="215" column="22" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kpi/person.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="471">
+              <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -57,9 +97,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -69,36 +109,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kpi/menu.html" />
-        <option value="$PROJECT_DIR$/kpi/topMenu.html" />
-        <option value="$PROJECT_DIR$/kpi/header.html" />
-        <option value="$PROJECT_DIR$/kpi/footer.html" />
-        <option value="$PROJECT_DIR$/test/index.html" />
-        <option value="$PROJECT_DIR$/kpi/includeHeader.js" />
-        <option value="$PROJECT_DIR$/kpi/index.js" />
-        <option value="$PROJECT_DIR$/kpi/midlertidig.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/bedriftOgOrganisasjon.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/radgiver.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/omSkatteetaten.html" />
-        <option value="$PROJECT_DIR$/kpi/intranettet/intranettet.html" />
-        <option value="$PROJECT_DIR$/kpi/head.html" />
-        <option value="$PROJECT_DIR$/kpi.css" />
-        <option value="$PROJECT_DIR$/kpi/css/sb-admin.css" />
-        <option value="$PROJECT_DIR$/kpi/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/person.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/selvangivelse.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skattekort.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js" />
-        <option value="$PROJECT_DIR$/kpi/headerMenu.html" />
-        <option value="$PROJECT_DIR$/kpi/kpi.js" />
         <option value="$PROJECT_DIR$/kpi/kpi.css" />
+        <option value="$PROJECT_DIR$/kpi/jquery-ui/jquery-ui.js" />
+        <option value="$PROJECT_DIR$/kpi/publikumsdata.html" />
+        <option value="$PROJECT_DIR$/standard-report-compareTo.json" />
+        <option value="$PROJECT_DIR$/report_last_year.json" />
+        <option value="$PROJECT_DIR$/report.json" />
+        <option value="$PROJECT_DIR$/standard-report-1month.json" />
+        <option value="$PROJECT_DIR$/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+        <option value="$PROJECT_DIR$/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
         <option value="$PROJECT_DIR$/kpi/index.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/Person.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/person/skattekort.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/person/selvangivelse.html" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css" />
-        <option value="$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html" />
+        <option value="$PROJECT_DIR$/json/noRadgiverRettskilderrundskriv-retningslinjer-og-andre-rettskilderavgiftsrundskrivarsavgift.json" />
+        <option value="$PROJECT_DIR$/json/noRadgiverRettskilderrundskriv-retningslinjer-og-andre-rettskilderavgiftsrundskrivarsavgift_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/report.json" />
+        <option value="$PROJECT_DIR$/json/report_last_year.json" />
+        <option value="$PROJECT_DIR$/json/ferdige/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/ferdige/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noPersonSkatteoppgjorSkatteoppgjoret-i-ar.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noPersonSkatteoppgjorSkatteoppgjoret-i-ar_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noSkjemaerSkjema-for-a-bestille-skattekort_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/uferdige/noSkjemaerSkjema-for-a-bestille-skattekort.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSelvangivelseSelvangivelse-for-lonnstakere-og-pensjonister.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSelvangivelseSelvangivelse-for-lonnstakere-og-pensjonister_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerSkjema-for-a-bestille-skattekort.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerSkjema-for-a-bestille-skattekort_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorRestskatt.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorRestskatt_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noPersonbil-og-andre-kjoretoyeierskifteomregistreringsavgift.json" />
+        <option value="$PROJECT_DIR$/json/noPersonbil-og-andre-kjoretoyeierskifteomregistreringsavgift_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSkatteoppgjoret-i-ar.json" />
+        <option value="$PROJECT_DIR$/json/noPersonSkatteoppgjorSkatteoppgjoret-i-ar_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter.json" />
+        <option value="$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/noBedrift-og-organisasjonStarte-bedriftJeg-vil-i-gangHobby-eller-naring.json" />
+        <option value="$PROJECT_DIR$/json/noBedrift-og-organisasjonStarte-bedriftJeg-vil-i-gangHobby-eller-naring_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort_lastyear.json" />
+        <option value="$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort.json" />
+        <option value="$PROJECT_DIR$/kpi/bedrift_og_organisasjon.html" />
+        <option value="$PROJECT_DIR$/kpi/om_skatteetaten.html" />
+        <option value="$PROJECT_DIR$/kpi/radgiver.html" />
+        <option value="$PROJECT_DIR$/kpi/person.html" />
+        <option value="$PROJECT_DIR$/kpi/skattekort.html" />
+        <option value="$PROJECT_DIR$/kpi/selvangivelse.html" />
+        <option value="$PROJECT_DIR$/kpi/headerMenu.html" />
+        <option value="$PROJECT_DIR$/kpi/index.js" />
+        <option value="$PROJECT_DIR$/kpi/style.css" />
       </list>
     </option>
   </component>
@@ -140,6 +201,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -172,27 +234,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skatteetaten.no" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,15 +248,17 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\json" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\json\ferdige" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\moment-duration-format" />
+      <recent name="C:\Users\Administrator\Documents\skatteetaten" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\skatteetaten" />
       <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\images" />
       <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Daphne\Documents\jobb\skatteetaten\kpi\skatteetaten.no\person" />
-      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi" />
-      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\skatteetaten.no" />
-      <recent name="C:\Users\Administrator\Documents\skatteetaten\kpi\hjem" />
     </key>
   </component>
   <component name="RunManager">
@@ -297,52 +342,53 @@
       <workItem from="1467460754028" duration="8876000" />
       <workItem from="1467553138812" duration="841000" />
       <workItem from="1467568663360" duration="10702000" />
-      <workItem from="1467612400376" duration="5566000" />
+      <workItem from="1467612400376" duration="14733000" />
+      <workItem from="1467700599771" duration="17268000" />
+      <workItem from="1467787045911" duration="22206000" />
+      <workItem from="1467876095512" duration="21023000" />
+      <workItem from="1467957830725" duration="17569000" />
+      <workItem from="1468219017986" duration="23674000" />
+      <workItem from="1468305334095" duration="11399000" />
+      <workItem from="1468391743652" duration="18717000" />
+      <workItem from="1468479387352" duration="21459000" />
+      <workItem from="1468564535923" duration="16545000" />
+      <workItem from="1470031650875" duration="24319000" />
+      <workItem from="1470296183161" duration="20158000" />
+      <workItem from="1470318333004" duration="1426000" />
+      <workItem from="1470382427824" duration="15471000" />
+      <workItem from="1470409242793" duration="20991000" />
+      <workItem from="1470439511088" duration="3324000" />
+      <workItem from="1470477468140" duration="30077000" />
+      <workItem from="1470589632608" duration="10051000" />
+      <workItem from="1470637542319" duration="23697000" />
+      <workItem from="1470731076475" duration="2610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105401000" />
+    <option name="totallyTimeSpent" value="436552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1670179" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14646997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034369886" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16741072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -360,276 +406,307 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.js">
+    <entry file="file://$PROJECT_DIR$/report.json" />
+    <entry file="file://$PROJECT_DIR$/standard-report-compareTo.json" />
+    <entry file="file://$PROJECT_DIR$/standard-report-1month.json" />
+    <entry file="file://$PROJECT_DIR$/noSkjemaerFlyttemelding-til-folkeregisteret.json" />
+    <entry file="file://$PROJECT_DIR$/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json" />
+    <entry file="file://$PROJECT_DIR$/json/noRadgiverRettskilderrundskriv-retningslinjer-og-andre-rettskilderavgiftsrundskrivarsavgift.json" />
+    <entry file="file://$PROJECT_DIR$/json/noRadgiverRettskilderrundskriv-retningslinjer-og-andre-rettskilderavgiftsrundskrivarsavgift_lastyear.json" />
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="119">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
+    <entry file="file://$PROJECT_DIR$/json/ferdige/noPersonSkatteoppgjorSkatteoppgjoret-i-ar.json" />
+    <entry file="file://$PROJECT_DIR$/json/ferdige/noPersonSkatteoppgjorSkatteoppgjoret-i-ar_lastyear.json" />
+    <entry file="file://$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
+    <entry file="file://$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        <state relative-caret-position="442">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.js">
+    <entry file="file://$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
+    <entry file="file://$PROJECT_DIR$/json/ferdige/noSkjemaerSkjema-for-a-bestille-skattekort_lastyear.json" />
+    <entry file="file://$PROJECT_DIR$/json/ferdige/noSkjemaerSkjema-for-a-bestille-skattekort.json" />
+    <entry file="file://$PROJECT_DIR$/json/report_last_year.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../gentelella-master – orginal/gentelella-master/src/scss/custom.scss" />
-    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76449">
-          <caret line="4497" column="17" selection-start-line="4497" selection-start-column="17" selection-end-line="4497" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/menu.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/kpi/bootstrap-theme.css" />
-    <entry file="file://$PROJECT_DIR$/kpi/css/plugins/morris.css" />
-    <entry file="file://$PROJECT_DIR$/kpi/topMenu.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/footer.html" />
-    <entry file="file://$PROJECT_DIR$/test/footer.html" />
-    <entry file="file://$PROJECT_DIR$/test/server.js" />
-    <entry file="file://$PROJECT_DIR$/test/index.html" />
-    <entry file="file://$PROJECT_DIR$/test/header.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/server.js" />
-    <entry file="file://$PROJECT_DIR$/kpi/includeHeader.js" />
-    <entry file="file://$PROJECT_DIR$/kpi/index.js" />
-    <entry file="file://$PROJECT_DIR$/kpi/intranettet/intranettet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/omSkatteetaten.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/radgiver.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/bedriftOgOrganisasjon.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/head.html" />
-    <entry file="file://$PROJECT_DIR$/kpi/css/sb-admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-349">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="154" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../gentelella-master – orginal/gentelella-master/src/scss/custom.scss" />
-    <entry file="file://$PROJECT_DIR$/kpi/midlertidig.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="75" column="42" selection-start-line="73" selection-start-column="11" selection-end-line="75" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="4296" column="0" selection-start-line="4296" selection-start-column="0" selection-end-line="4307" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/kpi.js">
+    <entry file="file://$PROJECT_DIR$/json/report.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="67" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSelvangivelseSelvangivelse-for-lonnstakere-og-pensjonister.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSelvangivelseSelvangivelse-for-lonnstakere-og-pensjonister_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerSkjema-for-a-bestille-skattekort_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerFlyttemelding-til-folkeregisteret.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorRestskatt.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="104" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorRestskatt_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonbil-og-andre-kjoretoyeierskifteomregistreringsavgift_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSkatteoppgjoret-i-ar.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSkatteoppgjoret-i-ar_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonFolkeregisterUtlevering-av-opplysningerAttesterVIKTIG-a-vite-nar-du-bestiller-attester-eller-utskrifter_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noBedrift-og-organisasjonStarte-bedriftJeg-vil-i-gangHobby-eller-naring.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noBedrift-og-organisasjonStarte-bedriftJeg-vil-i-gangHobby-eller-naring_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonbil-og-andre-kjoretoyeierskifteomregistreringsavgift.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noSkjemaerSkjema-for-a-bestille-skattekort.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/nnPersonSkattekort-og-forskotsskattFrikortBestill-frikort.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/noPersonSkatteoppgjorSe-skatteoppgjoret-ditt_lastyear.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kpi/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="136">
+          <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/Person.html">
+    <entry file="file://$PROJECT_DIR$/kpi/bedrift_og_organisasjon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="547">
+          <caret line="118" column="57" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/person/selvangivelse.html">
+    <entry file="file://$PROJECT_DIR$/kpi/om_skatteetaten.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        <state relative-caret-position="462">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/person/skattekort.html">
+    <entry file="file://$PROJECT_DIR$/kpi/radgiver.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        <state relative-caret-position="156">
+          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.css">
+    <entry file="file://$PROJECT_DIR$/kpi/person.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="471">
+          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kpi/skatteetaten.no/skatteetaten.no.html">
+    <entry file="file://$PROJECT_DIR$/kpi/skattekort.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="530">
+          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/selvangivelse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/headerMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kpi/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="215" column="22" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
           <folding />
         </state>
       </provider>
