@@ -2,9 +2,7 @@
  * Created by Administrator on 30.06.2016.
  */
 
-var active_sideMenu_url = location.href.split("/kpi")[1];
-
-//dates
+//Dates
 var start_date = moment().subtract(29, 'days');
 var end_date = moment();
 var compareToStartDate = moment(start_date).subtract(1, 'year');
@@ -16,10 +14,13 @@ var end_dateJSONformat = moment().format('MM.DD.YY');
 var top_pages_list = [];
 var top_pages_data = [];
 var top_pages_data_last_year = [];
+var top_pages_last_year_sorted = [];
 var numberOfWordsMap = new Map();
 
 //Jquery UI widget - accordion
 var acc = $("#accordion");
+
+var active_sideMenu_url = location.href.split("/kpi")[1];
 
 $(document).ready(function () {
 
@@ -156,7 +157,6 @@ $(document).ready(function () {
         $(".compareTo").hide();
     }
 
-
     $(function createMainHeader (){
         //Read JSON object with top pages and values for main header
         $.ajax({
@@ -199,7 +199,7 @@ $(document).ready(function () {
     });
 
     //Read Json object per page. Stores values in lists.
-    function topPagesData() { /*Read JSON for chose date*/
+    function topPagesData() { /*Read JSON for chosen date*/
         $.each(top_pages_list, function (index, url) {
             var JSONurl = url.replace(/\//g, "") + ".json";
             var JSONurl_lastyear = url.replace(/\//g, "") + "_lastyear.json";
@@ -269,12 +269,25 @@ $(document).ready(function () {
         });
     }
 
+    //Sort top_pages_data_last_year to match top_pages_data and run wordCounter() when other ajax calls are finished
+    $(document).ajaxStop(function( event, xhr, settings ) {
+        $.each(top_pages_data, function(index, element){
+            var url = element.get("url");
+            $.each(top_pages_data_last_year, function(index, element){
+                if(url == element.get("url")){
+                    top_pages_last_year_sorted.push(top_pages_data_last_year[index]);
+                }
+            });
+        });
+        wordCounter();
+    });
+
     //Creates content - note that the content is a Jquery UI accordion widget containing element of <h4><div>
     function createContent(){
         $.each(top_pages_data, function(index, element){
 
             /*List of values from last year*/
-            var last_year = top_pages_data_last_year[index];
+            var last_year = top_pages_last_year_sorted[index];
 
             /*Set header values*/
             var page_number = index + 1;
@@ -294,7 +307,6 @@ $(document).ready(function () {
             createHeaderOfAccordion(page_number, page_url, page_smily, unique_pageviews, unique_pageviews_last_year);
 
             /*Set div content values*/
-
             var noOfWords = numberOfWordsMap.get(page_url); /*number of words for the url*/
 
             /*Pageviews*/
@@ -322,7 +334,6 @@ $(document).ready(function () {
             else{
                 aTActualCompareTo = "-";
             }
-
             var aTGoal = (moment.duration((noOfWords / 500), "minutes").format("mm:ss", {trim: false}))
                 + " - "
                 + moment.duration((noOfWords / 150), "minutes").format("mm:ss", {trim: false});
@@ -386,7 +397,6 @@ $(document).ready(function () {
                     var yesAnswerLastYear = last_year.get("voc")[1].antall;
                     if(noAnswerLastYear != 0){
                         calcQBpercentageLastYear = noAnswerLastYear + " (" +((noAnswerLastYear * 100) / (+noAnswerLastYear + +yesAnswerLastYear)).toFixed(2) + "%)";
-
                     }
                     else{
                         calcQBpercentageLastYear = "0%";
@@ -426,7 +436,6 @@ $(document).ready(function () {
                 var chatStatus = calculateStatusChatContactSearch((element.get("chat") / unique_pageviews * 100).toFixed(2));
                 var chatRow = createRowOfTable(chatName, chatActual, chatActualCompareTo, chatGoal, chatTrend, chatStatus);
                 sumList.push(element.get("chat"));
-
             }
             else{
                 chatRow = null;
@@ -449,7 +458,6 @@ $(document).ready(function () {
                 var cUStatus = calculateStatusChatContactSearch((element.get("contact_us") / unique_pageviews * 100).toFixed(2));
                 var contactUsRow = createRowOfTable(contactUsName, cUActual, cUActualCompareTo, cUGoal, cUTrend, cUStatus);
                 sumList.push(element.get("contact_us"));
-
             }
             else{
                 contactUsRow = null;
@@ -472,7 +480,6 @@ $(document).ready(function () {
                 var searchStatus = calculateStatusChatContactSearch((element.get("search") / unique_pageviews * 100).toFixed(2));
                 var searchRow = createRowOfTable(searchName, searchActual, searchActualCompareTo, searchGoal, searchTrend, searchStatus);
                 sumList.push(element.get("search"));
-
             }
             else{
                 searchRow = null;
@@ -480,19 +487,15 @@ $(document).ready(function () {
 
             /*SUM*/
             var sumName = "Sum:";
-
             var calcSum = 0;
             var calcSumLastYear = 0;
-
             $.each(sumList, function(index, item){
                 calcSum += +item;
             });
             $.each(sumListLastYear, function(index, item){
                 calcSumLastYear += +item;
             });
-
             var sumActual = calcSum + " (" + (calcSum/unique_pageviews*100).toFixed(2) + "%)";
-
             var sumActualCompareTo;
             if(calcSumLastYear != 0){
                 sumActualCompareTo = calcSumLastYear + " (" + (calcSumLastYear/unique_pageviews_last_year*100).toFixed(2) + "%)";
@@ -500,7 +503,6 @@ $(document).ready(function () {
             else{
                 sumActualCompareTo = "-";
             }
-
             var sumGoal = "< 2%";
             var sumTrend = "";
             var sumStatus = calculateStatusSum((calcSum/unique_pageviews*100).toFixed(2));
@@ -547,10 +549,6 @@ $(document).ready(function () {
     }
 
 
-    //Run wordCounter() when other ajax calls are finished
-    $(document).ajaxStop(function( event, xhr, settings ) {
-        wordCounter();
-    });
 
     //Creates header <h4> of each accordion element
     function createHeaderOfAccordion(number, url, smileIndicator, unique_pageviews, unique_pageviews_last_year){
@@ -568,7 +566,7 @@ $(document).ready(function () {
         pageURLSpan.className = 'accordionLink font-helvetica-small';
         pageURLSpan.innerHTML = url;
 
-        /* <span><i> with smily indicator */
+        /*<span><i> with smily indicator*/
         var smilySpan = document.createElement('span');
         var smily = document.createElement('i');
         smilySpan.className = 'smilyIcon';
@@ -648,7 +646,7 @@ $(document).ready(function () {
             tbody.appendChild(row);
         });
 
-
+        /*adds classes to rows, classes that sets borders*/
         var list = [];
         if(questionBox_row != null){
             questionBox_row.className = 'noBorder';
@@ -675,7 +673,6 @@ $(document).ready(function () {
         }
 
         list[0].className = "boldTableBorderTop";
-
         sum_row.className = 'boldTableBorderBottom sumRow';
         tbody.appendChild(sum_row);
 
@@ -752,7 +749,6 @@ $(document).ready(function () {
         return tr;
     }
 
-    
     //Calculate status of rows
     function calculateStatusPageviews(actualPageviews){
         var status;
@@ -782,8 +778,6 @@ $(document).ready(function () {
 
     function calculateStatusBounceRate(actualPercentage){
         var status;
-        console.log(actualPercentage);
-
         if(actualPercentage < 25){
             status = 0;}
         else if(actualPercentage >= 25 && actualPercentage < 30){
@@ -846,8 +840,6 @@ $(document).ready(function () {
             return false;}
         return status;
     }
-
-
 
     //Disable functions - used when trend is clicked/maximized
     function disableFunctions(){
