@@ -1,8 +1,9 @@
+/*Body*/
 body {
     background-color: #f6f6f6;
     overflow-x: hidden;}
 
-/*Font*/
+/*Font styling*/
 .label-font{
     font-family: Helvetica, sans-serif;
     font-size: 16px;
@@ -84,11 +85,10 @@ tbody th{
 .activeTopMenu,
 .activeTopMenu:focus{
     color: #dbdbdb;
-    background-color: #9b5162;
-}
+    background-color: #9b5162;}
 
-/*Side Menu*/
-/* toggeling sidemenu*/
+
+/*Toggeling sidemenu*/
 #wrapper {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -115,8 +115,6 @@ tbody th{
 #wrapper.toggled #sidebar-wrapper {
     width: 15em;}
 
-
-
 #menu-toggle-close{
     white-space: nowrap;
     overflow: hidden;
@@ -125,7 +123,7 @@ tbody th{
     margin: 4% 5% 0 0;}
 
 
-/* styling sidemenu */
+/* Styling sidemenu */
 .side-nav {
     position: absolute;
     top: 65px;
@@ -134,7 +132,6 @@ tbody th{
     margin-left: -225px;
     border: none;
     border-radius: 0;
-
     background-color: #ffffff;
     overflow-x: hidden;}
 
@@ -149,16 +146,13 @@ tbody th{
     background-color: #fff;
     width: 15em;
     height: 100%;
-    display: inline-block;
-}
+    display: inline-block;}
 
 .sidebar-wrapper .activeSideMenu > .menu-link-side{
     border-right: solid 1px #f6f6f6 !important;}
 
-
 .menu-button-side {
     width: 15em;
-
     border-right: solid 1px #bababa;}
 
 .menu-link-side {
@@ -178,10 +172,7 @@ tbody th{
     border-top: solid 1px #bababa;
     border-bottom: solid 3px #bababa;}
 
-/*------------------------------------------------------------------------------------------------------------*/
-
-/*Sub Side Menu*/
-
+/*Styling sub side menu*/
 .sub-side-nav li{
     height: 3em;}
 
@@ -192,17 +183,14 @@ tbody th{
     height: 3em;
     width: 15em;
     border-right: solid 1px #bababa;
-    color: #000;
-}
+    color: #000;}
 
 .sub-side-nav li a:hover{
-    background-color: #cff2f8 !important;
-  }
+    background-color: #cff2f8 !important;}
 
 .sub-side-nav li a span {
     vertical-align: top;
-    line-height: 3em;
-  }
+    line-height: 3em;}
 
 .sidebar-line{
     margin: 0 1em 0 0;
@@ -222,13 +210,11 @@ tbody th{
     border-radius: 50%;}
 
 .active-dot{
-    border: solid 2px #000;
-}
+    border: solid 2px #000;}
 
 .activeSubSideMenu{
     font-weight: bold;
-    background-color: #cff2f8;
-}
+    background-color: #cff2f8;}
 
 
 #person ul{
@@ -237,21 +223,19 @@ tbody th{
     border-bottom-color: #bababa;}
 
 
-
-
-/*Content*/
+/*Content wrapper*/
 .content-wrapper {
     margin-top: 4.65em;
     padding: 1%;
     padding-top: 0.5%;}
 
+/*Loading gif*/
 #loading{
     text-align: center;
     margin-top: 12%;
-    color: #000;
-}
+    color: #000;}
 
-/*--header with numbers--*/
+/*--Main header and menu button div--*/
 #menuButtonWrapper{
     width: 100%;
     white-space: nowrap;
@@ -259,6 +243,7 @@ tbody th{
     text-align: center;
     margin-top: 0.3%;}
 
+/*Toggle-button*/
 #menu-toggle-open{
     width: 2%;
     color: #000;
@@ -269,6 +254,7 @@ tbody th{
     overflow: hidden;
     float: left;}
 
+/*Main header*/
 .main-header{
     width: 85%;
     margin-top: 3%;
@@ -292,8 +278,7 @@ tbody th{
 
 .name-date-header>h1 {
     margin-top: 0 !important;
-    margin-bottom: 2% !important;
-}
+    margin-bottom: 2% !important;}
 
 .name-date-header>h1{
     margin: 4%;}
@@ -302,11 +287,9 @@ tbody th{
     display: inline-block;
     background-color: #000;
     width: 2px;
-    height: 6em;} /*header with numbers end*/
+    height: 6em;}
 
-
-
-/*--sub header with datepicker and compare to-functioanlity--*/
+/*--Sub header with datepicker and compare to-functioanlity--*/
 .subHeaderDate{
     display: inline-block;
     width: 80%;
@@ -319,6 +302,7 @@ tbody th{
     color: #000;
     margin-top: 0;}
 
+/*Datepicker*/
 #datepickerInput{
     height: 1.8em;
     width: 14.05em;
@@ -332,15 +316,13 @@ tbody th{
 #datepickerInput:hover,
 #datepickerInput:active{
     border: solid 1px #1178bd;
-    cursor: pointer;
-}
+    cursor: pointer;}
 
 #datepickerInput:disabled{
     cursor: auto;
     border: solid 1px #bababa;
     background-color: #ebebe4;
-    color: #bababa;
-}
+    color: #bababa;}
 
 /*Checkbox styling from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes*/
 #date-checkbox-div{
@@ -383,8 +365,7 @@ tbody th{
     cursor: auto;
     border: solid 1px #bababa;
     background-color: #ebebe4;
-    color: #bababa;
-}
+    color: #bababa;}
 
 /* Check mark */
 .compareTo-checkDiv:after {
@@ -403,7 +384,7 @@ tbody th{
     height: 12px;
     transform: rotate(45deg);
     border: solid #fff;
-    border-width: 0 2px 2px 0;} /*Checkbox end*/ /*Subheader end*/
+    border-width: 0 2px 2px 0;}
 
 
 /*Accordion with table + sort and search functionality*/
@@ -434,15 +415,13 @@ tbody th{
 
 #sortPagesBy:hover{
     cursor: pointer;
-    border: solid 1px #1178bd;
-}
+    border: solid 1px #1178bd;}
 
 #sortPagesBy:disabled{
     cursor: auto;
     border: solid 1px #bababa;
     background-color: #ebebe4;
-    color: #bababa;
-}
+    color: #bababa;}
 
 
 #searchLink{
@@ -450,7 +429,7 @@ tbody th{
     height: 1.8em;
     float: right;
     width: 36.5%;
-    border: solid 1px #bababa;} /*sort and search end*/
+    border: solid 1px #bababa;}
 
 /*Limit of pages shown in accordion*/
 #showPagesDiv{
@@ -477,9 +456,9 @@ tbody th{
     cursor: auto;
     border: solid 1px #bababa;
     background-color: #ebebe4;
-    color: #bababa;}/*Limit of pages shown end*/
+    color: #bababa;}
 
-/*accordion with table*/
+/*Accordion with table*/
 #accordion{
     width: 100%;
     display: inline-block;
@@ -531,14 +510,12 @@ tbody th{
     float: right;}
 
 .accordionUniquePageviews p{
-    margin: 0;
-}
+    margin: 0;}
 
 .pageviewsPCompareTo{
-    color: #f59fa7;} /*accordion header end*/
+    color: #f59fa7;}
 
-/*accordion content/table*/
-
+/*Accordion content/table*/
 .accordionDiv{
     padding-top: 2%;
     border: none;
@@ -557,42 +534,32 @@ tbody th{
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     vertical-align: middle;
-    padding: 0.3em;
-}
+    padding: 0.3em;}
 
 .table>thead>tr>th {
-    border-bottom: 2px solid #554f4f;
-}
+    border-bottom: 2px solid #554f4f;}
 
 .table>tbody>tr {
-    height: 3.25em;
-}
+    height: 3.25em;}
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    border-top: 1px solid #bababa;
-}
+    border-top: 1px solid #bababa;}
 
 .boldTableBorderTop{
-    border-top: 2px solid #554f4f;
-}
+    border-top: 2px solid #554f4f;}
 
 .boldTableBorderBottom{
-    border-bottom: 2px solid #554f4f;
-}
+    border-bottom: 2px solid #554f4f;}
 
 .table>tbody>.noBorder>td, .table>tbody>.noBorder>th{
-    border: none;
-}
+    border: none;}
 
 .table>tbody>.noBorder {
-    height: 2.5em;
-}
+    height: 2.5em;}
 
 .table>tbody>.sumRow>th,
 .table>tbody>.sumRow>td{
-    font-weight: bold !important;
-}
-
+    font-weight: bold !important;}
 
 /*Trend Div*/
 .trendMinimized{
@@ -606,8 +573,7 @@ tbody th{
     opacity: 100;}
 
 .trendMinimized:hover{
-    cursor: pointer;
-}
+    cursor: pointer;}
 
 .trendMaximized{
     background-color: #cff2f8;
@@ -633,19 +599,4 @@ tbody th{
 .ui-widget-header .ui-state-disabled {
     opacity: .65;
     filter:Alpha(Opacity=65); /* support: IE8 */
-    background-image: none;} /*accordion content end*/ /*accordion end*/
-
-
-/*.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
-    border: 1px solid #cccccc;
-    background: #8094DD;
-    font-weight: normal;
-    color: #ffffff;
-}*/
-
-
-
-
-
-
-
+    background-image: none;}

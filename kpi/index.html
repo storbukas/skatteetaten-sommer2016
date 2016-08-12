@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <title>Skatteetaten | KPI</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
@@ -15,10 +12,11 @@
     <script src="jquery-ui/jquery-ui.js"></script>
     <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
 
-    <!-- Latest compiled JavaScript -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <!--moment and date picker, documentation: http://www.daterangepicker.com/-->
+    <!--Moment.js and date picker, documentation: http://www.daterangepicker.com/-->
     <script src="datepicker/moment.min.js"></script>
     <script src="moment-duration-format/moment-duration-format.js"></script>
     <script type="text/javascript" src="datepicker/daterangepicker.js"></script>
@@ -42,7 +40,6 @@
 <!--Side Menu-->
     <ul class="nav navbar-nav side-nav" id="sidebar-wrapper">
         <div id="emptySpaceTop"><a href="#menu-toggle-close" class="font-helvetica-large" id="menu-toggle-close"><i class="fa fa-times" aria-hidden="true"></i></a></div>
-
         <li class="menu-button-side">
             <a class="menu-link-side font-helvetica-medium" href="http://localhost:8000/kpi/"> Oversikt</a>
         </li>
@@ -61,14 +58,13 @@
         <div id="emptySpaceBottom"></div>
     </ul>
 
-
 <!--Content-->
 <div class="content-wrapper">
 
     <div id="menuButtonWrapper">
     <a href="#menu-toggle-open" class="font-helvetica-large" id="menu-toggle-open"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-    <!--Header-->
+    <!--Main header-->
     <div class="main-header">
         <div class="name-date-header header-block">
             <h1 class="nameOfSite">Skatteetaten.no</h1>
@@ -114,7 +110,7 @@
     </div>
 
 
-    <!--sub header with datepicker-->
+    <!--Sub header with datepicker-->
     <div class="subHeaderDate">
         <h2 class="subHeader">OVERSIKT</h2>
         <div id="date-checkbox-div">
@@ -127,14 +123,16 @@
         </div>
     </div>
 
+    <!--Loading gif-->
     <div id="loading">
         <img src="http://localhost:8000/kpi/images/load.gif" alt="loading">
         <p class="font-helvetica-small">Laster inn data...</p>
     </div>
 
-    <!--main box with information-->
+    <!--Accordion wrapper-->
     <div id="accordion-wrapper">
-        <!--sort by, or copy paste link div-->
+
+        <!--Sort by and search div-->
         <div id="sortSearch-accordionDiv">
             <select id="sortPagesBy" class="font-helvetica-medium">
                 <option>Mest aktive sider</option>
@@ -142,17 +140,14 @@
            <input type="text" id="searchLink" class="font-helvetica-medium" placeholder="   &#xf002;   Søk etter en bestemt side" style="font-family:Helvetica, FontAwesome">
         </div>
 
-        <!--box with tables/accordion from jquery UI-->
+        <!--Accordion widget from JQuery UI-->
         <div id="accordion">
-
             <!--<h4>
                 <span class="accordionNumber font-helvetica-medium">1 </span>
                 <span class="accordionLink font-helvetica-small">/no/Bedrift-og-organisasjon/Drive-bedrift/Arbeidsgiver/A-ordningen/Innsyn-i-hva-som-er-rapportert-inn-Mine-inntekter-og-arbeidsforhold/</span>
                 <span class="smilyIcon"><i class="fa fa-frown-o" aria-hidden="true"></i></span>
                 <span class="accordionBrukere font-helvetica-small"><p>Brukere: 23456789</p></span>
             </h4>
-
-
             <div>
                 <table class="table font-helvetica-small">
                     <thead>
@@ -164,8 +159,6 @@
                             <th>Mål %</th>
                         </tr>
                     </thead>
-
-
                     <tbody>
                         <tr>
                             <th scope="row">Fluktfrekvens</th>
@@ -205,11 +198,9 @@
                     </tbody>
                 </table>
             </div>-->
-
         </div>
 
-
-        <!--show limited amount of pages div-->
+        <!--Show limited amount of pages div-->
         <div id="showPagesDiv">
             <label id="showPagesLabel" class="label-font" for="showPages">Vis antall rader: </label>
             <select name="showPages" id="showPages" class="font-helvetica-medium">
